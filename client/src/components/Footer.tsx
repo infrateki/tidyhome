@@ -66,7 +66,7 @@ export function Footer() {
                   onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#E8E4DB'}
                   data-testid="footer-service-home">
-                  Home Organization
+                  {t('footer.home_organization')}
                 </Link>
               </li>
               <li>
@@ -75,7 +75,7 @@ export function Footer() {
                   onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#E8E4DB'}
                   data-testid="footer-service-moving">
-                  Moving Concierge
+                  {t('footer.moving_concierge')}
                 </Link>
               </li>
               <li>
@@ -84,7 +84,7 @@ export function Footer() {
                   onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#E8E4DB'}
                   data-testid="footer-service-space">
-                  Space Creation
+                  {t('footer.space_creation')}
                 </Link>
               </li>
               <li>
@@ -93,7 +93,7 @@ export function Footer() {
                   onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#E8E4DB'}
                   data-testid="footer-service-refresh">
-                  Refresh Sessions
+                  {t('footer.refresh_sessions')}
                 </Link>
               </li>
             </ul>
@@ -113,7 +113,7 @@ export function Footer() {
                   style={{ color: '#E8E4DB' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#E8E4DB'}>
-                  About
+                  {t('footer.about_link')}
                 </Link>
               </li>
               <li>
@@ -121,7 +121,7 @@ export function Footer() {
                   style={{ color: '#E8E4DB' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#E8E4DB'}>
-                  Services
+                  {t('footer.services_link')}
                 </Link>
               </li>
               <li>
@@ -129,7 +129,7 @@ export function Footer() {
                   style={{ color: '#E8E4DB' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#E8E4DB'}>
-                  Portfolio
+                  {t('footer.portfolio_link')}
                 </Link>
               </li>
               <li>
@@ -137,7 +137,7 @@ export function Footer() {
                   style={{ color: '#E8E4DB' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#E8E4DB'}>
-                  FAQs
+                  {t('footer.faqs_link')}
                 </Link>
               </li>
             </ul>
@@ -149,17 +149,17 @@ export function Footer() {
               style={{ color: '#F5F3EE' }}
               data-testid="footer-contact-title"
             >
-              Contact Info
+              {t('footer.contact_info')}
             </h4>
             <div className="space-y-3" style={{ color: '#E8E4DB' }}>
               <div className="flex items-center space-x-2" data-testid="footer-email">
-                <span>info@tidyhomepr.com</span>
+                <span>{t('footer.email')}</span>
               </div>
               <div className="flex items-center space-x-2" data-testid="footer-hours">
-                <span>Mon-Fri: 9AM - 5PM</span>
+                <span>{t('footer.hours')}</span>
               </div>
               <div className="flex items-center space-x-2" data-testid="footer-location">
-                <span>Serving: Dorado, San Juan, Carolina, Bayamón</span>
+                <span>{t('footer.service_areas')}</span>
               </div>
             </div>
           </div>

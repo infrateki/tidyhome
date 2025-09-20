@@ -12,27 +12,27 @@ export default function ConnectWithUs() {
   const services = [
     {
       id: 'first-time-project',
-      title: 'First Time Project',
-      description: 'Transform your home with our comprehensive organization service. Perfect for those ready to create lasting change in their living spaces.',
-      features: ['Complete home assessment', 'Custom organization systems', 'Product sourcing included', 'Team implementation']
+      title: t('connect.form.first-time.title'),
+      description: t('connect.form.first-time.description'),
+      features: [t('connect.form.first-time.feature1'), t('connect.form.first-time.feature2'), t('connect.form.first-time.feature3'), t('connect.form.first-time.feature4')]
     },
     {
       id: 'moving-services',
-      title: 'Moving Services',
-      description: 'Make your transition seamless with our complete moving concierge service. We handle everything from packing to setting up your new home.',
-      features: ['Pre-move decluttering', 'Professional packing', 'New home setup', 'Unpacking & organizing']
+      title: t('connect.form.moving.title'),
+      description: t('connect.form.moving.description'),
+      features: [t('connect.form.moving.feature1'), t('connect.form.moving.feature2'), t('connect.form.moving.feature3'), t('connect.form.moving.feature4')]
     },
     {
       id: 'refresh-sessions',
-      title: 'Refresh Sessions',
-      description: 'Maintain your organized spaces with regular refresh sessions. Perfect for keeping your systems working beautifully.',
-      features: ['System maintenance', 'Seasonal updates', 'Quick reorganization', 'Ongoing support']
+      title: t('connect.form.refresh.title'),
+      description: t('connect.form.refresh.description'),
+      features: [t('connect.form.refresh.feature1'), t('connect.form.refresh.feature2'), t('connect.form.refresh.feature3'), t('connect.form.refresh.feature4')]
     },
     {
       id: 'proyecto-inicial',
-      title: 'Proyecto Inicial',
-      description: 'Nuestro servicio completo de organización para transformar su hogar. Creamos sistemas personalizados que funcionan para su estilo de vida.',
-      features: ['Evaluación completa', 'Sistemas personalizados', 'Productos incluidos', 'Implementación profesional']
+      title: t('connect.form.spanish.title'),
+      description: t('connect.form.spanish.description'),
+      features: [t('connect.form.spanish.feature1'), t('connect.form.spanish.feature2'), t('connect.form.spanish.feature3'), t('connect.form.spanish.feature4')]
     }
   ];
 
@@ -48,14 +48,14 @@ export default function ConnectWithUs() {
               style={{ color: '#3C3C3C' }}
               data-testid="connect-title"
             >
-              Connect With Us
+              {t('connect.title')}
             </h1>
             <p 
               className="text-xl max-w-3xl mx-auto"
               style={{ color: '#4A4A4A' }}
               data-testid="connect-subtitle"
             >
-              Choose the service that best fits your needs and let's begin your transformation journey
+              {t('connect.description')}
             </p>
           </div>
 
@@ -106,13 +106,13 @@ export default function ConnectWithUs() {
                   onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#8B9574'}
                   data-testid={`get-started-${service.id}`}
                 >
-                  Get Started
+                  {t('services.get_started')}
                 </button>
 
                 {selectedService === service.id && (
                   <div className="mt-6 p-4 rounded-lg" style={{ backgroundColor: '#F5F3EE' }}>
                     <p className="text-center" style={{ color: '#4A4A4A' }}>
-                      Contact form will be integrated here with HoneyBook
+                      {t('connect.contact_note')}
                     </p>
                   </div>
                 )}
@@ -125,7 +125,7 @@ export default function ConnectWithUs() {
               className="text-lg mb-6"
               style={{ color: '#4A4A4A' }}
             >
-              Not sure which service is right for you?
+              {t('connect.not_sure')}
             </p>
             <Link href="/faqs">
               <button 
@@ -145,7 +145,7 @@ export default function ConnectWithUs() {
                 }}
                 data-testid="view-faqs-button"
               >
-                View FAQs
+                {t('services.view_faqs')}
               </button>
             </Link>
           </div>

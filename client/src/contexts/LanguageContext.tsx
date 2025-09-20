@@ -222,6 +222,23 @@ const translations = {
     // Connect Page Additional
     'connect.not_sure': 'Not sure which service is right for you?',
     'connect.contact_note': 'Contact form will be integrated here with HoneyBook',
+    // Connect Form Features
+    'connect.form.first-time.feature1': 'Complete home assessment',
+    'connect.form.first-time.feature2': 'Custom organization systems',
+    'connect.form.first-time.feature3': 'Product sourcing included',
+    'connect.form.first-time.feature4': 'Team implementation',
+    'connect.form.moving.feature1': 'Pre-move decluttering',
+    'connect.form.moving.feature2': 'Professional packing',
+    'connect.form.moving.feature3': 'New home setup',
+    'connect.form.moving.feature4': 'Unpacking & organizing',
+    'connect.form.refresh.feature1': 'System maintenance',
+    'connect.form.refresh.feature2': 'Seasonal updates',
+    'connect.form.refresh.feature3': 'Quick reorganization',
+    'connect.form.refresh.feature4': 'Ongoing support',
+    'connect.form.spanish.feature1': 'Complete assessment',
+    'connect.form.spanish.feature2': 'Custom systems',
+    'connect.form.spanish.feature3': 'Products included',
+    'connect.form.spanish.feature4': 'Professional implementation',
     // WhatsApp
     'whatsapp.aria_label': 'Contact us on WhatsApp',
   },
@@ -434,6 +451,23 @@ const translations = {
     // Connect Page Additional
     'connect.not_sure': '¿No estás seguro qué servicio es el correcto para ti?',
     'connect.contact_note': 'El formulario de contacto se integrará aquí con HoneyBook',
+    // Connect Form Features
+    'connect.form.first-time.feature1': 'Evaluación completa del hogar',
+    'connect.form.first-time.feature2': 'Sistemas de organización personalizados',
+    'connect.form.first-time.feature3': 'Búsqueda de productos incluida',
+    'connect.form.first-time.feature4': 'Implementación del equipo',
+    'connect.form.moving.feature1': 'Desorden previo a la mudanza',
+    'connect.form.moving.feature2': 'Empaque profesional',
+    'connect.form.moving.feature3': 'Configuración del nuevo hogar',
+    'connect.form.moving.feature4': 'Desempaque y organización',
+    'connect.form.refresh.feature1': 'Mantenimiento del sistema',
+    'connect.form.refresh.feature2': 'Actualizaciones estacionales',
+    'connect.form.refresh.feature3': 'Reorganización rápida',
+    'connect.form.refresh.feature4': 'Apoyo continuo',
+    'connect.form.spanish.feature1': 'Evaluación completa',
+    'connect.form.spanish.feature2': 'Sistemas personalizados',
+    'connect.form.spanish.feature3': 'Productos incluidos',
+    'connect.form.spanish.feature4': 'Implementación profesional',
     // WhatsApp
     'whatsapp.aria_label': 'Contáctanos por WhatsApp',
   }

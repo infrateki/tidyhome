@@ -62,7 +62,7 @@ export function ServiceGrid({ onServiceClick }: ServiceGridProps) {
             {t('services.title')}
           </h2>
           <p className="text-xl text-muted-foreground" data-testid="services-subtitle">
-            Solutions for every space and style
+            {t('services.grid_subtitle')}
           </p>
         </div>
         
@@ -87,7 +87,7 @@ export function ServiceGrid({ onServiceClick }: ServiceGridProps) {
                 {service.description}
               </p>
               <div className="text-sage font-medium" data-testid={`service-cta-${service.id}`}>
-                {service.id === 'additional-services' ? 'View FAQs' : 'Get Started'}
+                {service.id === 'additional-services' ? t('services.view_faqs') : t('services.get_started')}
               </div>
             </div>
           ))}

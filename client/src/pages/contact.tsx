@@ -122,10 +122,10 @@ export default function Contact() {
             {/* Introduction */}
             <div className="bg-cream p-8 rounded-xl mb-12" data-testid="contact-intro">
               <h2 className="text-2xl font-heading font-semibold text-ebony mb-4">
-                Looking to Get Started?
+                {t('contact.looking_to_start')}
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                If you already have an idea of what your project entails and are ready to share details, the best next step is to visit our Connect With Us page. There, you can book your consultation and select the service that aligns with your needs. Below are some common FAQs!
+                {t('contact.looking_description')}
               </p>
             </div>
             
@@ -174,17 +174,17 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="bg-cream p-8 rounded-xl" data-testid="contact-form-section">
               <h2 className="text-2xl font-heading font-semibold text-ebony mb-4">
-                Still Have Questions?
+                {t('contact.still_questions')}
               </h2>
               <p className="text-muted-foreground mb-8">
-                If something wasn't covered above, leave your question in the form below and we'll be happy to get back to you.
+                {t('contact.still_description')}
               </p>
               
               <form onSubmit={handleSubmit} className="space-y-6" data-testid="contact-form">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-ebony mb-2">
-                      Full Name *
+                      {t('contact.form.full_name')}
                     </label>
                     <Input
                       type="text"
@@ -198,7 +198,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-ebony mb-2">
-                      Email *
+                      {t('contact.form.email_label')}
                     </label>
                     <Input
                       type="email"
@@ -214,7 +214,7 @@ export default function Contact() {
                 
                 <div>
                   <label className="block text-sm font-semibold text-ebony mb-2">
-                    Phone Number *
+                    {t('contact.form.phone_label')}
                   </label>
                   <Input
                     type="tel"
@@ -229,7 +229,7 @@ export default function Contact() {
                 
                 <div>
                   <label className="block text-sm font-semibold text-ebony mb-2">
-                    Your Question *
+                    {t('contact.form.question_label')}
                   </label>
                   <Textarea
                     name="question"
@@ -237,7 +237,7 @@ export default function Contact() {
                     onChange={handleInputChange}
                     required
                     rows={5}
-                    placeholder="Please share your question here..."
+                    placeholder={t('contact.form.question_placeholder')}
                     className="w-full resize-vertical"
                     data-testid="contact-question-input"
                   />
@@ -249,7 +249,7 @@ export default function Contact() {
                   className="bg-sage text-primary-foreground px-8 py-3 rounded-md font-semibold hover:bg-sage-dark transition-colors"
                   data-testid="contact-submit-button"
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Question'}
+                  {isSubmitting ? t('contact.form.sending') : t('contact.form.send_button')}
                 </Button>
               </form>
             </div>

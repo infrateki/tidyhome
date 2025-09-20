@@ -1,8 +1,11 @@
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
 import { trackExternalLink } from '@/lib/analytics';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export function WhatsAppButton() {
+  const { t } = useLanguage();
+
   const handleWhatsAppClick = () => {
     // Track WhatsApp button click
     trackExternalLink('whatsapp', 'https://wa.me/19392021008');
@@ -15,7 +18,7 @@ export function WhatsAppButton() {
       rel="noopener noreferrer"
       onClick={handleWhatsAppClick}
       className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50"
-      aria-label="Contact us on WhatsApp"
+      aria-label={t('whatsapp.aria_label')}
       data-testid="whatsapp-button"
     >
       <MessageCircle className="w-6 h-6" />

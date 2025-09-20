@@ -11,10 +11,10 @@ export default function Portfolio() {
   const [selectedImage, setSelectedImage] = useState<any>(null);
 
   const categories = [
-    { id: 'all', name: 'All Projects' },
-    { id: 'organization', name: 'Organization' },
-    { id: 'space-creation', name: 'Space Creation' },
-    { id: 'moving', name: 'Moving Services' }
+    { id: 'all', name: t('portfolio.categories.all') },
+    { id: 'organization', name: t('portfolio.categories.organization') },
+    { id: 'space-creation', name: t('portfolio.categories.space_creation') },
+    { id: 'moving', name: t('portfolio.categories.moving') }
   ];
 
   const portfolioItems = [
@@ -48,14 +48,14 @@ export default function Portfolio() {
               style={{ color: '#3C3C3C' }}
               data-testid="portfolio-title"
             >
-              Our Portfolio
+              {t('portfolio.title')}
             </h1>
             <p 
               className="text-xl max-w-3xl mx-auto"
               style={{ color: '#4A4A4A' }}
               data-testid="portfolio-subtitle"
             >
-              Explore our transformations and see how we create beautiful, functional spaces
+              {t('portfolio.subtitle')}
             </p>
           </div>
 
