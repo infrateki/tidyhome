@@ -59,7 +59,7 @@ export function Header() {
             fontFamily: 'Montserrat, system-ui, sans-serif' 
           }}
         >
-          Schedule a Free Consultation
+          {t('header.schedule_consultation')}
         </Link>
       </div>
 
@@ -84,7 +84,7 @@ export function Header() {
                 <Link
                   href="/"
                   className="text-xs uppercase tracking-[0.15em] transition-colors duration-200"
-                  style={{ 
+                  style={{
                     color: '#3C3C3C',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
@@ -92,7 +92,7 @@ export function Header() {
                   onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#3C3C3C'}
                 >
-                  HOME
+                  {t('nav.home')}
                 </Link>
                 <Link
                   href="/about"
@@ -105,7 +105,7 @@ export function Header() {
                   onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#3C3C3C'}
                 >
-                  ABOUT
+                  {t('nav.about')}
                 </Link>
                 <Link
                   href="/services"
@@ -118,7 +118,7 @@ export function Header() {
                   onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#3C3C3C'}
                 >
-                  SERVICES
+                  {t('nav.services')}
                 </Link>
               </div>
 
@@ -146,7 +146,7 @@ export function Header() {
                   onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#3C3C3C'}
                 >
-                  CONNECT WITH US
+                  {t('nav.connect')}
                 </Link>
                 <Link
                   href="/portfolio"
@@ -159,7 +159,7 @@ export function Header() {
                   onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#3C3C3C'}
                 >
-                  PORTFOLIO
+                  {t('nav.portfolio')}
                 </Link>
                 <Link
                   href="/faqs"
@@ -172,7 +172,7 @@ export function Header() {
                   onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#3C3C3C'}
                 >
-                  FAQS
+                  {t('nav.faqs')}
                 </Link>
               </div>
             </div>
@@ -241,9 +241,9 @@ export function Header() {
                     fontWeight: 400
                   }}
                 >
-                  HOME
+                  {t('nav.home')}
                 </Link>
-                <Link 
+                <Link
                   href="/about" 
                   className="block text-xs uppercase tracking-[0.15em] py-2" 
                   style={{ 
@@ -252,9 +252,9 @@ export function Header() {
                     fontWeight: 400
                   }}
                 >
-                  ABOUT
+                  {t('nav.about')}
                 </Link>
-                <Link 
+                <Link
                   href="/services" 
                   className="block text-xs uppercase tracking-[0.15em] py-2" 
                   style={{ 
@@ -263,9 +263,9 @@ export function Header() {
                     fontWeight: 400
                   }}
                 >
-                  SERVICES
+                  {t('nav.services')}
                 </Link>
-                <Link 
+                <Link
                   href="/connect-with-us" 
                   className="block text-xs uppercase tracking-[0.15em] py-2" 
                   style={{ 
@@ -274,9 +274,9 @@ export function Header() {
                     fontWeight: 400
                   }}
                 >
-                  CONNECT WITH US
+                  {t('nav.connect')}
                 </Link>
-                <Link 
+                <Link
                   href="/portfolio" 
                   className="block text-xs uppercase tracking-[0.15em] py-2" 
                   style={{ 
@@ -285,9 +285,9 @@ export function Header() {
                     fontWeight: 400
                   }}
                 >
-                  PORTFOLIO
+                  {t('nav.portfolio')}
                 </Link>
-                <Link 
+                <Link
                   href="/faqs" 
                   className="block text-xs uppercase tracking-[0.15em] py-2" 
                   style={{ 
@@ -296,7 +296,7 @@ export function Header() {
                     fontWeight: 400
                   }}
                 >
-                  FAQS
+                  {t('nav.faqs')}
                 </Link>
                 <div className="flex items-center pt-3 border-t" style={{ borderColor: '#E8E4DB' }}>
                   <div className="flex items-center space-x-2">

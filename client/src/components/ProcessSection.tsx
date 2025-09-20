@@ -1,28 +1,30 @@
 import React from 'react';
 import { Link } from 'wouter';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export function ProcessSection() {
+  const { t } = useLanguage();
 
   const steps = [
     {
       number: 1,
-      title: 'INITIAL FORM & CONSULTATION',
-      description: 'We begin with a 15-minute discovery call to understand your vision and goals. Then, we schedule an in-person consultation to assess your space and needs in detail.'
+      title: t('process.step_1_title'),
+      description: t('process.step_1_description')
     },
     {
       number: 2,
-      title: 'PROJECT PROPOSAL AND CONFIRMATION',
-      description: 'You\'ll receive a personalized plan crafted for your home. Once confirmed, we guide you through the next steps, handling every detail to make the process simple and seamless.'
+      title: t('process.step_2_title'),
+      description: t('process.step_2_description')
     },
     {
       number: 3,
-      title: 'PLANNING & SHOPPING',
-      description: 'We take care of the product sourcing, ensuring a smooth and effortless experience for you.'
+      title: t('process.step_3_title'),
+      description: t('process.step_3_description')
     },
     {
       number: 4,
-      title: 'PROJECT DAY',
-      description: 'Our team arrives fully prepared to transform your space, beginning with careful preparation and finishing with lasting systems that are both functional and beautiful.'
+      title: t('process.step_4_title'),
+      description: t('process.step_4_description')
     }
   ];
 
@@ -31,10 +33,10 @@ export function ProcessSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-heading text-4xl font-bold text-foreground mb-4" data-testid="process-title">
-            PROCESS
+            {t('process.title')}
           </h2>
           <p className="text-xl text-muted-foreground" data-testid="process-subtitle">
-            The Tidy Home 4 Step Process
+            {t('process.subtitle')}
           </p>
         </div>
         
@@ -63,7 +65,7 @@ export function ProcessSection() {
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#8B9574'}
               data-testid="process-cta"
             >
-              Get Started Today
+              {t('process.cta_button')}
             </button>
           </Link>
         </div>

@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'wouter';  // Add this import
+import { Link } from 'wouter';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
@@ -33,7 +36,7 @@ export function Hero() {
               textShadow: '2px 2px 6px rgba(0,0,0,0.4)'
             }}
           >
-            YOUR SPACE MATTERS
+            {t('hero.main_title')}
           </p>
           <h1 
             className="text-5xl md:text-6xl lg:text-7xl text-center"
@@ -45,7 +48,7 @@ export function Hero() {
               textShadow: '2px 2px 6px rgba(0,0,0,0.4)'
             }}
           >
-            The Tidy Touch
+            {t('hero.company_name')}
           </h1>
           <p 
             className="max-w-3xl text-center text-lg md:text-xl px-6"
@@ -57,7 +60,7 @@ export function Hero() {
               lineHeight: '1.6'
             }}
           >
-            We specialize in curated, clutter-free living. Whether refreshing a room, preparing for a move, or designing from scratch, our team creates organized sanctuaries that blend luxury, functionality, and calm.
+            {t('hero.description')}
           </p>
         </div>
 
@@ -78,7 +81,7 @@ export function Hero() {
                 textTransform: 'uppercase'
               }}
             >
-              Book Your Consultation
+              {t('hero.cta.book_consultation')}
             </button>
           </Link>
           <Link href="/about">
@@ -94,7 +97,7 @@ export function Hero() {
                 textTransform: 'uppercase'
               }}
             >
-              Discover Our Process
+              {t('hero.cta.discover_process')}
             </button>
           </Link>
         </div>
