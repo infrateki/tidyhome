@@ -1,0 +1,878 @@
+# Product Requirements Document - Tidy Home Puerto Rico Website
+
+## AI Agent Development Specification for Replit
+
+-----
+
+## 1. EXECUTIVE SUMMARY
+
+### Project Overview
+
+Build a luxury home organization company website for Tidy Home Puerto Rico using Next.js 14, TypeScript, and Tailwind CSS. The website must be bilingual (English/Spanish), feature a video hero, service modals, and integrate with HoneyBook forms for lead capture.
+
+### Critical Success Criteria
+
+- ✅ Video hero with specific layout: “YOUR SPACE MATTERS” at top, “Tidy Home” in middle, CTAs at bottom
+- ✅ Dual-page strategy: “Connect With Us” (service-specific forms) and “Contact” (FAQs + general inquiry)
+- ✅ Service information delivered via modal popups, not separate pages
+- ✅ Full bilingual support with persistent language toggle
+- ✅ HoneyBook form integration on both Connect and Contact pages
+- ✅ Mobile-first responsive design with WhatsApp floating button
+
+### Agent Instructions
+
+This PRD is designed for autonomous development. Follow specifications exactly as written. All content, colors, and layouts are final and approved by the client. Do not improvise or add creative elements beyond what is specified.
+
+-----
+
+## 2. TECHNICAL SPECIFICATIONS
+
+### Core Technology Stack
+
+```yaml
+framework: Next.js 14
+router: App Router
+language: TypeScript
+styling: Tailwind CSS
+deployment: Vercel
+forms: HoneyBook (embedded iframes)
+analytics: Google Analytics 4
+cdn: Cloudflare (for video delivery)
+```
+
+### Required Dependencies
+
+```json
+{
+  "dependencies": {
+    "next": "14.x",
+    "react": "18.x",
+    "react-dom": "18.x",
+    "lucide-react": "latest",
+    "clsx": "latest",
+    "tailwind-merge": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "typescript": "5.x",
+    "tailwindcss": "3.x",
+    "autoprefixer": "latest",
+    "postcss": "latest"
+  }
+}
+```
+
+### File Structure
+
+```
+/app
+  /layout.tsx          # Root layout with navigation
+  /page.tsx           # Homepage
+  /about/page.tsx     # About page
+  /process/page.tsx   # Process page  
+  /services/page.tsx  # Services overview
+  /connect/page.tsx   # Connect With Us (booking forms)
+  /contact/page.tsx   # Contact (FAQs + inquiry form)
+  /api
+    /newsletter/route.ts  # Newsletter signup endpoint
+
+/components
+  /navigation/Navigation.tsx
+  /hero/VideoHero.tsx
+  /services/ServiceGrid.tsx
+  /services/ServiceModal.tsx
+  /process/ProcessSteps.tsx
+  /forms/HoneyBookEmbed.tsx
+  /forms/ContactForm.tsx
+  /common/WhatsAppButton.tsx
+  /common/LanguageToggle.tsx
+  /common/Footer.tsx
+
+/lib
+  /translations.ts    # EN/ES translations
+  /constants.ts      # Colors, spacing, etc.
+  
+/public
+  /videos
+    /hero.mp4
+    /hero.webm
+  /images
+    /hero-poster.jpg
+```
+
+-----
+
+## 3. DESIGN SYSTEM
+
+### Brand Colors (Exact Values - Do Not Modify)
+
+```css
+/* Primary Palette */
+--sage: #8B9574;
+--sage-light: #B8C4A6;
+--sage-dark: #6B7459;
+--sage-muted: #A4AE92;
+
+/* Neutral Palette */
+--ebony: #3C3C3C;
+--charcoal: #4A4A4A;
+--cream: #F5F3EE;
+--beige: #E8E4DB;
+--white: #FFFFFF;
+--gray-light: #F8F7F5;
+
+/* Service Modal Specific */
+--modal-bg: #6B7459;
+--modal-text: #F5F3EE;
+--modal-overlay: rgba(60, 60, 60, 0.95);
+```
+
+### Typography System
+
+```css
+/* Google Fonts Import - Add to layout.tsx */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Font Assignments */
+--font-heading: 'Playfair Display', serif;  /* All headings */
+--font-body: 'Montserrat', sans-serif;      /* All body text */
+
+/* Font Sizes - Use Tailwind classes */
+Hero Title: text-5xl md:text-7xl
+Section Title: text-3xl md:text-4xl
+Card Title: text-xl
+Body: text-base
+Small: text-sm
+```
+
+### Spacing & Layout
+
+```css
+Section Padding: py-20
+Container: max-w-7xl mx-auto px-4
+Card Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
+Modal Max Width: max-w-2xl
+```
+
+-----
+
+## 4. PAGE SPECIFICATIONS
+
+### 4.1 HOMEPAGE
+
+#### Video Hero Section
+
+```typescript
+// CRITICAL: Client-approved layout - DO NOT CHANGE
+Layout Structure:
+- Full viewport height (h-screen)
+- Video background (autoplay, muted, loop, playsInline)
+- Overlay: gradient from black/40 to black/20
+
+Content Positioning:
+- TOP: "YOUR SPACE MATTERS" (text-5xl md:text-7xl, white, centered)
+- MIDDLE: "Tidy Home" (text-4xl md:text-6xl, white, centered)
+- BOTTOM: Two CTA buttons (centered, below video area)
+
+Video Controls:
+- Bottom right: Play/Pause and Mute/Unmute buttons
+- Semi-transparent background with backdrop blur
+
+// IMPORTANT: No "Calm, beautiful spaces..." headline - removed per client
+```
+
+#### Brand Introduction Section (NEW - After Video)
+
+```markdown
+Title: "Creating Calm, Beautiful Spaces"
+Content: "At Tidy Home, we believe that an organized space is more than just aesthetic—it's about creating calm in your daily life. Our boutique organization service brings luxury, functionality, and peace to every corner of your home."
+Background: cream (#F5F3EE)
+Position: Immediately after video hero, before services
+```
+
+#### Services Grid
+
+```typescript
+// 6 Services - Each opens a modal on click
+Layout: 2x3 grid on desktop, 2x3 tablet, 1 column mobile
+Services:
+1. HOME ORGANIZATION
+2. MOVING CONCIERGE  
+3. SPACE CREATION
+4. REFRESH SESSIONS
+5. ADDITIONAL SERVICES
+6. GIFT CERTIFICATES
+
+Card Design:
+- Background: #F5F3EE
+- Hover: shadow-xl, translateY(-4px)
+- Icon at top, title below
+- Click action: Opens service modal
+```
+
+#### Why Tidy Home Section (NEW - On Homepage)
+
+```markdown
+Title: "Why Tidy Home"
+Points:
+- Personalized systems tailored to your lifestyle
+- Full-service transformations from start to finish
+- Lasting solutions that are easy to maintain
+- Trusted by families across Puerto Rico
+
+CTA Button: "Learn More" → Process page
+Background: white
+```
+
+#### Process Preview
+
+```markdown
+Title: "PROCESS"
+Subtitle: "The Tidy Home 4 Step Process"
+Display: 4 numbered circles with step names
+CTA: "Contact Us" button
+```
+
+#### About Preview
+
+```markdown
+Title: "ABOUT"
+Subtitle: "The Journey"
+Content: First paragraph of about content
+CTA: "Contact Us" button
+```
+
+#### Instagram Feed
+
+```markdown
+Title: "follow us on instagram"
+Handle: @tidyhomepr
+Grid: 6 recent posts (2x3 on desktop)
+Link: External to Instagram profile
+```
+
+### 4.2 CONNECT WITH US PAGE (Replaces “Book With Us”)
+
+```markdown
+Page Title: "Connect With Us"
+Subtitle: "Ready to transform your space? Choose the service that best fits your needs and let's begin your journey to a beautifully organized home."
+
+Service Options (Each with embedded HoneyBook form):
+1. First Time Project
+   - Description: "Starting fresh with Tidy Home..."
+   - Form ID: first-time-project
+   
+2. PROYECTO INICIAL  
+   - Description: "For Spanish-speaking clients..."
+   - Form ID: proyecto-inicial
+   
+3. Moving Services
+   - Description: "Moving doesn't have to feel overwhelming..."
+   - Form ID: moving-services
+   
+4. Refresh Sessions
+   - Description: "For existing clients..."
+   - Form ID: refresh-sessions
+
+Layout: 2x2 grid on desktop, single column mobile
+Each card contains embedded HoneyBook form
+```
+
+### 4.3 CONTACT PAGE (FAQs + Inquiry Form)
+
+```markdown
+Page Title: "Contact Us"
+
+Section 1 - Introduction:
+Title: "Looking to Get Started?"
+Content: "If you already have an idea of what your project entails and are ready to share details, the best next step is to visit our Connect With Us page. There, you can book your consultation and select the service that aligns with your needs. Below are some common FAQs!"
+
+Section 2 - FAQs:
+Accordion style, click to expand
+Questions:
+1. WHAT SERVICES DO YOU OFFER?
+2. HOW FAR IN ADVANCE SHOULD I BOOK?
+3. HOW DO YOU CHARGE FOR YOUR SERVICES?
+4. HOW DO I GET STARTED?
+5. WHAT AREAS DO YOU SERVE?
+
+Section 3 - Question Form:
+Title: "Still Have Questions?"
+Subtitle: "If something wasn't covered above, leave your question in the form below and we'll be happy to get back to you."
+Form Fields:
+- Full Name (required)
+- Email (required)
+- Phone Number (required)
+- Your Question (textarea, required)
+Submit Button: "Send Question"
+```
+
+### 4.4 PROCESS PAGE
+
+```markdown
+Page Title: "The Tidy Home 4 Step Process"
+
+Layout: Vertical timeline, centered
+Design: Each step has number circle, title, and description
+Connection: Vertical line between steps
+
+Steps:
+1. INITIAL FORM & CONSULTATION
+   "We begin with a 15-minute discovery call..."
+   
+2. PROJECT PROPOSAL & ONBOARDING
+   "You'll receive a customized project plan..."
+   
+3. PLANNING & SHOPPING
+   "We take care of the product sourcing..."
+   
+4. PROJECT DAY
+   "Our team arrives ready to transform..."
+
+CTA: "Ready to get started?" → Connect With Us page
+```
+
+### 4.5 ABOUT PAGE
+
+```markdown
+Page Title: "ABOUT"
+Subtitle: "The Journey"
+
+Content Sections:
+1. Our Story (full text from knowledge base)
+2. Team Section:
+   - Raul (photo placeholder + bio)
+   - Valeria (photo placeholder + bio)
+   
+Background: Cream (#F5F3EE)
+CTA: "Contact Us"
+```
+
+### 4.6 SERVICES PAGE
+
+```markdown
+Page Title: "SERVICES"
+
+Layout: Same 6-card grid as homepage
+Difference: Larger cards with more hover emphasis
+Each card opens same modal as homepage
+```
+
+-----
+
+## 5. SERVICE MODAL SPECIFICATIONS
+
+### Modal Behavior
+
+```typescript
+Trigger: Click on any service card
+Overlay: rgba(60, 60, 60, 0.95)
+Modal Background: #6B7459
+Text Color: #F5F3EE
+Max Width: 600px
+Close Button: × in top right
+Animation: Fade in with scale
+Mobile: Full screen with padding
+```
+
+### Modal Content Structure
+
+```markdown
+Each modal contains:
+1. Title (service name)
+2. 2-3 paragraphs of description
+3. "OUR SERVICES INCLUDE:" section with bullet points
+4. CTA button "Contact Us" → Connect With Us page
+5. Note for Refresh Sessions: "*Available exclusively to past clients"
+```
+
+### Service Modal Content (Use Exact Text)
+
+#### HOME ORGANIZATION
+
+```
+We create customized, clutter-free spaces that reflect your style while promoting order and harmony.
+
+Before the project begins, we prepare a personalized mood board and lay the groundwork to bring your vision to life.
+
+Tidy Home evolves with your needs adding products or labels to maintain long-term functionality.
+
+OUR SERVICES INCLUDE:
+• Decluttering
+• Product sourcing and returns
+• Space planning
+• Installations
+• Donation drop-offs after each session
+```
+
+#### MOVING CONCIERGE
+
+```
+Tidy Home redefines the moving experience, delivering seamless, stress-free transitions from one home to the next.
+
+With meticulous attention to detail, we manage every aspect of your move; planning, coordination, and execution with precision and grace.
+
+OUR SERVICES INCLUDE:
+• Packing – Decluttering, procurement of materials, and item classification
+• Moving Management – Day-of supervision, storage solutions, and coordination
+• Unpacking & Organizing – Space planning, system creation, and setup of home essentials
+```
+
+#### SPACE CREATION
+
+```
+Tidy Home transforms everyday spaces into functional, beautifully tailored environments.
+
+From reimagining a cluttered pantry to designing a streamlined garage, we bring thoughtful styling and practical solutions to every corner of your home.
+
+OUR SERVICES INCLUDE:
+• Creative Conceptualization - Inspiring mood boards that set the tone for your space
+• Custom Built-In Design - Tailored solutions to elevate functionality and style
+• Home Staging – Enhancing appeal to attract buyers and maximize market potential
+```
+
+#### REFRESH SESSIONS
+
+```
+Tidy Home's Refresh Sessions are designed for spaces we've previously organized.
+
+These visits help maintain the systems in place by clearing any clutter that may have built up over time.*
+
+OUR SERVICES INCLUDE:
+• Two organizers
+• One-two spaces per session
+• Space planning
+• Four hours
+• Transportation
+
+*Available exclusively to past clients seeking ongoing support and maintenance.
+```
+
+#### ADDITIONAL SERVICES
+
+```
+We also coordinate a range of trusted solutions, including but not limited to:
+
+• Handy solutions
+• Electrician services
+• Painting
+• Power washing
+• Deep cleaning
+```
+
+#### GIFT CERTIFICATES
+
+```
+Give the gift of a beautifully organized home with Tidy Home gift certificates.
+
+Perfect for any occasion, our gift certificates can be used for any of our services.
+```
+
+-----
+
+## 6. COMPONENT SPECIFICATIONS
+
+### Navigation Component
+
+```typescript
+Desktop Behavior:
+- Fixed header with white/90% opacity background
+- On scroll > 50px: Full white background with shadow
+- Logo: "Tidy Home" in Playfair Display, sage color
+- Menu items: Montserrat, medium weight
+- "Connect With Us" = Primary CTA button (sage background)
+- Language toggle: Globe icon + EN/ES text
+- Phone number: Visible on desktop only
+
+Mobile Behavior:
+- Hamburger menu (right side)
+- Slide-out panel from right
+- Full menu items in vertical stack
+- Language toggle in menu
+```
+
+### Video Hero Component
+
+```typescript
+Requirements:
+- Use native HTML5 video element
+- Attributes: autoPlay, muted, loop, playsInline
+- Poster image for loading state
+- Two source formats: WebM (primary), MP4 (fallback)
+- Controls: Custom play/pause and mute/unmute buttons
+- Position controls bottom-right with glass morphism effect
+```
+
+### HoneyBook Form Component
+
+```typescript
+// Component: HoneyBookEmbed.tsx
+Props:
+- formType: 'first-time' | 'proyecto-inicial' | 'moving' | 'refresh' | 'general'
+- className?: string
+
+Implementation:
+- Use iframe for HoneyBook embedded forms
+- Add loading state while iframe loads
+- Mobile responsive (100% width on mobile)
+- Minimum height: 600px
+
+Example:
+<div className="honeybook-embed">
+  <iframe 
+    src={`https://widget.honeybook.com/forms/${formId}`}
+    width="100%"
+    height="600"
+    frameBorder="0"
+  />
+</div>
+```
+
+### WhatsApp Button Component
+
+```typescript
+Position: fixed bottom-6 right-6
+Background: #25D366 (WhatsApp green)
+Icon: MessageCircle from lucide-react
+Link: https://wa.me/19392021008
+Hover: scale(110%)
+Z-index: 9999
+Mobile: Slightly smaller, bottom-4 right-4
+```
+
+### Language Toggle Component
+
+```typescript
+Storage: localStorage key 'preferred-language'
+Default: 'en'
+Toggle between: 'en' and 'es'
+Updates: All text content via translation system
+Persistence: Maintains selection across page navigation
+```
+
+-----
+
+## 7. TRANSLATION SYSTEM
+
+### Implementation
+
+```typescript
+// translations.ts
+export const translations = {
+  en: {
+    // All English content
+  },
+  es: {
+    // All Spanish content
+  }
+}
+
+// Usage in components
+const t = translations[language];
+<h1>{t.hero.title}</h1>
+```
+
+### Required Translations
+
+All content must be available in both languages:
+
+- Navigation labels
+- Hero content
+- Service names and descriptions
+- Process steps
+- About content
+- Form labels
+- CTA buttons
+- Footer content
+
+-----
+
+## 8. INTEGRATIONS
+
+### HoneyBook Forms
+
+```yaml
+Purpose: Lead capture and booking
+Implementation: Embedded iframes
+Forms needed:
+  - first-time-project
+  - proyecto-inicial (Spanish)
+  - moving-services
+  - refresh-sessions
+  - general-inquiry
+Tracking: UTM parameters for source attribution
+```
+
+### Google Analytics 4
+
+```yaml
+Events to track:
+  - page_view (all pages)
+  - video_play
+  - video_progress (25%, 50%, 75%, complete)
+  - modal_open (service_name)
+  - form_view (form_type)
+  - form_submit (form_type)
+  - language_switch (from_lang, to_lang)
+  - whatsapp_click
+  - phone_click
+```
+
+### Newsletter Popup
+
+```yaml
+Trigger: 30% scroll OR exit intent
+Form fields:
+  - Email (required)
+  - First Name (optional)
+Lead magnet: "Free Home Organization Guide"
+Integration: Beehiiv or ConvertKit
+Frequency: Once per session (cookie-based)
+```
+
+-----
+
+## 9. PERFORMANCE REQUIREMENTS
+
+### Core Web Vitals Targets
+
+```yaml
+LCP (Largest Contentful Paint): < 2.5s
+FID (First Input Delay): < 100ms
+CLS (Cumulative Layout Shift): < 0.1
+Performance Score: > 90 (Lighthouse mobile)
+```
+
+### Optimization Checklist
+
+- [ ] Video: Use CDN, preload metadata only
+- [ ] Images: Next.js Image component with lazy loading
+- [ ] Fonts: Preload critical fonts, use font-display: swap
+- [ ] Code splitting: Dynamic imports for modals
+- [ ] CSS: Purge unused Tailwind classes
+- [ ] Compression: Enable gzip/brotli on Vercel
+
+-----
+
+## 10. SEO REQUIREMENTS
+
+### Meta Tags (Per Page)
+
+```yaml
+Homepage:
+  title: "Tidy Home PR | Luxury Home Organization in Puerto Rico"
+  description: "Transform your home with Puerto Rico's premier luxury organization service. Serving Dorado, San Juan, Guaynabo, and Bayamón."
+
+Process:
+  title: "Our 4-Step Process | Tidy Home PR"
+  description: "Discover how we transform cluttered spaces into organized havens with our proven 4-step process."
+
+Services:
+  title: "Home Organization Services | Tidy Home PR"
+  description: "From home organization to moving concierge, explore our full range of luxury organizing services in Puerto Rico."
+```
+
+### Structured Data
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Tidy Home Puerto Rico",
+  "image": "https://tidyhomepr.com/images/logo.jpg",
+  "telephone": "+1-939-202-1008",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dorado",
+    "addressRegion": "PR",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 18.4589,
+    "longitude": -66.2676
+  },
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 18.4589,
+      "longitude": -66.2676
+    },
+    "geoRadius": "30000"
+  }
+}
+```
+
+-----
+
+## 11. CONTENT THAT MUST BE EXACT
+
+### Critical Text (Do Not Modify)
+
+1. Tagline: “YOUR SPACE MATTERS” (all caps)
+1. Brand name: “Tidy Home”
+1. Phone: (939) 202-1008
+1. Email: info@tidyhomepr.com
+1. Instagram: @tidyhomepr
+1. WhatsApp: 19392021008 (no +1 in link)
+1. Service areas: Dorado, San Juan, Guaynabo, Bayamón
+
+### Pricing Information
+
+**NEVER include specific prices**
+Only mention: “We charge per project rather than offering a flat rate”
+
+-----
+
+## 12. AGENT DEVELOPMENT CHECKLIST
+
+### Phase 1: Setup & Structure
+
+- [ ] Initialize Next.js 14 project with TypeScript
+- [ ] Configure Tailwind CSS with custom colors
+- [ ] Set up app router structure
+- [ ] Add Google Fonts
+- [ ] Create translation system
+
+### Phase 2: Components
+
+- [ ] Build Navigation with language toggle
+- [ ] Create Video Hero with exact layout
+- [ ] Implement Service Grid
+- [ ] Build Service Modal system
+- [ ] Create HoneyBook embed component
+- [ ] Add WhatsApp floating button
+
+### Phase 3: Pages
+
+- [ ] Complete Homepage with all sections
+- [ ] Build Connect With Us page with forms
+- [ ] Create Contact page with FAQs
+- [ ] Implement Process page with timeline
+- [ ] Build About page
+- [ ] Create Services overview page
+
+### Phase 4: Features
+
+- [ ] Implement language persistence
+- [ ] Add newsletter popup
+- [ ] Configure analytics tracking
+- [ ] Set up form submissions
+- [ ] Add loading states
+- [ ] Implement error boundaries
+
+### Phase 5: Optimization
+
+- [ ] Optimize video delivery
+- [ ] Implement image optimization
+- [ ] Add meta tags and SEO
+- [ ] Configure structured data
+- [ ] Test Core Web Vitals
+- [ ] Mobile responsiveness check
+
+### Phase 6: Testing
+
+- [ ] Test all service modals
+- [ ] Verify language toggle
+- [ ] Test HoneyBook forms
+- [ ] Check WhatsApp link
+- [ ] Validate all CTAs
+- [ ] Cross-browser testing
+
+-----
+
+## 13. ERROR PREVENTION
+
+### Common Mistakes to Avoid
+
+1. ❌ Adding prices or pricing tables
+1. ❌ Creating separate pages for services (use modals)
+1. ❌ Changing the video hero layout
+1. ❌ Modifying brand colors
+1. ❌ Forgetting Spanish translations
+1. ❌ Missing WhatsApp button
+1. ❌ Wrong form placement (both pages need forms)
+1. ❌ Adding creative content not in specifications
+
+### Required Validations
+
+- All forms must have proper validation
+- Language preference must persist
+- Video must have fallback poster
+- Modals must be keyboard accessible
+- Mobile menu must trap focus
+- Forms must show loading states
+
+-----
+
+## 14. DEPLOYMENT SPECIFICATIONS
+
+### Vercel Configuration
+
+```yaml
+Framework: Next.js
+Build Command: npm run build
+Output Directory: .next
+Node Version: 18.x
+Environment Variables:
+  - NEXT_PUBLIC_GA_ID
+  - NEXT_PUBLIC_HONEYBOOK_API_KEY
+  - NEWSLETTER_API_KEY
+```
+
+### Domain Setup
+
+```yaml
+Primary: tidyhomepr.com
+WWW: www.tidyhomepr.com (redirect to primary)
+SSL: Automatic via Vercel
+```
+
+-----
+
+## 15. SUCCESS CRITERIA
+
+### Must Have (P0)
+
+- ✅ Video hero with exact layout specified
+- ✅ Dual-page strategy (Connect With Us + Contact)
+- ✅ All 6 service modals working
+- ✅ HoneyBook forms embedded
+- ✅ Full bilingual support
+- ✅ WhatsApp button
+- ✅ Mobile responsive
+
+### Should Have (P1)
+
+- ✅ Newsletter popup
+- ✅ Instagram feed (can be placeholder)
+- ✅ Google Analytics
+- ✅ Loading states
+- ✅ Error handling
+
+### Nice to Have (P2)
+
+- ✅ Page transitions
+- ✅ Micro-animations
+- ✅ Progressive Web App
+- ✅ Offline support
+
+-----
+
+## FINAL AGENT INSTRUCTIONS
+
+1. **Follow this PRD exactly** - All content, layouts, and specifications are client-approved
+1. **Use provided content only** - Do not create new copy or marketing text
+1. **Implement in order** - Follow the development checklist sequentially
+1. **Test continuously** - Verify each component works before moving to the next
+1. **Maintain consistency** - Use the design system tokens throughout
+1. **Prioritize performance** - Optimize as you build, not after
+1. **Document as needed** - Add comments for complex logic
+
+This website is for a real client with specific requirements. Quality and accuracy are paramount. Build exactly what is specified, nothing more, nothing less.
+
+-----
+
+*END OF PRD - Version 2.0 - For AI Agent Development*

@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap');
+
+/* Tidy Home Brand Fonts - Using closest available Google Fonts alternatives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Tidy Home Brand Colors - Updated Brand System */
+  --brand-sage: #8B9574;                   /* Primary Sage Green */
+  --brand-sage-light: #B8C4A6;             /* Light Sage */
+  --brand-sage-dark: #6B7459;              /* Dark Sage */
+  --brand-cream: #F5F3EE;                  /* Cream - Replaces all white */
+  --brand-beige: #E8E4DB;                  /* Beige */
+  --brand-ebony: #3C3C3C;                  /* Ebony */
+  --brand-charcoal: #4A4A4A;               /* Charcoal */
+  --brand-gold: #D4AF37;                   /* Gold Accent */
+  --brand-warm-brown: #8B7355;             /* Warm Brown */
+  
+  /* Semantic Color System */
+  --background: #F5F3EE;                /* Cream - Never white */
+  --foreground: #3C3C3C;                /* Ebony */
+  --card: #F5F3EE;                      /* Cream - Never white */
+  --card-foreground: #3C3C3C;
+  --popover: #F5F3EE;
+  --popover-foreground: #3C3C3C;
+  --primary: #8B9574;                   /* Sage */
+  --primary-foreground: #F5F3EE;
+  --secondary: #B8C4A6;                 /* Sage Light */
+  --secondary-foreground: #3C3C3C;
+  --muted: #E8E4DB;                     /* Beige */
+  --muted-foreground: #4A4A4A;          /* Charcoal */
+  --accent: #8B9574;                    /* Sage */
+  --accent-foreground: #F5F3EE;
+  --destructive: hsl(356.3033, 90.5579%, 54.3137%);
+  --destructive-foreground: #F5F3EE;
+  --border: #E8E4DB;                    /* Beige border */
+  --input: #F5F3EE;
+  --ring: #8B9574;                      /* Sage */
+  
+  /* Brand-specific colors */
+  --sage: #8B9574;
+  --sage-light: #B8C4A6;
+  --sage-dark: #6B7459;
+  --sage-muted: #9EA68B;
+  --ebony: #3C3C3C;
+  --charcoal: #4A4A4A;
+  --gold: #D4AF37;
+  --warm-brown: #8B7355;
+  --cream: #F5F3EE;
+  --beige: #E8E4DB;
+  
+  /* Layout colors */
+  --gray-light: #FAF9F7;
+  --modal-bg: #6B7459;
+  --modal-text: #F5F3EE;
+  --modal-overlay: rgba(107, 116, 89, 0.9);
+  
+  /* Typography - Brand Fonts */
+  --font-heading: 'Playfair Display', 'Times New Roman', serif;
+  --font-body: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --radius: 12px;
+  
+  /* Border colors */
+  --border-light: #E5E3E0;
+  --border-medium: #D4D2CF;
+  --border-accent: #BDB982;
+}
+
+.dark {
+  /* Dark mode adaptations of brand colors */
+  --background: hsl(22, 25%, 8%);
+  --foreground: hsl(41, 32%, 90%);
+  --card: hsl(22, 25%, 12%);
+  --card-foreground: hsl(41, 32%, 90%);
+  --popover: hsl(22, 25%, 8%);
+  --popover-foreground: hsl(41, 32%, 90%);
+  --primary: hsl(60, 26%, 62%);        /* Sage in dark mode */
+  --primary-foreground: hsl(22, 25%, 8%);
+  --secondary: hsl(84, 17%, 25%);
+  --secondary-foreground: hsl(41, 32%, 90%);
+  --muted: hsl(22, 25%, 15%);
+  --muted-foreground: hsl(22, 10%, 60%);
+  --accent: hsl(60, 26%, 52%);
+  --accent-foreground: hsl(22, 25%, 8%);
+  --destructive: hsl(356.3033, 90.5579%, 54.3137%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(22, 15%, 20%);
+  --input: hsl(22, 25%, 12%);
+  --ring: hsl(60, 26%, 62%);
+  
+  /* Brand colors for dark mode */
+  --sage: hsl(60, 26%, 62%);
+  --sage-light: hsl(60, 26%, 72%);
+  --sage-dark: hsl(60, 26%, 45%);
+  --sage-muted: hsl(60, 20%, 55%);
+  --ebony: hsl(84, 17%, 65%);
+  --brown-sugar: hsl(21, 45%, 65%);
+  --ruddy-blue: hsl(209, 43%, 74%);
+  --alabaster: hsl(22, 25%, 12%);
+  --kobicha: hsl(41, 32%, 85%);
+  --cream: hsl(22, 25%, 15%);
+  --charcoal: hsl(0, 0%, 29%);
+  --beige: hsl(22, 25%, 18%);
+  --gray-light: hsl(22, 16%, 20%);
+  --modal-bg: hsl(22, 25%, 10%);
+  --modal-text: hsl(41, 32%, 90%);
+  --modal-overlay: rgba(0, 0, 0, 0.9);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: var(--font-body);
+    font-weight: 300;
+    background-color: #F5F3EE;  /* Cream - Never white */
+    color: #3C3C3C;  /* Ebony */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    font-family: var(--font-heading);
+    font-weight: 300;
+    color: #3C3C3C;  /* Ebony */
+    letter-spacing: 0.02em;
+  }
+  
+  /* Typography scale based on brand guidelines */
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  /* Navigation specific styling */
+  nav {
+    font-family: var(--font-body);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 12px;
+  }
+}
+
+@layer components {
+  .service-card {
+    @apply transition-all duration-300 ease-in-out hover:-translate-y-1;
+  }
+
+  .video-hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+  }
+
+  .modal-backdrop {
+    background: rgba(60, 60, 60, 0.95);
+    backdrop-filter: blur(4px);
+  }
+
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .newsletter-modal {
+    animation: fadeInScale 0.3s ease-out;
+  }
+  
+  .service-modal {
+    animation: fadeInScale 0.3s ease-out;
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .accordion-content.open {
+    max-height: 200px;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  
+  .font-body {
+    font-family: var(--font-body);
+  }
+  
+  /* Brand color utilities */
+  .bg-sage {
+    background-color: #8B9574;
+  }
+  
+  .text-sage {
+    color: #8B9574;
+  }
+  
+  .text-ebony {
+    color: #3C3C3C;
+  }
+  
+  .border-sage {
+    border-color: #8B9574;
+  }
+  
+  .bg-cream {
+    background-color: #F5F3EE;
+  }
+  
+  .bg-beige {
+    background-color: #E8E4DB;
+  }
+}

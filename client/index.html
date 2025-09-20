@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tidy Home Puerto Rico - Luxury Home Organization</title>
+    <meta name="description" content="Transform your home with Puerto Rico's premier luxury organization service. Creating calm, beautiful spaces that work for your life." />
+    <meta property="og:title" content="Tidy Home Puerto Rico - Luxury Home Organization" />
+    <meta property="og:description" content="Transform your home with Puerto Rico's premier luxury organization service. Creating calm, beautiful spaces that work for your life." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tidyhomepr.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Google Analytics 4 -->
+    <!-- 
+      IMPORTANT: Replace G-PLACEHOLDER with your actual GA4 Measurement ID
+      For GDPR compliance, consider implementing a cookie consent banner before loading analytics
+      You can get your GA4 Measurement ID from Google Analytics Admin > Data Streams
+    -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+    <script>
+      // Check if GA4 measurement ID is configured
+      const GA4_ID = 'G-PLACEHOLDER'; // Replace with your actual GA4 Measurement ID or use environment variable
+      
+      if (GA4_ID && GA4_ID !== 'G-PLACEHOLDER') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Configure GA4 with enhanced measurement and privacy settings
+        gtag('config', GA4_ID, {
+          page_path: window.location.pathname,
+          anonymize_ip: true, // IP anonymization for GDPR compliance
+          cookie_flags: 'SameSite=None;Secure', // Cookie security settings
+          allow_google_signals: false, // Disable advertising features by default for privacy
+          allow_ad_personalization_signals: false // Disable ad personalization by default
+        });
+        
+        // Make gtag available globally for custom events
+        window.gtag = gtag;
+        window.GA4_ID = GA4_ID;
+      } else {
+        console.info('GA4 tracking is not configured. Replace G-PLACEHOLDER with your actual measurement ID.');
+        // Create dummy gtag function to prevent errors if GA4 is not configured
+        window.gtag = function() {};
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="service-modal-root"></div>
+    <div id="newsletter-modal-root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

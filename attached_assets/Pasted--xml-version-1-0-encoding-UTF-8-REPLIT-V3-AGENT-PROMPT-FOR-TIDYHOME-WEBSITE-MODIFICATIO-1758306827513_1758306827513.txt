@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- REPLIT V3 AGENT PROMPT FOR TIDYHOME WEBSITE MODIFICATIONS -->
+
+<system_instructions>
+You are modifying an existing Next.js 14 TidyHome website in Replit. The website is already built and functional. Your task is to implement specific content and design updates based on client feedback, NOT to rebuild the entire website.
+
+CRITICAL: Work incrementally with existing components. Preserve functionality while implementing the exact changes specified below.
+</system_instructions>
+
+<project_context>
+<existing_structure>
+The TidyHome website is already built with:
+
+- Next.js 14 with App Router
+- TypeScript and Tailwind CSS
+- Existing components in src/components/
+- Working responsive design
+- Current navigation and page structure
+  </existing_structure>
+
+<modification_goal>
+Update content, styling, and navigation based on client feedback while maintaining existing functionality and performance.
+</modification_goal>
+</project_context>
+
+<critical_requirements>
+<requirement id="1">NEVER use white backgrounds anywhere - replace ALL white with cream (#F5F3EE)</requirement>
+<requirement id="2">Use brand colors: darker greens, sage (#8B9574), creams (#F5F3EE, #E8E4DB), orange accents</requirement>
+<requirement id="3">Remove ALL phone number displays - client doesn’t want phone inquiries</requirement>
+<requirement id="4">Change ALL service buttons to say “Get Started” instead of “Contact Us”</requirement>
+<requirement id="5">Update navigation to: Home, About, Services, Connect with Us, Portfolio, FAQs</requirement>
+<requirement id="6">Preserve existing responsive design and functionality</requirement>
+</critical_requirements>
+
+<homepage_modifications>
+<hero_section>
+<current_changes>
+
+<!-- Update existing Hero.tsx component -->
+
+<tagline>
+OLD: Current tagline
+NEW: "YOUR SPACE MATTERS" (all caps, slightly smaller, branded font)
+</tagline>
+
+<title>
+OLD: "Creating calm beautiful spaces"
+NEW: "The Tidy Touch"
+</title>
+
+<subtext>
+NEW: "We specialize in curated, clutter-free living. Whether refreshing a room, preparing for a move, or designing from scratch, our team creates organized sanctuaries that blend luxury, functionality, and calm."
+</subtext>
+
+<buttons>
+<button_1>
+TEXT: "Book Your Consultation"
+DESTINATION: /connect-with-us
+</button_1>
+<button_2>
+TEXT: "Discover Our Process" 
+DESTINATION: /about
+</button_2>
+<button_3>
+TEXT: "Schedule a Free Consultation" (top of page)
+DESTINATION: /connect-with-us
+</button_3>
+</buttons>
+</current_changes>
+
+<implementation>
+Update src/components/Hero.tsx:
+- Replace background colors (no white, use cream #F5F3EE)
+- Update text content exactly as specified
+- Ensure button routing works correctly
+- Maintain responsive design
+</implementation>
+</hero_section>
+
+<services_section>
+<content_updates>
+<headline>
+OLD: “Comprehensive solutions for every space in your home”
+NEW: “Solutions for every space and style”
+</headline>
+
+<buttons>
+- ALL service buttons: Change text to "Get Started"
+- EXCEPTION: "Additional Services" - remove button OR link to FAQ contact section
+- ALL buttons should route to appropriate lead forms in /connect-with-us
+</buttons>
+
+<styling>
+- Replace any white backgrounds with cream (#F5F3EE) or beige (#E8E4DB)
+- Use brand colors consistently
+- Maintain existing grid layout and responsiveness
+</styling>
+</content_updates>
+
+<implementation>
+Update src/components/sections/Services.tsx:
+- Change section headline
+- Update all button text to "Get Started"
+- Update button destinations to /connect-with-us
+- Replace white backgrounds with brand colors
+</implementation>
+</services_section>
+
+<why_tidyhome_section>
+<bullet_points>
+Replace existing bullet points with:
+
+- Personalized systems designed for your lifestyle
+- White-glove experience with every detail handled discreetly
+- Full-service transformations from start to finish
+- Solutions that balance beauty and function
+- Lasting results that are easy to maintain
+- Trusted by clients across Puerto Rico
+- Supporting families, busy professionals, and unique lifestyles
+  </bullet_points>
+
+<button>
+"Learn More" button → routes to /about
+</button>
+
+<implementation>
+Update src/components/sections/WhyTidyHome.tsx:
+- Replace bullet point content exactly as specified
+- Ensure "Learn More" button routes to /about
+- Update background colors (no white)
+</implementation>
+</why_tidyhome_section>
+
+<process_section>
+<step_updates>
+<step_2>
+<old_title>PROJECT PROPOSAL & ONBOARDING</old_title>
+<new_title>PROJECT PROPOSAL AND CONFIRMATION</new_title>
+<new_description>You’ll receive a personalized plan crafted for your home. Once confirmed, we guide you through the next steps, handling every detail to make the process simple and seamless.</new_description>
+</step_2>
+
+<step_4>
+<new_description>Our team arrives fully prepared to transform your space, beginning with careful preparation and finishing with lasting systems that are both functional and beautiful.</new_description>
+</step_4>
+
+<cta_button>
+TEXT: “Get Started Today”
+DESTINATION: /connect-with-us
+</cta_button>
+</step_updates>
+
+<implementation>
+Update src/components/sections/Process.tsx:
+- Modify Step 2 title and description
+- Update Step 4 description
+- Update CTA button text and destination
+- This component should appear on BOTH Home and About pages
+</implementation>
+</process_section>
+
+<footer_section>
+<keep>
+
+- Email: info@tidyhomepr.com
+- Working hours
+- Service locations: Dorado, San Juan, Carolina, Bayamón
+
+</keep>
+
+<remove>
+- Phone number (complete removal)
+- Duplicate "About" section content
+</remove>
+
+<implementation>
+Update src/components/layout/Footer.tsx:
+- Remove all phone number displays
+- Remove About section content (should only be on About page)
+- Keep email, hours, and service locations
+- Ensure background uses brand colors (no white)
+</implementation>
+</footer_section>
+</homepage_modifications>
+
+<about_page_modifications>
+<content_structure>
+<keep_sections>
+
+- Our Brand (from current website)
+- The Journey (from current website)
+  </keep_sections>
+
+<add_sections>
+
+- Our Process (same as homepage, with updated wording)
+- Meet Valeria & Raul (new bio section)
+  </add_sections>
+  </content_structure>
+
+<new_bio_section>
+
+<title>Meet Valeria & Raul</title>
+<content>
+Valeria and Raul, a husband-and-wife team, founded Tidy Home with a shared vision of creating spaces that feel curated and intentional. Valeria, an interior stylist with a love for organization and space creation, brings ideas and designs to life through thoughtful details and creative projects. Raul is the hands-on force behind the vision, painting, installing, and problem-solving with skill and versatility. Together, they balance creativity and craftsmanship, leading a team that can take on any project and transform any space into a reflection of your lifestyle and vision.
+</content>
+</new_bio_section>
+
+<implementation>
+Update src/app/about/page.tsx:
+- Keep existing "Our Brand" and "The Journey" sections
+- Add the Process section (reuse from homepage)
+- Add new "Meet Valeria & Raul" bio section with exact content
+- Ensure all backgrounds use brand colors (no white)
+</implementation>
+</about_page_modifications>
+
+<new_pages_creation>
+<connect_with_us_page>
+<file_path>src/app/connect-with-us/page.tsx</file_path>
+
+<layout_requirements>
+
+- Aligned with branding
+- Positioned on the right side
+- Emulate current “Book with Us” page style
+- Use exact wording from current “Book with Us” page
+  </layout_requirements>
+
+<content_structure>
+Display 4 services with “Get Started” buttons:
+
+1. First Time Project
+1. Moving Services
+1. Refresh Sessions
+1. Proyecto Inicial
+
+Each service should have:
+
+- Service title and description
+- “Get Started” button
+- Embedded lead form placeholder (for future HoneyBook integration)
+  </content_structure>
+
+<implementation>
+Create new src/app/connect-with-us/page.tsx:
+- Use layout similar to existing "Book with Us" page
+- Include 4 service options with descriptions
+- Add "Get Started" buttons for each service
+- Include embedded form placeholders
+- Use brand colors throughout
+</implementation>
+</connect_with_us_page>
+
+<portfolio_page>
+<file_path>src/app/portfolio/page.tsx</file_path>
+
+<structure>
+- Gallery layout organized by service type
+- Categories: Organization, Space Creation, Moving
+- Filter tabs for each category
+- Grid layout for images
+- Modal view for enlarged images
+</structure>
+
+<note>
+Client will provide actual photos during final review. Use placeholder images for now.
+</note>
+
+<implementation>
+Create new src/app/portfolio/page.tsx:
+- Responsive gallery grid
+- Category filter tabs
+- Image modal functionality
+- Placeholder images with service category labels
+- Brand color scheme throughout
+</implementation>
+</portfolio_page>
+
+<faq_page>
+<file_path>src/app/faqs/page.tsx</file_path>
+
+<page_structure>
+
+<title>Looking to Get Started?</title>
+
+<faq_content>
+<question_1>
+Q: How far in advance should I book?
+A: [Current answer] + Note: Peak season runs September through March.
+</question_1>
+
+<question_2>
+Q: How do you charge for your services?
+A: We begin by preparing an initial estimate based on the information you share through our project request form. After our consultation, where we learn more about your space, needs, and scope, we refine the details and provide a customized proposal with transparent pricing.
+</question_2>
+
+<question_3>
+Q: How do I get started?
+A: Simply visit our Connect With Us page and choose the service that best fits your needs. Once you submit your request, you’ll be able to schedule your consultation so we can discuss your project in more detail.
+</question_3>
+
+<question_4>
+Q: What areas do you serve?
+A: We proudly serve Dorado, San Juan, Carolina, and Bayamón with no additional travel fees. Projects outside these areas are also welcome, with travel costs discussed during your consultation.
+</question_4>
+</faq_content>
+
+<end_section>
+<section_title>Still have questions?</section_title>
+<section_text>For any additional questions, complete the form below and a member of our team will be in touch with you shortly.</section_text>
+<contact_form>Include basic contact form</contact_form>
+</end_section>
+</page_structure>
+
+<implementation>
+Create new src/app/faqs/page.tsx:
+- FAQ accordion layout
+- Exact content as specified above
+- "Still have questions?" section at bottom
+- Contact form for additional questions
+- Brand colors and styling consistent with site
+</implementation>
+</faq_page>
+</new_pages_creation>
+
+<navigation_updates>
+<header_component>
+<file_path>src/components/layout/Header.tsx</file_path>
+
+<navigation_structure>
+OLD: Home, About, Process, Services, Book With Us, Contact
+NEW: Home, About, Services, Connect with Us, Portfolio, FAQs
+</navigation_structure>
+
+<contact_info_updates>
+<keep>
+
+- Email: info@tidyhomepr.com
+- Social media icons (Instagram, Facebook)
+
+</keep>
+
+<remove>
+- Phone number (complete removal from header)
+</remove>
+</contact_info_updates>
+
+<implementation>
+Update src/components/layout/Header.tsx:
+- Update navigation menu items
+- Remove phone number completely
+- Update routing for new page structure
+- Ensure mobile menu includes new navigation items
+- Maintain existing responsive behavior
+</implementation>
+</header_component>
+</navigation_updates>
+
+<services_page_modifications>
+<standalone_page>
+<file_path>src/app/services/page.tsx</file_path>
+
+<content_updates>
+
+- Use same updates as Home page services section
+- Update button wording to “Get Started”
+- Update copy/headlines as specified
+- Plan for new photos (client will provide during final review)
+  </content_updates>
+
+<implementation>
+Update src/app/services/page.tsx:
+- Apply all service section updates from homepage
+- Ensure standalone page maintains consistency with homepage services
+- Update all buttons to "Get Started"
+- Use brand colors throughout
+</implementation>
+</standalone_page>
+</services_page_modifications>
+
+<global_styling_updates>
+<color_replacements>
+<find_and_replace>
+
+- Find: white, #FFFFFF, #FFF, bg-white
+- Replace: cream #F5F3EE (bg-[#F5F3EE])
+- Secondary: beige #E8E4DB (bg-[#E8E4DB])
+  </find_and_replace>
+
+<brand_colors>
+
+- Sage: #8B9574
+- Sage Light: #B8C4A6
+- Sage Dark: #6B7459
+- Ebony: #3C3C3C
+- Charcoal: #4A4A4A
+- Cream: #F5F3EE
+- Beige: #E8E4DB
+  </brand_colors>
+  </color_replacements>
+
+<implementation>
+Global search and replace across all components:
+- Replace white backgrounds with cream
+- Ensure consistent brand color usage
+- Update Tailwind classes accordingly
+- Test all components for visual consistency
+</implementation>
+</global_styling_updates>
+
+<testing_requirements>
+<functionality_check>
+
+- All existing functionality preserved
+- Navigation works correctly
+- Forms and buttons route properly
+- Responsive design maintained
+- No broken links or components
+  </functionality_check>
+
+<visual_check>
+
+- No white backgrounds anywhere
+- Brand colors used consistently
+- Typography maintained
+- Layout integrity preserved
+- Mobile responsiveness intact
+  </visual_check>
+  </testing_requirements>
+
+<completion_checklist>
+<homepage_updates>
+□ Hero section content updated
+□ Services section headline changed
+□ All “Get Started” buttons implemented
+□ Why Tidy Home bullet points updated
+□ Process section step 2 & 4 modified
+□ Footer phone number removed
+</homepage_updates>
+
+<new_pages>
+□ Connect with Us page created
+□ Portfolio page created  
+□ FAQ page created with exact content
+□ About page bio section added
+</new_pages>
+
+<navigation>
+□ Header navigation updated
+□ Phone number removed from header
+□ All routing works correctly
+</navigation>
+
+<global_changes>
+□ All white backgrounds replaced with cream
+□ Brand colors applied consistently
+□ Button text updated to “Get Started”
+□ Responsive design preserved
+</global_changes>
+</completion_checklist>
+
+<implementation_priority>
+<phase_1>High Priority - Complete First</phase_1>
+
+1. Global color updates (replace white with cream)
+1. Hero section content updates
+1. Navigation structure updates
+1. Remove phone numbers everywhere
+
+<phase_2>Medium Priority</phase_2>
+
+1. Services section updates
+1. Process section wording changes
+1. Why Tidy Home bullet points
+1. Footer modifications
+
+<phase_3>Lower Priority</phase_3>
+
+1. Create new Connect with Us page
+1. Create new Portfolio page
+1. Create new FAQ page
+1. Add About page bio section
+   </implementation_priority>
+
+<!-- END REPLIT V3 AGENT PROMPT -->

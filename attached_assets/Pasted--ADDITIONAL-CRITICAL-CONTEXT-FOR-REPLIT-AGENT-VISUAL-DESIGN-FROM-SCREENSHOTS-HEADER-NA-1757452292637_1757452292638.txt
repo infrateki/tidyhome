@@ -1,0 +1,527 @@
+# ADDITIONAL CRITICAL CONTEXT FOR REPLIT AGENT
+
+## VISUAL DESIGN FROM SCREENSHOTS
+
+### HEADER/NAVIGATION SPECIFICS
+```css
+/* Based on screenshot - exact header styling */
+.header {
+  background: rgba(139, 149, 116, 0.95); /* Sage with transparency */
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #F5F3EE; /* Cream text on sage background */
+  letter-spacing: 0.05em;
+}
+
+.tagline {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #F5F3EE;
+}
+
+.nav-links {
+  color: #F5F3EE;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.contact-button {
+  background: transparent;
+  border: 2px solid #F5F3EE;
+  border-radius: 25px;
+  padding: 8px 24px;
+  color: #F5F3EE;
+  transition: all 0.3s;
+}
+```
+
+### HERO SECTION - EXACT LAYOUT FROM SCREENSHOT
+```jsx
+// Hero has full-width image background with woman in pantry
+// Text overlay on LEFT side (not centered)
+// Image should be slightly darkened for text readability
+
+<section className="hero">
+  <div className="hero-image-container">
+    <img src="/images/hero-pantry.jpg" alt="Woman organizing pantry" />
+    <div className="hero-overlay"></div>
+  </div>
+  <div className="hero-content">
+    <h1>Calm, beautiful spaces that work for your life</h1>
+    <p>Transform your home with Puerto Rico's premier luxury organization service</p>
+  </div>
+</section>
+
+/* CSS */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+}
+
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(60,60,60,0.6) 0%, rgba(60,60,60,0.2) 100%);
+}
+
+.hero-content {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 600px;
+  color: white;
+}
+```
+
+### ABOUT SECTION - TEAM PHOTO LAYOUT
+```jsx
+// Two-column layout as shown in screenshot
+// Left: Team photo (two people in sage green shirts)
+// Right: "The Journey" text content
+
+<section className="about-section">
+  <div className="about-container">
+    <div className="about-image">
+      <img src="/images/team-photo.jpg" alt="Tidy Home team" />
+    </div>
+    <div className="about-content">
+      <h2>The Journey</h2>
+      <p>[Content here]</p>
+      <button>Contact Us</button>
+    </div>
+  </div>
+</section>
+
+/* Layout: 50/50 split on desktop, stack on mobile */
+```
+
+### INSTAGRAM FEED - EXACT GRID FROM SCREENSHOT
+```jsx
+// 4 posts shown in screenshot with specific captions
+// Grid layout: 2x2 on desktop, 2x2 on tablet, 1 column mobile
+
+const instagramPosts = [
+  {
+    id: 1,
+    type: "carousel",
+    caption: "INS & OUTS - ROUTINE RESET EDITION",
+    image: "/images/ig-laundry.jpg"
+  },
+  {
+    id: 2,
+    type: "image",
+    caption: "YOUR CLUTTERED CHAOS TURNED INTO A LAUNDRY SPACE THAT WORKS FOR YOU",
+    image: "/images/ig-laundry-2.jpg"
+  },
+  {
+    id: 3,
+    type: "carousel",
+    caption: "OUR ORGANIZING PROCESS",
+    subtitle: "Step-by-Step",
+    image: "/images/ig-process.jpg"
+  },
+  {
+    id: 4,
+    type: "image",
+    caption: "Modern kitchen organization",
+    image: "/images/ig-kitchen.jpg"
+  }
+];
+
+/* Instagram post styling */
+.instagram-post {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
+
+.instagram-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 20px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.instagram-post:hover .instagram-caption-overlay {
+  opacity: 1;
+}
+```
+
+### FOOTER - EXACT SAGE COLOR SCHEME
+```css
+.footer {
+  background: #8B9574; /* Sage green background */
+  color: #F5F3EE; /* Cream text */
+  padding: 60px 0 40px;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #F5F3EE;
+  margin-bottom: 10px;
+}
+
+.footer-tagline {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.footer-links {
+  color: #F5F3EE;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.footer-links:hover {
+  opacity: 1;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(245, 243, 238, 0.2);
+  margin-top: 40px;
+  padding-top: 20px;
+}
+```
+
+## SPECIFIC INTERACTIONS & ANIMATIONS
+
+### Service Cards Hover Effect
+```css
+.service-card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(139, 149, 116, 0.2);
+}
+
+.service-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #3C3C3C;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+```
+
+### Modal Animation
+```css
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content {
+  animation: modalFadeIn 0.3s ease-out;
+}
+```
+
+### WhatsApp Button Pulse
+```css
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-button {
+  animation: pulse 2s infinite;
+}
+```
+
+## RESPONSIVE BREAKPOINTS DETAIL
+
+### Mobile First Approach
+```css
+/* Base (Mobile) */
+@media (min-width: 0px) {
+  .container { padding: 0 20px; }
+  .hero-content { width: 90%; }
+  .service-grid { grid-template-columns: 1fr; }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .container { padding: 0 40px; }
+  .hero-content { width: 60%; }
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .container { padding: 0 60px; max-width: 1200px; margin: 0 auto; }
+  .hero-content { width: 50%; }
+  .service-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Wide */
+@media (min-width: 1440px) {
+  .container { max-width: 1400px; }
+}
+```
+
+## EXACT PAGE ROUTING
+
+```javascript
+// pages structure for Next.js App Router
+app/
+├── layout.tsx (main layout with header/footer)
+├── page.tsx (homepage)
+├── about/
+│   └── page.tsx (The Journey page)
+├── process/
+│   └── page.tsx (4-step process)
+├── services/
+│   └── page.tsx (services overview - but modals handle details)
+├── book-with-us/
+│   ├── page.tsx (booking options)
+│   ├── first-time-project/
+│   │   └── page.tsx
+│   ├── proyecto-inicial/
+│   │   └── page.tsx
+│   ├── moving-services/
+│   │   └── page.tsx
+│   └── refresh-sessions/
+│       └── page.tsx
+├── contact/
+│   └── page.tsx (contact form + FAQ)
+└── api/
+    ├── contact/
+    │   └── route.ts (form submission)
+    └── instagram/
+        └── route.ts (Instagram feed)
+```
+
+## FORM IMPLEMENTATION DETAILS
+
+```jsx
+// Contact Form with EmailJS
+import emailjs from '@emailjs/browser';
+
+const ContactForm = () => {
+  const form = useRef();
+  
+  const sendEmail = (e) => {
+    e.preventDefault();
+    
+    emailjs.sendForm(
+      'service_tidyhome',
+      'template_tidyhome',
+      form.current,
+      'YOUR_PUBLIC_KEY'
+    ).then((result) => {
+      console.log('Email sent successfully');
+    });
+  };
+  
+  return (
+    <form ref={form} onSubmit={sendEmail}>
+      <input name="user_name" placeholder="Full Name" required />
+      <input name="user_email" type="email" placeholder="Email" required />
+      <input name="user_phone" placeholder="Phone Number" required />
+      <select name="service_type" required>
+        <option value="">Select Service</option>
+        <option value="home-organization">Home Organization</option>
+        <option value="moving-concierge">Moving Concierge</option>
+        <option value="space-creation">Space Creation</option>
+        <option value="refresh-sessions">Refresh Sessions</option>
+        <option value="additional-services">Additional Services</option>
+        <option value="gift-certificates">Gift Certificates</option>
+      </select>
+      <textarea name="message" placeholder="Tell us about your project" rows="5" />
+      <button type="submit">Send Message</button>
+    </form>
+  );
+};
+```
+
+## LANGUAGE TOGGLE IMPLEMENTATION
+
+```jsx
+// Language Context Provider
+const LanguageContext = createContext();
+
+export const LanguageProvider = ({ children }) => {
+  const [language, setLanguage] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('language') || 'en';
+    }
+    return 'en';
+  });
+  
+  const toggleLanguage = () => {
+    const newLang = language === 'en' ? 'es' : 'en';
+    setLanguage(newLang);
+    localStorage.setItem('language', newLang);
+  };
+  
+  return (
+    <LanguageContext.Provider value={{ language, toggleLanguage }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+```
+
+## INSTAGRAM FEED API SETUP
+
+```javascript
+// Instagram Basic Display API configuration
+const INSTAGRAM_TOKEN = process.env.INSTAGRAM_ACCESS_TOKEN;
+const INSTAGRAM_FIELDS = 'id,caption,media_type,media_url,permalink,thumbnail_url,timestamp';
+
+async function getInstagramFeed() {
+  try {
+    const response = await fetch(
+      `https://graph.instagram.com/me/media?fields=${INSTAGRAM_FIELDS}&access_token=${INSTAGRAM_TOKEN}&limit=6`
+    );
+    const data = await response.json();
+    return data.data;
+  } catch (error) {
+    console.error('Instagram feed error:', error);
+    // Return static fallback posts
+    return staticInstagramPosts;
+  }
+}
+```
+
+## ENVIRONMENT VARIABLES NEEDED
+
+```env
+# .env.local
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_tidyhome
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_tidyhome
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+INSTAGRAM_ACCESS_TOKEN=your_instagram_token
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_SITE_URL=https://tidyhomepr.com
+```
+
+## PACKAGE.JSON DEPENDENCIES
+
+```json
+{
+  "name": "tidy-home-pr",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@emailjs/browser": "^3.11.0",
+    "framer-motion": "^10.16.0",
+    "react-intersection-observer": "^9.5.0",
+    "swiper": "^11.0.0",
+    "react-icons": "^4.11.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.0",
+    "@types/node": "^20.8.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.3.0",
+    "eslint": "^8.50.0",
+    "eslint-config-next": "14.0.0"
+  }
+}
+```
+
+## TAILWIND CONFIG
+
+```javascript
+// tailwind.config.js
+module.exports = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        sage: {
+          DEFAULT: '#8B9574',
+          light: '#B8C4A6',
+          dark: '#6B7459',
+          muted: '#A4AE92',
+        },
+        cream: '#F5F3EE',
+        beige: '#E8E4DB',
+        ebony: '#3C3C3C',
+        charcoal: '#4A4A4A',
+        gold: '#D4AF37',
+      },
+      fontFamily: {
+        playfair: ['Playfair Display', 'serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        cormorant: ['Cormorant Garamond', 'serif'],
+      },
+    },
+  },
+  plugins: [],
+}
+```
+
+## CRITICAL VISUAL ELEMENTS TO MATCH
+
+1. **Header**: Sage green background with cream text and logo
+2. **Hero**: Full-width image with text overlay on left side
+3. **Service Cards**: White cards with subtle shadow, uppercase titles
+4. **Instagram Grid**: 2x2 layout with hover captions
+5. **Footer**: Sage green background matching header
+6. **Modals**: Dark green (#6B7459) with cream text
+7. **WhatsApp**: Green button with pulse animation
+8. **Typography**: Elegant serif for headings, clean sans-serif for body
+
+## DO NOT IMPLEMENT
+- No blog functionality
+- No user accounts/login
+- No e-commerce/payments
+- No calendar booking system (just contact forms)
+- No live chat (only WhatsApp button)
