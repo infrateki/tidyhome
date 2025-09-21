@@ -33,14 +33,14 @@ export default function Services() {
               style={{ color: '#3C3C3C' }}
               data-testid="services-page-title"
             >
-              Our Services
+              {t('services.page.title')}
             </h1>
             <p 
               className="text-xl max-w-3xl mx-auto"
               style={{ color: '#4A4A4A' }}
               data-testid="services-page-subtitle"
             >
-              Comprehensive solutions designed to transform your space and simplify your life
+              {t('services.page.subtitle')}
             </p>
           </div>
         </div>

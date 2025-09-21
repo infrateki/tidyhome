@@ -17,43 +17,43 @@ export default function FAQs() {
   const faqs = [
     {
       id: 1,
-      question: 'How far in advance should I book?',
-      answer: 'We recommend booking at least 2-3 weeks in advance to ensure availability. Peak season runs September through March, so during these months, we suggest booking 4-6 weeks ahead for the best scheduling options.'
+      question: t('faqs.faq1.question'),
+      answer: t('faqs.faq1.answer')
     },
     {
       id: 2,
-      question: 'How do you charge for your services?',
-      answer: 'We begin by preparing an initial estimate based on the information you share through our project request form. After our consultation, where we learn more about your space, needs, and scope, we refine the details and provide a customized proposal with transparent pricing.'
+      question: t('faqs.faq2.question'),
+      answer: t('faqs.faq2.answer')
     },
     {
       id: 3,
-      question: 'How do I get started?',
-      answer: 'Simply visit our Connect With Us page and choose the service that best fits your needs. Once you submit your request, you\'ll be able to schedule your consultation so we can discuss your project in more detail.'
+      question: t('faqs.faq3.question'),
+      answer: t('faqs.faq3.answer')
     },
     {
       id: 4,
-      question: 'What areas do you serve?',
-      answer: 'We proudly serve Dorado, San Juan, Carolina, and Bayamón with no additional travel fees. Projects outside these areas are also welcome, with travel costs discussed during your consultation.'
+      question: t('faqs.faq4.question'),
+      answer: t('faqs.faq4.answer')
     },
     {
       id: 5,
-      question: 'Do you provide the organizing products?',
-      answer: 'Yes! We handle all product sourcing as part of our service. During the planning phase, we create a customized product list based on your space and budget, and we take care of all the shopping for you.'
+      question: t('faqs.faq5.question'),
+      answer: t('faqs.faq5.answer')
     },
     {
       id: 6,
-      question: 'How long does a typical project take?',
-      answer: 'Project timelines vary based on scope. A single room organization typically takes 6-8 hours, while whole-home projects may span multiple days. We provide a detailed timeline in your project proposal.'
+      question: t('faqs.faq6.question'),
+      answer: t('faqs.faq6.answer')
     },
     {
       id: 7,
-      question: 'Do I need to be present during the project?',
-      answer: 'While we love working alongside our clients, it\'s not required. Many clients prefer to return to a fully transformed space. We\'ll discuss your preference during the consultation.'
+      question: t('faqs.faq7.question'),
+      answer: t('faqs.faq7.answer')
     },
     {
       id: 8,
-      question: 'What happens to items I no longer want?',
-      answer: 'We can coordinate donation pickups, arrange for recycling, or disposal as needed. We work with local charities and ensure items are handled responsibly.'
+      question: t('faqs.faq8.question'),
+      answer: t('faqs.faq8.answer')
     }
   ];
 
@@ -75,14 +75,14 @@ export default function FAQs() {
               style={{ color: '#3C3C3C' }}
               data-testid="faq-title"
             >
-              Looking to Get Started?
+              {t('faqs.page.title')}
             </h1>
             <p 
               className="text-xl"
               style={{ color: '#4A4A4A' }}
               data-testid="faq-subtitle"
             >
-              Find answers to common questions about our services
+              {t('faqs.page.subtitle')}
             </p>
           </div>
 
@@ -133,14 +133,14 @@ export default function FAQs() {
                 style={{ color: '#3C3C3C' }}
                 data-testid="questions-section-title"
               >
-                Still have questions?
+                {t('faqs.still_questions')}
               </h2>
               <p 
                 className="mb-8"
                 style={{ color: '#4A4A4A' }}
                 data-testid="questions-section-text"
               >
-                For any additional questions, complete the form below and a member of our team will be in touch with you shortly.
+                {t('faqs.still_questions_text')}
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -150,7 +150,7 @@ export default function FAQs() {
                     className="block mb-2 font-medium"
                     style={{ color: '#3C3C3C' }}
                   >
-                    Your Name
+                    {t('faqs.form.name')}
                   </label>
                   <input
                     type="text"
@@ -170,7 +170,7 @@ export default function FAQs() {
                     className="block mb-2 font-medium"
                     style={{ color: '#3C3C3C' }}
                   >
-                    Email Address
+                    {t('faqs.form.email')}
                   </label>
                   <input
                     type="email"
@@ -190,7 +190,7 @@ export default function FAQs() {
                     className="block mb-2 font-medium"
                     style={{ color: '#3C3C3C' }}
                   >
-                    Your Question
+                    {t('faqs.form.question')}
                   </label>
                   <textarea
                     id="question"
@@ -215,7 +215,7 @@ export default function FAQs() {
                   onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#8B9574'}
                   data-testid="button-submit"
                 >
-                  Send Question
+                  {t('faqs.form.send')}
                 </button>
               </form>
             </div>
