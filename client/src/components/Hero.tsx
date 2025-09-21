@@ -84,8 +84,8 @@ export function Hero() {
               {t('hero.cta.book_consultation')}
             </button>
           </Link>
-          <Link href="/about">
-            <button 
+          <Link href="/about#process">
+            <button
               className="px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105"
               style={{
                 backgroundColor: 'transparent',

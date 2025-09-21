@@ -21,7 +21,7 @@ const translations = {
     'hero.tagline': 'Your Space Matters',
     'hero.title': 'Calm, beautiful spaces that work for your life',
     'hero.subtitle': 'Transform your home with Puerto Rico\'s premier luxury organization service',
-    'hero.description': 'From cluttered to calming, we create functional systems that last. Serving families in Dorado, San Juan, Guaynabo, and Bayamón.',
+    'hero.description': 'We specialize in curated, clutter-free living, simplifying closets, kitchens, playrooms, and garages for a seamless lifestyle.',
     'hero.cta.primary': 'Book Your Consultation',
     'hero.cta.secondary': 'Discover Our Process',
     'hero.stats.number': '500+',
@@ -42,7 +42,7 @@ const translations = {
     'services.gift-certificates.description': 'Give the gift of a beautifully organized home.',
     'services.learn-more': 'Learn More →',
     'process.title': 'PROCESS',
-    'process.subtitle': 'The Tidy Home 4 Step Process',
+    'process.subtitle': 'How We Transform Your Space',
     'process.step1.title': 'INITIAL FORM & CONSULTATION',
     'process.step1.description': '15-minute discovery call followed by in-person assessment of your space and needs.',
     'process.step2.title': 'PROJECT PROPOSAL & ONBOARDING',
@@ -168,13 +168,13 @@ const translations = {
     'hero.cta.discover_process': 'Discover Our Process',
     // Process Section
     'process.step_1_title': 'CONSULTATION',
-    'process.step_1_description': 'Initial consultation to understand your needs and space requirements.',
+    'process.step_1_description': 'We meet with you to understand your unique needs and vision.',
     'process.step_2_title': 'PLANNING',
-    'process.step_2_description': 'Customized project plan tailored to your home and lifestyle.',
+    'process.step_2_description': 'We create a personalized organization strategy for your home.',
     'process.step_3_title': 'SHOPPING',
-    'process.step_3_description': 'Product sourcing and procurement for optimal organization solutions.',
+    'process.step_3_description': 'We source the perfect products to bring your plan to life.',
     'process.step_4_title': 'TRANSFORMATION',
-    'process.step_4_description': 'Complete transformation with functional organization systems.',
+    'process.step_4_description': 'We implement beautiful, functional systems that last.',
     'process.cta_button': 'Get Started Today',
     // Contact Form
     'contact.form.full_name': 'Full Name *',
@@ -216,7 +216,7 @@ const translations = {
     'footer.portfolio_link': 'Portfolio',
     'footer.faqs_link': 'FAQs',
     // ServiceGrid
-    'services.grid_subtitle': 'Solutions for every space and style',
+    'services.grid_subtitle': 'Explore our comprehensive organization and lifestyle support services',
     'services.get_started': 'Get Started',
     'services.view_faqs': 'View FAQs',
     // Connect Page Additional
@@ -289,7 +289,7 @@ const translations = {
     'hero.tagline': 'Tu Espacio Importa',
     'hero.title': 'Espacios serenos y hermosos que funcionan para tu vida',
     'hero.subtitle': 'Transforma tu hogar con el servicio de organización de lujo premier de Puerto Rico',
-    'hero.description': 'De desordenado a relajante, creamos sistemas funcionales que duran. Sirviendo familias en Dorado, San Juan, Guaynabo y Bayamón.',
+    'hero.description': 'Nos especializamos en una vida curada y libre de desorden, simplificando armarios, cocinas, salas de juego y garajes para un estilo de vida perfecto.',
     'hero.cta.primary': 'Reserva Tu Consulta',
     'hero.cta.secondary': 'Descubre Nuestro Proceso',
     'hero.stats.number': '500+',
@@ -310,7 +310,7 @@ const translations = {
     'services.gift-certificates.description': 'Regala el obsequio de un hogar hermosamente organizado.',
     'services.learn-more': 'Saber Más →',
     'process.title': 'PROCESO',
-    'process.subtitle': 'El Proceso de 4 Pasos de Tidy Home',
+    'process.subtitle': 'Cómo Transformamos Tu Espacio',
     'process.step1.title': 'FORMULARIO INICIAL Y CONSULTA',
     'process.step1.description': 'Llamada de descubrimiento de 15 minutos seguida de evaluación en persona de tu espacio y necesidades.',
     'process.step2.title': 'PROPUESTA DE PROYECTO E INCORPORACIÓN',
@@ -436,13 +436,13 @@ const translations = {
     'hero.cta.discover_process': 'Descubre Nuestro Proceso',
     // Process Section
     'process.step_1_title': 'CONSULTA',
-    'process.step_1_description': 'Consulta inicial para entender tus necesidades y requisitos del espacio.',
+    'process.step_1_description': 'Nos reunimos contigo para entender tus necesidades y visión únicas.',
     'process.step_2_title': 'PLANIFICACIÓN',
-    'process.step_2_description': 'Plan de proyecto personalizado adaptado a tu hogar y estilo de vida.',
+    'process.step_2_description': 'Creamos una estrategia de organización personalizada para tu hogar.',
     'process.step_3_title': 'COMPRAS',
-    'process.step_3_description': 'Búsqueda y adquisición de productos para soluciones óptimas de organización.',
+    'process.step_3_description': 'Conseguimos los productos perfectos para dar vida a tu plan.',
     'process.step_4_title': 'TRANSFORMACIÓN',
-    'process.step_4_description': 'Transformación completa con sistemas de organización funcionales.',
+    'process.step_4_description': 'Implementamos sistemas hermosos y funcionales que perduran.',
     'process.cta_button': 'Comienza Hoy',
     // Contact Form
     'contact.form.full_name': 'Nombre Completo *',
@@ -484,7 +484,7 @@ const translations = {
     'footer.portfolio_link': 'Portafolio',
     'footer.faqs_link': 'Preguntas Frecuentes',
     // ServiceGrid
-    'services.grid_subtitle': 'Soluciones para cada espacio y estilo',
+    'services.grid_subtitle': 'Explore nuestros servicios integrales de organización y soporte de estilo de vida',
     'services.get_started': 'Comenzar',
     'services.view_faqs': 'Ver Preguntas Frecuentes',
     // Connect Page Additional
@@ -573,19 +573,20 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const t = (key: string): string => {
     // First try direct key lookup (for flat keys with dots)
-    const directValue = translations[currentLanguage.code][key];
+    const currentTranslations = translations[currentLanguage.code as keyof typeof translations];
+    const directValue = (currentTranslations as any)[key];
     if (directValue) {
       return directValue;
     }
-    
+
     // If not found, try nested object access (for backwards compatibility)
     const keys = key.split('.');
-    let value: any = translations[currentLanguage.code];
-    
+    let value: any = currentTranslations;
+
     for (const k of keys) {
       value = value?.[k];
     }
-    
+
     return value || key;
   };
 
