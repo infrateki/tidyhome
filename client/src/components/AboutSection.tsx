@@ -11,7 +11,7 @@ export function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-20 bg-white" data-testid="about-section">
+    <section id="about" className="py-20 bg-alabaster" data-testid="about-section">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>

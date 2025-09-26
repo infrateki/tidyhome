@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Clock, Mail, MapPin } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export function ContactSection() {
@@ -20,7 +20,7 @@ export function ContactSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center" data-testid="contact-phone">
             <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-4">
-              <Phone className="w-8 h-8 text-sage" />
+              <Clock className="w-8 h-8 text-sage" />
             </div>
             <h3 className="text-xl font-heading font-semibold mb-2">{t('contact.phone')}</h3>
             <p className="text-primary-foreground/80">{t('contact.phone.hours')}</p>

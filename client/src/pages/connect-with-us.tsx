@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { WhatsAppButton } from '../components/WhatsAppButton';
+import { CalendlyButton } from '../components/CalendlyButton';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link } from 'wouter';
 
@@ -37,7 +37,7 @@ export default function ConnectWithUs() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F5F3EE' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#eeeae1' }}>
       <Header />
       
       <section className="py-20">
@@ -45,14 +45,14 @@ export default function ConnectWithUs() {
           <div className="text-center mb-16">
             <h1 
               className="text-4xl md:text-5xl font-heading mb-6"
-              style={{ color: '#3C3C3C' }}
+              style={{ color: '#555843' }}
               data-testid="connect-title"
             >
               {t('connect.title')}
             </h1>
             <p 
               className="text-xl max-w-3xl mx-auto"
-              style={{ color: '#4A4A4A' }}
+              style={{ color: '#555843' }}
               data-testid="connect-subtitle"
             >
               {t('connect.description')}
@@ -64,18 +64,18 @@ export default function ConnectWithUs() {
               <div 
                 key={service.id}
                 className="rounded-xl p-8 shadow-lg transition-all duration-300 hover:shadow-xl"
-                style={{ backgroundColor: '#FFFFFF' }}
+                style={{ backgroundColor: '#eeeae1' }}
                 data-testid={`service-option-${service.id}`}
               >
                 <h3 
                   className="text-2xl font-heading mb-4"
-                  style={{ color: '#3C3C3C' }}
+                  style={{ color: '#555843' }}
                 >
                   {service.title}
                 </h3>
                 <p 
                   className="mb-6"
-                  style={{ color: '#4A4A4A' }}
+                  style={{ color: '#555843' }}
                 >
                   {service.description}
                 </p>
@@ -84,11 +84,11 @@ export default function ConnectWithUs() {
                     <li 
                       key={index}
                       className="flex items-center"
-                      style={{ color: '#4A4A4A' }}
+                      style={{ color: '#555843' }}
                     >
                       <span 
                         className="w-2 h-2 rounded-full mr-3"
-                        style={{ backgroundColor: '#8B9574' }}
+                        style={{ backgroundColor: '#c06446' }}
                       />
                       {feature}
                     </li>
@@ -99,19 +99,19 @@ export default function ConnectWithUs() {
                   onClick={() => setSelectedService(service.id)}
                   className="w-full py-3 px-6 rounded-lg font-medium transition-all duration-300"
                   style={{ 
-                    backgroundColor: '#8B9574',
-                    color: '#F5F3EE'
+                    backgroundColor: '#c06446',
+                    color: '#eeeae1'
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#6B7459'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#8B9574'}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#5e432c'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#c06446'}
                   data-testid={`get-started-${service.id}`}
                 >
                   {t('services.get_started')}
                 </button>
 
                 {selectedService === service.id && (
-                  <div className="mt-6 p-4 rounded-lg" style={{ backgroundColor: '#F5F3EE' }}>
-                    <p className="text-center" style={{ color: '#4A4A4A' }}>
+                  <div className="mt-6 p-4 rounded-lg" style={{ backgroundColor: '#eeeae1' }}>
+                    <p className="text-center" style={{ color: '#555843' }}>
                       {t('connect.contact_note')}
                     </p>
                   </div>
@@ -123,7 +123,7 @@ export default function ConnectWithUs() {
           <div className="mt-16 text-center">
             <p 
               className="text-lg mb-6"
-              style={{ color: '#4A4A4A' }}
+              style={{ color: '#555843' }}
             >
               {t('connect.not_sure')}
             </p>
@@ -132,16 +132,16 @@ export default function ConnectWithUs() {
                 className="py-3 px-8 rounded-lg font-medium transition-all duration-300"
                 style={{ 
                   backgroundColor: 'transparent',
-                  border: '2px solid #8B9574',
-                  color: '#8B9574'
+                  border: '2px solid #c06446',
+                  color: '#c06446'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#8B9574';
-                  e.currentTarget.style.color = '#F5F3EE';
+                  e.currentTarget.style.backgroundColor = '#c06446';
+                  e.currentTarget.style.color = '#eeeae1';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#8B9574';
+                  e.currentTarget.style.color = '#c06446';
                 }}
                 data-testid="view-faqs-button"
               >
@@ -153,7 +153,7 @@ export default function ConnectWithUs() {
       </section>
 
       <Footer />
-      <WhatsAppButton />
+      <CalendlyButton />
     </div>
   );
 }

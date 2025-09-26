@@ -103,7 +103,7 @@ export function NewsletterPopup() {
         onClick={(e) => e.target === e.currentTarget && handleClose()}
         data-testid="newsletter-popup"
       >
-        <div className="bg-white max-w-md w-full rounded-xl p-8 relative newsletter-modal">
+        <div className="bg-alabaster max-w-md w-full rounded-xl p-8 relative newsletter-modal">
           <Button
             variant="ghost"
             size="sm"

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { WhatsAppButton } from '../components/WhatsAppButton';
+import { CalendlyButton } from '../components/CalendlyButton';
 import { useLanguage } from '../contexts/LanguageContext';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -64,7 +64,7 @@ export default function FAQs() {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F5F3EE' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#eeeae1' }}>
       <Header />
       
       <section className="py-20">
@@ -72,14 +72,14 @@ export default function FAQs() {
           <div className="text-center mb-16">
             <h1 
               className="text-4xl md:text-5xl font-heading mb-6"
-              style={{ color: '#3C3C3C' }}
+              style={{ color: '#555843' }}
               data-testid="faq-title"
             >
               {t('faqs.page.title')}
             </h1>
             <p 
               className="text-xl"
-              style={{ color: '#4A4A4A' }}
+              style={{ color: '#555843' }}
               data-testid="faq-subtitle"
             >
               {t('faqs.page.subtitle')}
@@ -91,15 +91,15 @@ export default function FAQs() {
               <div 
                 key={faq.id}
                 className="rounded-lg overflow-hidden shadow-md transition-all duration-300"
-                style={{ backgroundColor: '#FFFFFF' }}
+                style={{ backgroundColor: '#eeeae1' }}
                 data-testid={`faq-item-${faq.id}`}
               >
                 <button
                   onClick={() => setOpenQuestion(openQuestion === faq.id ? null : faq.id)}
                   className="w-full px-6 py-4 text-left flex justify-between items-center transition-colors"
                   style={{ 
-                    backgroundColor: openQuestion === faq.id ? '#8B9574' : '#FFFFFF',
-                    color: openQuestion === faq.id ? '#F5F3EE' : '#3C3C3C'
+                    backgroundColor: openQuestion === faq.id ? '#c06446' : '#eeeae1',
+                    color: openQuestion === faq.id ? '#eeeae1' : '#555843'
                   }}
                   data-testid={`faq-question-${faq.id}`}
                 >
@@ -113,7 +113,7 @@ export default function FAQs() {
                 {openQuestion === faq.id && (
                   <div 
                     className="px-6 py-4"
-                    style={{ backgroundColor: '#FAF9F7', color: '#4A4A4A' }}
+                    style={{ backgroundColor: '#FAF9F7', color: '#555843' }}
                     data-testid={`faq-answer-${faq.id}`}
                   >
                     <p>{faq.answer}</p>
@@ -126,18 +126,18 @@ export default function FAQs() {
           <div className="mt-20">
             <div 
               className="rounded-xl p-8 shadow-lg"
-              style={{ backgroundColor: '#FFFFFF' }}
+              style={{ backgroundColor: '#eeeae1' }}
             >
               <h2 
                 className="text-2xl font-heading mb-4"
-                style={{ color: '#3C3C3C' }}
+                style={{ color: '#555843' }}
                 data-testid="questions-section-title"
               >
                 {t('faqs.still_questions')}
               </h2>
               <p 
                 className="mb-8"
-                style={{ color: '#4A4A4A' }}
+                style={{ color: '#555843' }}
                 data-testid="questions-section-text"
               >
                 {t('faqs.still_questions_text')}
@@ -148,7 +148,7 @@ export default function FAQs() {
                   <label 
                     htmlFor="name" 
                     className="block mb-2 font-medium"
-                    style={{ color: '#3C3C3C' }}
+                    style={{ color: '#555843' }}
                   >
                     {t('faqs.form.name')}
                   </label>
@@ -159,7 +159,7 @@ export default function FAQs() {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
                     className="w-full px-4 py-2 rounded-lg border"
-                    style={{ borderColor: '#E8E4DB' }}
+                    style={{ borderColor: '#eeeae1' }}
                     data-testid="input-name"
                   />
                 </div>
@@ -168,7 +168,7 @@ export default function FAQs() {
                   <label 
                     htmlFor="email" 
                     className="block mb-2 font-medium"
-                    style={{ color: '#3C3C3C' }}
+                    style={{ color: '#555843' }}
                   >
                     {t('faqs.form.email')}
                   </label>
@@ -179,7 +179,7 @@ export default function FAQs() {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
                     className="w-full px-4 py-2 rounded-lg border"
-                    style={{ borderColor: '#E8E4DB' }}
+                    style={{ borderColor: '#eeeae1' }}
                     data-testid="input-email"
                   />
                 </div>
@@ -188,7 +188,7 @@ export default function FAQs() {
                   <label 
                     htmlFor="question" 
                     className="block mb-2 font-medium"
-                    style={{ color: '#3C3C3C' }}
+                    style={{ color: '#555843' }}
                   >
                     {t('faqs.form.question')}
                   </label>
@@ -199,7 +199,7 @@ export default function FAQs() {
                     required
                     rows={4}
                     className="w-full px-4 py-2 rounded-lg border"
-                    style={{ borderColor: '#E8E4DB' }}
+                    style={{ borderColor: '#eeeae1' }}
                     data-testid="input-question"
                   />
                 </div>
@@ -208,11 +208,11 @@ export default function FAQs() {
                   type="submit"
                   className="w-full py-3 px-6 rounded-lg font-medium transition-all duration-300"
                   style={{ 
-                    backgroundColor: '#8B9574',
-                    color: '#F5F3EE'
+                    backgroundColor: '#c06446',
+                    color: '#eeeae1'
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#6B7459'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#8B9574'}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#5e432c'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#c06446'}
                   data-testid="button-submit"
                 >
                   {t('faqs.form.send')}
@@ -224,7 +224,7 @@ export default function FAQs() {
       </section>
 
       <Footer />
-      <WhatsAppButton />
+      <CalendlyButton />
     </div>
   );
 }

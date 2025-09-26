@@ -1,111 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap');
 
-/* Tidy Home Brand Fonts - Using closest available Google Fonts alternatives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* Tidy Home Brand Colors - Updated Brand System */
-  --brand-sage: #8B9574;                   /* Primary Sage Green */
-  --brand-sage-light: #B8C4A6;             /* Light Sage */
-  --brand-sage-dark: #6B7459;              /* Dark Sage */
-  --brand-cream: #F5F3EE;                  /* Cream - Replaces all white */
-  --brand-beige: #E8E4DB;                  /* Beige */
-  --brand-ebony: #3C3C3C;                  /* Ebony */
-  --brand-charcoal: #4A4A4A;               /* Charcoal */
-  --brand-gold: #D4AF37;                   /* Gold Accent */
-  --brand-warm-brown: #8B7355;             /* Warm Brown */
-  
-  /* Semantic Color System */
-  --background: #F5F3EE;                /* Cream - Never white */
-  --foreground: #3C3C3C;                /* Ebony */
-  --card: #F5F3EE;                      /* Cream - Never white */
-  --card-foreground: #3C3C3C;
-  --popover: #F5F3EE;
-  --popover-foreground: #3C3C3C;
-  --primary: #8B9574;                   /* Sage */
-  --primary-foreground: #F5F3EE;
-  --secondary: #B8C4A6;                 /* Sage Light */
-  --secondary-foreground: #3C3C3C;
-  --muted: #E8E4DB;                     /* Beige */
-  --muted-foreground: #4A4A4A;          /* Charcoal */
-  --accent: #8B9574;                    /* Sage */
-  --accent-foreground: #F5F3EE;
-  --destructive: hsl(356.3033, 90.5579%, 54.3137%);
-  --destructive-foreground: #F5F3EE;
-  --border: #E8E4DB;                    /* Beige border */
-  --input: #F5F3EE;
-  --ring: #8B9574;                      /* Sage */
-  
-  /* Brand-specific colors */
-  --sage: #8B9574;
-  --sage-light: #B8C4A6;
-  --sage-dark: #6B7459;
-  --sage-muted: #9EA68B;
-  --ebony: #3C3C3C;
-  --charcoal: #4A4A4A;
-  --gold: #D4AF37;
-  --warm-brown: #8B7355;
-  --cream: #F5F3EE;
-  --beige: #E8E4DB;
-  
-  /* Layout colors */
-  --gray-light: #FAF9F7;
-  --modal-bg: #6B7459;
-  --modal-text: #F5F3EE;
-  --modal-overlay: rgba(107, 116, 89, 0.9);
-  
-  /* Typography - Brand Fonts */
-  --font-heading: 'Playfair Display', 'Times New Roman', serif;
-  --font-body: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --radius: 12px;
-  
-  /* Border colors */
-  --border-light: #E5E3E0;
-  --border-medium: #D4D2CF;
-  --border-accent: #BDB982;
+/* CRITICAL: Force Alabaster background globally - NO WHITE ALLOWED */
+html, body, #root {
+  background-color: #eeeae1 !important; /* ALABASTER - Never white */
+  min-height: 100vh;
 }
 
-.dark {
-  /* Dark mode adaptations of brand colors */
-  --background: hsl(22, 25%, 8%);
-  --foreground: hsl(41, 32%, 90%);
-  --card: hsl(22, 25%, 12%);
-  --card-foreground: hsl(41, 32%, 90%);
-  --popover: hsl(22, 25%, 8%);
-  --popover-foreground: hsl(41, 32%, 90%);
-  --primary: hsl(60, 26%, 62%);        /* Sage in dark mode */
-  --primary-foreground: hsl(22, 25%, 8%);
-  --secondary: hsl(84, 17%, 25%);
-  --secondary-foreground: hsl(41, 32%, 90%);
-  --muted: hsl(22, 25%, 15%);
-  --muted-foreground: hsl(22, 10%, 60%);
-  --accent: hsl(60, 26%, 52%);
-  --accent-foreground: hsl(22, 25%, 8%);
-  --destructive: hsl(356.3033, 90.5579%, 54.3137%);
-  --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(22, 15%, 20%);
-  --input: hsl(22, 25%, 12%);
-  --ring: hsl(60, 26%, 62%);
+/* Override ANY white backgrounds */
+.bg-white {
+  background-color: #eeeae1 !important;
+}
+
+:root {
+  /* EXACT Tidy Home Brand Colors from Palette */
   
-  /* Brand colors for dark mode */
-  --sage: hsl(60, 26%, 62%);
-  --sage-light: hsl(60, 26%, 72%);
-  --sage-dark: hsl(60, 26%, 45%);
-  --sage-muted: hsl(60, 20%, 55%);
-  --ebony: hsl(84, 17%, 65%);
-  --brown-sugar: hsl(21, 45%, 65%);
-  --ruddy-blue: hsl(209, 43%, 74%);
-  --alabaster: hsl(22, 25%, 12%);
-  --kobicha: hsl(41, 32%, 85%);
-  --cream: hsl(22, 25%, 15%);
-  --charcoal: hsl(0, 0%, 29%);
-  --beige: hsl(22, 25%, 18%);
-  --gray-light: hsl(22, 16%, 20%);
-  --modal-bg: hsl(22, 25%, 10%);
-  --modal-text: hsl(41, 32%, 90%);
-  --modal-overlay: rgba(0, 0, 0, 0.9);
+  /* Primary Colors */
+  --brand-ebony: #555843;          /* EBONY - Dark green (CALMA) */
+  --brand-sage: #bfbf82;           /* SAGE - Light green (ORDEN) */
+  
+  /* Secondary Colors */
+  --brand-brown-sugar: #c06446;    /* BROWN SUGAR - Terracotta (CALIDEZ) */
+  --brand-ruddy-blue: #82a7d3;     /* RUDDY BLUE - Blue (FRESCURA) */
+  
+  /* Neutral Colors */
+  --brand-alabaster: #eeeae1;      /* ALABASTER - Cream (LIMPIEZA) */
+  --brand-kobicha: #5e432c;        /* KOBICHA - Brown (ELEGANCIA) */
+  
+  /* Semantic Color System - Using ONLY brand colors */
+  --background: #eeeae1;           /* ALABASTER */
+  --foreground: #555843;           /* EBONY for main text */
+  --card: #eeeae1;                 /* ALABASTER */
+  --card-foreground: #555843;      /* EBONY */
+  --popover: #eeeae1;              /* ALABASTER */
+  --popover-foreground: #555843;   /* EBONY */
+  --primary: #555843;              /* EBONY */
+  --primary-foreground: #eeeae1;   /* ALABASTER */
+  --secondary: #bfbf82;            /* SAGE */
+  --secondary-foreground: #555843; /* EBONY */
+  --accent: #c06446;               /* BROWN SUGAR */
+  --accent-foreground: #eeeae1;    /* ALABASTER */
+  --muted: #bfbf82;                /* SAGE for muted elements */
+  --muted-foreground: #555843;     /* EBONY */
+  --border: #bfbf8250;             /* SAGE with opacity for borders */
+  --input: #eeeae1;                /* ALABASTER */
+  --ring: #555843;                 /* EBONY */
+  
+  /* Service Modal Specific */
+  --modal-bg: #555843;             /* EBONY for modal background */
+  --modal-text: #eeeae1;           /* ALABASTER for modal text */
+  --modal-overlay: rgba(85, 88, 67, 0.95); /* EBONY overlay */
+  
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --radius: 12px;
 }
 
 @layer base {
@@ -113,133 +65,184 @@
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground font-body antialiased;
-    font-family: var(--font-body);
-    font-weight: 300;
-    background-color: #F5F3EE;  /* Cream - Never white */
-    color: #3C3C3C;  /* Ebony */
+  /* Ensure ALABASTER background everywhere */
+  html, body {
+    background-color: #eeeae1 !important;
   }
 
+  body {
+    font-family: var(--font-body);
+    font-weight: 300;
+    background-color: #eeeae1 !important;  /* ALABASTER */
+    color: #555843 !important;             /* EBONY text */
+    min-height: 100vh;
+  }
+
+  /* All headings use EBONY */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
     font-family: var(--font-heading);
     font-weight: 300;
-    color: #3C3C3C;  /* Ebony */
+    color: #555843 !important;  /* EBONY */
     letter-spacing: 0.02em;
   }
   
-  /* Typography scale based on brand guidelines */
-  h1 {
-    @apply text-5xl md:text-6xl lg:text-7xl;
-  }
-  
-  h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
-  }
-  
-  h3 {
-    @apply text-2xl md:text-3xl;
-  }
-  
-  h4 {
-    @apply text-xl md:text-2xl;
-  }
-  
-  /* Navigation specific styling */
+  /* Navigation */
   nav {
     font-family: var(--font-body);
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 12px;
+    background-color: #eeeae1 !important; /* ALABASTER */
+    color: #555843;                        /* EBONY */
+  }
+
+  /* Links */
+  a {
+    color: #555843;  /* EBONY */
+  }
+  
+  a:hover {
+    color: #c06446;  /* BROWN SUGAR on hover */
+  }
+
+  /* Buttons - Primary */
+  .btn-primary, button[type="submit"] {
+    background-color: #555843 !important;  /* EBONY */
+    color: #eeeae1 !important;             /* ALABASTER text */
+  }
+  
+  .btn-primary:hover {
+    background-color: #5e432c !important;  /* KOBICHA on hover */
+  }
+
+  /* Buttons - Secondary */
+  .btn-secondary {
+    background-color: #c06446 !important;  /* BROWN SUGAR */
+    color: #eeeae1 !important;             /* ALABASTER text */
+  }
+
+  /* Ensure main content areas have ALABASTER */
+  main, header, footer, section, article, div {
+    background-color: transparent;
   }
 }
 
 @layer components {
+  /* Service Cards */
   .service-card {
     @apply transition-all duration-300 ease-in-out hover:-translate-y-1;
+    background-color: #eeeae1 !important;  /* ALABASTER */
+    border: 1px solid #bfbf8250;          /* SAGE with opacity */
+    color: #555843;                        /* EBONY text */
+  }
+  
+  .service-card:hover {
+    border-color: #c06446;                 /* BROWN SUGAR on hover */
   }
 
-  .video-hero-overlay {
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.2) 50%,
-      rgba(0, 0, 0, 0.4) 100%
-    );
+  /* Service Modals - EBONY background */
+  .service-modal, .modal-content {
+    background-color: #555843 !important;  /* EBONY */
+    color: #eeeae1 !important;             /* ALABASTER text */
   }
 
+  .service-modal h2, .service-modal h3 {
+    color: #eeeae1 !important;             /* ALABASTER for modal headings */
+  }
+
+  /* CRITICAL: Override for ServiceModal component text visibility */
+  .service-modal-title-visible {
+    color: #bfbf82 !important;             /* SAGE for title visibility */
+    font-weight: bold !important;
+  }
+
+  .service-modal-subtitle-visible {
+    color: #bfbf82 !important;             /* SAGE for subtitle visibility */
+    font-weight: bold !important;
+  }
+  
+  .service-modal button {
+    background-color: #c06446 !important;  /* BROWN SUGAR for modal buttons */
+    color: #eeeae1 !important;             /* ALABASTER text */
+  }
+  
+  .service-modal button:hover {
+    background-color: #5e432c !important;  /* KOBICHA on hover */
+  }
+
+  /* Modal Backdrop */
   .modal-backdrop {
-    background: rgba(60, 60, 60, 0.95);
+    background: rgba(85, 88, 67, 0.95) !important; /* EBONY overlay */
     backdrop-filter: blur(4px);
   }
 
-  .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  .newsletter-modal {
-    animation: fadeInScale 0.3s ease-out;
+  /* Footer - Use KOBICHA */
+  footer {
+    background-color: #5e432c !important;  /* KOBICHA */
+    color: #eeeae1 !important;             /* ALABASTER text */
   }
   
-  .service-modal {
-    animation: fadeInScale 0.3s ease-out;
+  footer a {
+    color: #eeeae1 !important;
+  }
+  
+  footer a:hover {
+    color: #bfbf82 !important;             /* SAGE on hover */
   }
 
-  @keyframes fadeInScale {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  .accordion-content.open {
-    max-height: 200px;
+  /* Footer heading overrides */
+  footer h3, footer h4 {
+    color: #bfbf82 !important;             /* SAGE for all footer headings */
   }
 }
 
 @layer utilities {
-  .font-heading {
-    font-family: var(--font-heading);
-  }
+  /* Brand Color Utilities */
   
-  .font-body {
-    font-family: var(--font-body);
-  }
+  /* Backgrounds */
+  .bg-ebony { background-color: #555843 !important; }
+  .bg-sage { background-color: #bfbf82 !important; }
+  .bg-brown-sugar { background-color: #c06446 !important; }
+  .bg-ruddy-blue { background-color: #82a7d3 !important; }
+  .bg-alabaster { background-color: #eeeae1 !important; }
+  .bg-kobicha { background-color: #5e432c !important; }
   
-  /* Brand color utilities */
-  .bg-sage {
-    background-color: #8B9574;
-  }
+  /* Text Colors */
+  .text-ebony { color: #555843 !important; }
+  .text-sage { color: #bfbf82 !important; }
+  .text-brown-sugar { color: #c06446 !important; }
+  .text-ruddy-blue { color: #82a7d3 !important; }
+  .text-alabaster { color: #eeeae1 !important; }
+  .text-kobicha { color: #5e432c !important; }
   
-  .text-sage {
-    color: #8B9574;
-  }
-  
-  .text-ebony {
-    color: #3C3C3C;
-  }
-  
-  .border-sage {
-    border-color: #8B9574;
-  }
-  
-  .bg-cream {
-    background-color: #F5F3EE;
-  }
-  
-  .bg-beige {
-    background-color: #E8E4DB;
-  }
+  /* Borders */
+  .border-ebony { border-color: #555843 !important; }
+  .border-sage { border-color: #bfbf82 !important; }
+  .border-brown-sugar { border-color: #c06446 !important; }
+  .border-alabaster { border-color: #eeeae1 !important; }
+}
+
+/* FINAL OVERRIDES - Catch any remaining white */
+[class*="bg-white"],
+[style*="background-color: white"],
+[style*="background-color:#FFFFFF"],
+[style*="background-color: #FFFFFF"],
+[style*="background: white"],
+[style*="background:#FFFFFF"],
+[style*="background: #FFFFFF"] {
+  background-color: #eeeae1 !important;  /* ALABASTER */
+}
+
+/* Ensure text contrast follows brand rules */
+.bg-ebony *, .bg-kobicha * {
+  color: #eeeae1 !important;  /* ALABASTER text on dark backgrounds */
+}
+
+.bg-alabaster *, .bg-sage *, .bg-ruddy-blue * {
+  color: #555843 !important;  /* EBONY text on light backgrounds */
+}
+
+.bg-brown-sugar * {
+  color: #eeeae1 !important;  /* ALABASTER text on brown sugar */
 }

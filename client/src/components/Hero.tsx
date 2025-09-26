@@ -32,8 +32,10 @@ export function Hero() {
             style={{ 
               fontFamily: 'Montserrat, sans-serif',
               fontWeight: 400,
-              color: '#FFFFFF',
-              textShadow: '2px 2px 6px rgba(0,0,0,0.4)'
+              color: '#5e432c',
+              fontSize: '24px',
+              opacity: 0.8,
+              textShadow: '2px 2px 6px rgba(85,88,67,0.4)'
             }}
           >
             {t('hero.main_title')}
@@ -44,23 +46,22 @@ export function Hero() {
               fontFamily: 'Playfair Display, Georgia, serif',
               fontWeight: 300,
               letterSpacing: '0.02em',
-              color: '#FFFFFF',
-              textShadow: '2px 2px 6px rgba(0,0,0,0.4)'
+              color: '#eeeae1',
+              textShadow: '2px 2px 6px rgba(85,88,67,0.4)'
             }}
           >
-            {t('hero.company_name')}
+            
           </h1>
           <p 
             className="max-w-3xl text-center text-lg md:text-xl px-6"
             style={{ 
               fontFamily: 'Montserrat, sans-serif',
               fontWeight: 300,
-              color: '#FFFFFF',
-              textShadow: '1px 1px 4px rgba(0,0,0,0.4)',
+              color: '#eeeae1',
+              textShadow: '1px 1px 4px rgba(85,88,67,0.4)',
               lineHeight: '1.6'
             }}
           >
-            {t('hero.description')}
           </p>
         </div>
 
@@ -73,8 +74,8 @@ export function Hero() {
             <button 
               className="px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105"
               style={{
-                backgroundColor: '#8B9574',
-                color: '#FFFFFF',
+                backgroundColor: '#c06446',
+                color: '#eeeae1',
                 fontFamily: 'Montserrat, sans-serif',
                 fontSize: '14px',
                 letterSpacing: '0.05em',
@@ -89,8 +90,8 @@ export function Hero() {
               className="px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105"
               style={{
                 backgroundColor: 'transparent',
-                border: '2px solid #FFFFFF',
-                color: '#FFFFFF',
+                border: '2px solid #eeeae1',
+                color: '#eeeae1',
                 fontFamily: 'Montserrat, sans-serif',
                 fontSize: '14px',
                 letterSpacing: '0.05em',

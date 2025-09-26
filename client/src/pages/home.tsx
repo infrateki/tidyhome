@@ -9,7 +9,7 @@ import { AboutSection } from '../components/AboutSection';
 import { InstagramFeed } from '../components/InstagramFeed';
 import { ContactSection } from '../components/ContactSection';
 import { Footer } from '../components/Footer';
-import { WhatsAppButton } from '../components/WhatsAppButton';
+import { CalendlyButton } from '../components/CalendlyButton';
 import { ServiceModal } from '../components/ServiceModal';
 import { NewsletterPopup } from '../components/NewsletterPopup';
 
@@ -39,7 +39,7 @@ export default function Home() {
       <InstagramFeed />
       <ContactSection />
       <Footer />
-      <WhatsAppButton />
+      <CalendlyButton />
       <ServiceModal 
         isOpen={isModalOpen}
         onClose={handleCloseModal}

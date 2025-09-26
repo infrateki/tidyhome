@@ -20,7 +20,7 @@ export function WhyTidyHome() {
 
 
   return (
-    <section className="py-20" style={{ backgroundColor: '#F5F3EE' }} data-testid="why-tidy-home">
+    <section className="py-20" style={{ backgroundColor: '#eeeae1' }} data-testid="why-tidy-home">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -42,7 +42,7 @@ export function WhyTidyHome() {
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start space-x-4" data-testid={`benefit-item-${index}`}>
                   <div className="w-6 h-6 bg-sage rounded-full flex items-center justify-center mt-1">
-                    <Check className="w-4 h-4 text-white" />
+                    <Check className="w-4 h-4 text-alabaster" />
                   </div>
                   <p className="text-lg text-muted-foreground">{benefit}</p>
                 </div>
@@ -52,9 +52,9 @@ export function WhyTidyHome() {
               <Link href="/about">
                 <Button 
                   className="px-8 py-3 rounded-md font-semibold transition-colors"
-                  style={{ backgroundColor: '#8B9574', color: '#F5F3EE' }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#6B7459'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#8B9574'}
+                  style={{ backgroundColor: '#c06446', color: '#eeeae1' }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#5e432c'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#c06446'}
                   data-testid="why-tidy-home-cta"
                 >
                   Learn More

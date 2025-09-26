@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { WhatsAppButton } from '../components/WhatsAppButton';
+import { CalendlyButton } from '../components/CalendlyButton';
 import { useLanguage } from '../contexts/LanguageContext';
 import { X } from 'lucide-react';
 
@@ -37,7 +37,7 @@ export default function Portfolio() {
     : portfolioItems.filter(item => item.category === selectedCategory);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F5F3EE' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#eeeae1' }}>
       <Header />
       
       <section className="py-20">
@@ -45,14 +45,14 @@ export default function Portfolio() {
           <div className="text-center mb-16">
             <h1 
               className="text-4xl md:text-5xl font-heading mb-6"
-              style={{ color: '#3C3C3C' }}
+              style={{ color: '#555843' }}
               data-testid="portfolio-title"
             >
               {t('portfolio.title')}
             </h1>
             <p 
               className="text-xl max-w-3xl mx-auto"
-              style={{ color: '#4A4A4A' }}
+              style={{ color: '#555843' }}
               data-testid="portfolio-subtitle"
             >
               {t('portfolio.subtitle')}
@@ -66,9 +66,9 @@ export default function Portfolio() {
                 onClick={() => setSelectedCategory(category.id)}
                 className="px-6 py-2 rounded-full transition-all duration-300"
                 style={{
-                  backgroundColor: selectedCategory === category.id ? '#8B9574' : 'transparent',
-                  color: selectedCategory === category.id ? '#F5F3EE' : '#3C3C3C',
-                  border: `2px solid ${selectedCategory === category.id ? '#8B9574' : '#E8E4DB'}`
+                  backgroundColor: selectedCategory === category.id ? '#c06446' : 'transparent',
+                  color: selectedCategory === category.id ? '#eeeae1' : '#555843',
+                  border: `2px solid ${selectedCategory === category.id ? '#c06446' : '#eeeae1'}`
                 }}
                 data-testid={`filter-${category.id}`}
               >
@@ -85,15 +85,15 @@ export default function Portfolio() {
                 onClick={() => setSelectedImage(item)}
                 data-testid={`portfolio-item-${item.id}`}
               >
-                <div className="aspect-w-4 aspect-h-3 overflow-hidden" style={{ backgroundColor: '#E8E4DB' }}>
+                <div className="aspect-w-4 aspect-h-3 overflow-hidden" style={{ backgroundColor: '#eeeae1' }}>
                   <div className="w-full h-64 flex items-center justify-center">
-                    <p style={{ color: '#4A4A4A' }}>Image placeholder - {item.title}</p>
+                    <p style={{ color: '#555843' }}>Image placeholder - {item.title}</p>
                   </div>
                 </div>
-                <div className="p-4" style={{ backgroundColor: '#FFFFFF' }}>
+                <div className="p-4" style={{ backgroundColor: '#eeeae1' }}>
                   <h3 
                     className="font-heading text-lg"
-                    style={{ color: '#3C3C3C' }}
+                    style={{ color: '#555843' }}
                   >
                     {item.title}
                   </h3>
@@ -115,19 +115,19 @@ export default function Portfolio() {
             <button
               onClick={() => setSelectedImage(null)}
               className="absolute top-4 right-4 p-2 rounded-full transition-colors"
-              style={{ backgroundColor: '#8B9574', color: '#F5F3EE' }}
+              style={{ backgroundColor: '#c06446', color: '#eeeae1' }}
               data-testid="close-modal"
             >
               <X className="w-6 h-6" />
             </button>
-            <div className="rounded-xl overflow-hidden" style={{ backgroundColor: '#E8E4DB' }}>
+            <div className="rounded-xl overflow-hidden" style={{ backgroundColor: '#eeeae1' }}>
               <div className="w-full h-96 flex items-center justify-center">
-                <p style={{ color: '#4A4A4A' }}>Large image placeholder - {selectedImage.title}</p>
+                <p style={{ color: '#555843' }}>Large image placeholder - {selectedImage.title}</p>
               </div>
             </div>
             <h2 
               className="text-2xl font-heading mt-4 text-center"
-              style={{ color: '#F5F3EE' }}
+              style={{ color: '#eeeae1' }}
             >
               {selectedImage.title}
             </h2>
@@ -136,7 +136,7 @@ export default function Portfolio() {
       )}
 
       <Footer />
-      <WhatsAppButton />
+      <CalendlyButton />
     </div>
   );
 }

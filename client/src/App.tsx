@@ -29,6 +29,9 @@ function RouteTracker({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     // Track page views on route changes
     trackPageView(location, document.title);
+
+    // Scroll to top when navigating to a new page
+    window.scrollTo(0, 0);
   }, [location]);
 
   return <>{children}</>;

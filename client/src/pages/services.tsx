@@ -3,7 +3,7 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ServiceGrid } from '../components/ServiceGrid';
 import { ServiceModal } from '../components/ServiceModal';
-import { WhatsAppButton } from '../components/WhatsAppButton';
+import { CalendlyButton } from '../components/CalendlyButton';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Services() {
@@ -22,22 +22,22 @@ export default function Services() {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F5F3EE' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#555843' }}>
       <Header />
       
-      <section className="py-20">
+      <section className="pt-12 pb-4">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center">
             <h1 
-              className="text-4xl md:text-5xl font-heading mb-6"
-              style={{ color: '#3C3C3C' }}
+              className="text-4xl md:text-5xl font-heading mb-3"
+              style={{ color: '#eeeae1' }}
               data-testid="services-page-title"
             >
               {t('services.page.title')}
             </h1>
             <p 
               className="text-xl max-w-3xl mx-auto"
-              style={{ color: '#4A4A4A' }}
+              style={{ color: '#eeeae1', opacity: 0.8 }}
               data-testid="services-page-subtitle"
             >
               {t('services.page.subtitle')}
@@ -55,7 +55,7 @@ export default function Services() {
       />
 
       <Footer />
-      <WhatsAppButton />
+      <CalendlyButton />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { WhatsAppButton } from '../components/WhatsAppButton';
+import { CalendlyButton } from '../components/CalendlyButton';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -139,7 +139,7 @@ export default function Contact() {
                 {faqs.map((faq, index) => (
                   <div 
                     key={index}
-                    className="bg-white rounded-lg shadow-sm border border-border"
+                    className="bg-alabaster rounded-lg shadow-sm border border-border"
                     data-testid={`faq-item-${index}`}
                   >
                     <button
@@ -257,7 +257,7 @@ export default function Contact() {
         </section>
       </main>
       <Footer />
-      <WhatsAppButton />
+      <CalendlyButton />
     </div>
   );
 }

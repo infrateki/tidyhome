@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { WhatsAppButton } from '../components/WhatsAppButton';
+import { CalendlyButton } from '../components/CalendlyButton';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Connect() {
@@ -77,7 +77,7 @@ export default function Connect() {
                   
                   {/* HoneyBook Form Embed Placeholder */}
                   <div 
-                    className="bg-white p-6 rounded-lg border border-border min-h-[400px] flex items-center justify-center"
+                    className="bg-alabaster p-6 rounded-lg border border-border min-h-[400px] flex items-center justify-center"
                     data-testid={`form-embed-${form.id}`}
                   >
                     <div className="text-center text-muted-foreground">
@@ -102,7 +102,7 @@ export default function Connect() {
         </section>
       </main>
       <Footer />
-      <WhatsAppButton />
+      <CalendlyButton />
     </div>
   );
 }

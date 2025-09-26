@@ -71,7 +71,7 @@ export function VideoHero() {
         {/* Top: Main Headline */}
         <div className="flex-1 flex items-start justify-center pt-32">
           <h1 
-            className="text-5xl md:text-7xl font-heading font-bold text-white text-shadow"
+            className="text-5xl md:text-7xl font-heading font-bold text-alabaster text-shadow"
             data-testid="hero-main-headline"
           >
             {t('hero.tagline')}
@@ -81,7 +81,7 @@ export function VideoHero() {
         {/* Middle: Brand Name */}
         <div className="flex-1 flex items-center justify-center">
           <h2 
-            className="text-4xl md:text-6xl font-heading font-bold text-white text-shadow"
+            className="text-4xl md:text-6xl font-heading font-bold text-alabaster text-shadow"
             data-testid="hero-brand-name"
           >
             
@@ -101,7 +101,7 @@ export function VideoHero() {
             <Button
               variant="outline"
               onClick={scrollToServices}
-              className="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-sage transition-colors bg-transparent"
+              className="border-2 border-white text-alabaster px-8 py-3 rounded-md font-semibold hover:bg-alabaster hover:text-sage transition-colors bg-transparent"
               data-testid="hero-cta-secondary"
             >
               {t('hero.cta.secondary')}
@@ -116,7 +116,7 @@ export function VideoHero() {
           variant="secondary"
           size="sm"
           onClick={togglePlayPause}
-          className="bg-black/50 backdrop-blur-sm text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+          className="bg-black/50 backdrop-blur-sm text-alabaster p-2 rounded-full hover:bg-black/70 transition-colors"
           data-testid="video-play-pause"
         >
           {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
@@ -125,7 +125,7 @@ export function VideoHero() {
           variant="secondary"
           size="sm"
           onClick={toggleMute}
-          className="bg-black/50 backdrop-blur-sm text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+          className="bg-black/50 backdrop-blur-sm text-alabaster p-2 rounded-full hover:bg-black/70 transition-colors"
           data-testid="video-mute"
         >
           {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}

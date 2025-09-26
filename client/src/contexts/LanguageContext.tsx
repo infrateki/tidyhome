@@ -21,13 +21,12 @@ const translations = {
     'hero.tagline': 'Your Space Matters',
     'hero.title': 'Calm, beautiful spaces that work for your life',
     'hero.subtitle': 'Transform your home with Puerto Rico\'s premier luxury organization service',
-    'hero.description': 'From cluttered to calming, we create functional systems that last. Serving families in Dorado, San Juan, Guaynabo, and Bayamón.',
+    'hero.description': '',
     'hero.cta.primary': 'Book Your Consultation',
     'hero.cta.secondary': 'Discover Our Process',
     'hero.stats.number': '500+',
     'hero.stats.text': 'Homes Transformed',
-    'services.title': 'Our Services',
-    'services.subtitle': 'Comprehensive solutions for every space in your home',
+    'services.subtitle': 'Solutions for every space and style',
     'services.home-organization.title': 'HOME ORGANIZATION',
     'services.home-organization.description': 'Create customized, clutter-free spaces that reflect your style.',
     'services.moving-concierge.title': 'MOVING CONCIERGE',
@@ -36,7 +35,6 @@ const translations = {
     'services.space-creation.description': 'Transform everyday spaces into functional, beautiful environments.',
     'services.refresh-sessions.title': 'REFRESH SESSIONS',
     'services.refresh-sessions.description': 'Maintain your organized spaces with ongoing support.',
-    'services.additional-services.title': 'ADDITIONAL SERVICES',
     'services.additional-services.description': 'Trusted solutions including handy work, electrical, and cleaning.',
     'services.gift-certificates.title': 'GIFT CERTIFICATES',
     'services.gift-certificates.description': 'Give the gift of a beautifully organized home.',
@@ -51,16 +49,16 @@ const translations = {
     'process.step3.description': 'We handle product sourcing to ensure a smooth, effortless experience.',
     'process.step4.title': 'PROJECT DAY',
     'process.step4.description': 'Transform your space with thoughtful decluttering and functional organization.',
-    'process.cta': 'Contact Us',
+    'process.cta': 'Connect With Us',
     'about.title': 'ABOUT',
     'about.subtitle': 'The Journey',
     'about.description': 'Tidy Home began as a small, boutique home organization service with one clear goal; to help clients create calm, beautiful spaces they could truly enjoy. Over time, our passion for organization and client care led us to expand both our expertise and our reach. What started as helping organize a single room has grown into offering full-home transformations and complete lifestyle support, always with the same attention to detail and personal touch that defined us from the start.',
-    'about.cta': 'Contact Us',
+    'about.cta': 'Connect With Us',
     'instagram.title': 'follow us on instagram',
     'instagram.handle': '@tidyhomepr',
     'instagram.follow': 'Follow @tidyhomepr',
     'contact.title': 'Get Started Today',
-    'contact.phone': '(939) 202-1008',
+    'contact.phone': 'Business Hours',
     'contact.phone.hours': 'Monday-Friday: 8:00 AM - 6:00 PM',
     'contact.email': 'info@tidyhomepr.com',
     'contact.email.response': 'We\'ll respond within 24 hours',
@@ -93,8 +91,8 @@ const translations = {
     'newsletter.error.title': 'Error',
     'newsletter.error.description': 'Failed to subscribe. Please try again.',
     // Brand Introduction
-    'brand.title': 'Creating Calm, Beautiful Spaces',
-    'brand.description': "At Tidy Home, we believe that an organized space is more than just aesthetic—it's about creating calm in your daily life. Our boutique organization service brings luxury, functionality, and peace to every corner of your home.",
+    'brand.title': 'The Tidy Touch',
+    'brand.description': "From cluttered to calming, we create functional systems that last. Serving families in Dorado, San Juan, Guaynabo, and Bayamón..",
     // Why Tidy Home
     'why.title': 'Why Tidy Home',
     'why.benefit1': 'Personalized systems tailored to your lifestyle',
@@ -134,7 +132,7 @@ const translations = {
     'connect.form.refresh.title': 'Refresh Sessions',
     'connect.form.refresh.description': 'For existing clients looking to maintain and refresh their organized spaces with ongoing support.',
     // Contact/FAQ Page
-    'contact.page.title': 'Contact Us',
+    'contact.page.title': 'Connect With Us',
     'contact.page.subtitle': 'Transform your space today',
     'contact.form.title': 'Send us a message',
     'contact.form.name': 'Name',
@@ -163,9 +161,9 @@ const translations = {
     'nav.faqs': 'FAQS',
     // Hero Section Additional
     'hero.main_title': 'YOUR SPACE MATTERS',
-    'hero.company_name': 'The Tidy Touch',
+    'hero.company_name': '',
     'hero.cta.book_consultation': 'Book Your Consultation',
-    'hero.cta.discover_process': 'Discover Our Process',
+    'hero.cta.discover_process': 'Learn More',
     // Process Section
     'process.step_1_title': 'CONSULTATION',
     'process.step_1_description': 'Initial consultation to understand your needs and space requirements.',
@@ -216,8 +214,7 @@ const translations = {
     'footer.portfolio_link': 'Portfolio',
     'footer.faqs_link': 'FAQs',
     // ServiceGrid
-    'services.grid_subtitle': 'Solutions for every space and style',
-    'services.get_started': 'Get Started',
+    'services.get_started': 'Learn More',
     'services.view_faqs': 'View FAQs',
     // Connect Page Additional
     'connect.not_sure': 'Not sure which service is right for you?',
@@ -239,8 +236,8 @@ const translations = {
     'connect.form.spanish.feature2': 'Custom systems',
     'connect.form.spanish.feature3': 'Products included',
     'connect.form.spanish.feature4': 'Professional implementation',
-    // WhatsApp
-    'whatsapp.aria_label': 'Contact us on WhatsApp',
+    // Calendly
+    'calendly.aria_label': 'Schedule appointment on Calendly',
     // About Page
     'about.page.title': 'About Tidy Home',
     'about.brand.title': 'Our Brand',
@@ -254,9 +251,9 @@ const translations = {
     'about.team.description': 'Valeria and Raul, a husband-and-wife team, founded Tidy Home with a shared vision of creating spaces that feel curated and intentional. Valeria, an interior stylist with a love for organization and space creation, brings ideas and designs to life through thoughtful details and creative projects. Raul is the hands-on force behind the vision, painting, installing, and problem-solving with skill and versatility. Together, they balance creativity and craftsmanship, leading a team that can take on any project and transform any space into a reflection of your lifestyle and vision.',
     // Services Page
     'services.page.title': 'Our Services',
-    'services.page.subtitle': 'Comprehensive solutions designed to transform your space and simplify your life',
+    'services.page.subtitle': 'Solutions for every space and style',
     // FAQs Page
-    'faqs.page.title': 'Looking to Get Started?',
+    'faqs.page.title': 'Your Questions, Answered',
     'faqs.page.subtitle': 'Find answers to common questions about our services',
     'faqs.faq1.question': 'How far in advance should I book?',
     'faqs.faq1.answer': 'We recommend booking at least 2-3 weeks in advance to ensure availability. Peak season runs September through March, so during these months, we suggest booking 4-6 weeks ahead for the best scheduling options.',
@@ -294,7 +291,6 @@ const translations = {
     'hero.cta.secondary': 'Descubre Nuestro Proceso',
     'hero.stats.number': '500+',
     'hero.stats.text': 'Hogares Transformados',
-    'services.title': 'Nuestros Servicios',
     'services.subtitle': 'Soluciones integrales para cada espacio de tu hogar',
     'services.home-organization.title': 'ORGANIZACIÓN DEL HOGAR',
     'services.home-organization.description': 'Crea espacios personalizados y libres de desorden que reflejen tu estilo.',
@@ -319,16 +315,16 @@ const translations = {
     'process.step3.description': 'Manejamos la búsqueda de productos para asegurar una experiencia suave y sin esfuerzo.',
     'process.step4.title': 'DÍA DEL PROYECTO',
     'process.step4.description': 'Transforma tu espacio con desorden reflexivo y organización funcional.',
-    'process.cta': 'Contáctanos',
+    'process.cta': 'Conéctate Con Nosotros',
     'about.title': 'ACERCA DE',
     'about.subtitle': 'El Viaje',
     'about.description': 'Tidy Home comenzó como un pequeño servicio boutique de organización del hogar con un objetivo claro; ayudar a los clientes a crear espacios serenos y hermosos que realmente pudieran disfrutar. Con el tiempo, nuestra pasión por la organización y el cuidado del cliente nos llevó a expandir tanto nuestra experiencia como nuestro alcance. Lo que comenzó como ayudar a organizar una sola habitación ha crecido hasta ofrecer transformaciones completas del hogar y apoyo completo del estilo de vida, siempre con la misma atención al detalle y toque personal que nos definió desde el principio.',
-    'about.cta': 'Contáctanos',
+    'about.cta': 'Conéctate Con Nosotros',
     'instagram.title': 'síguenos en instagram',
     'instagram.handle': '@tidyhomepr',
     'instagram.follow': 'Seguir @tidyhomepr',
     'contact.title': 'Comienza Hoy',
-    'contact.phone': '(939) 202-1008',
+    'contact.phone': 'Business Hours',
     'contact.phone.hours': 'Lunes-Viernes: 8:00 AM - 6:00 PM',
     'contact.email': 'info@tidyhomepr.com',
     'contact.email.response': 'Responderemos dentro de 24 horas',
@@ -402,7 +398,7 @@ const translations = {
     'connect.form.refresh.title': 'Sesiones de Renovación',
     'connect.form.refresh.description': 'Para clientes existentes que buscan mantener y renovar sus espacios organizados con apoyo continuo.',
     // Contact/FAQ Page
-    'contact.page.title': 'Contáctanos',
+    'contact.page.title': 'Conéctate Con Nosotros',
     'contact.page.subtitle': 'Transforma tu espacio hoy',
     'contact.form.title': 'Envíanos un mensaje',
     'contact.form.name': 'Nombre',
@@ -433,7 +429,7 @@ const translations = {
     'hero.main_title': 'TU ESPACIO IMPORTA',
     'hero.company_name': 'El Toque Organizado',
     'hero.cta.book_consultation': 'Reserva Tu Consulta',
-    'hero.cta.discover_process': 'Descubre Nuestro Proceso',
+    'hero.cta.discover_process': 'Aprende Más',
     // Process Section
     'process.step_1_title': 'CONSULTA',
     'process.step_1_description': 'Consulta inicial para entender tus necesidades y requisitos del espacio.',
@@ -507,8 +503,8 @@ const translations = {
     'connect.form.spanish.feature2': 'Sistemas personalizados',
     'connect.form.spanish.feature3': 'Productos incluidos',
     'connect.form.spanish.feature4': 'Implementación profesional',
-    // WhatsApp
-    'whatsapp.aria_label': 'Contáctanos por WhatsApp',
+    // Calendly
+    'calendly.aria_label': 'Programar cita en Calendly',
     // About Page
     'about.page.title': 'Acerca de Tidy Home',
     'about.brand.title': 'Nuestra Marca',
@@ -524,7 +520,7 @@ const translations = {
     'services.page.title': 'Nuestros Servicios',
     'services.page.subtitle': 'Soluciones integrales diseñadas para transformar tu espacio y simplificar tu vida',
     // FAQs Page
-    'faqs.page.title': '¿Listo para Comenzar?',
+    'faqs.page.title': 'Tus Preguntas, Respondidas',
     'faqs.page.subtitle': 'Encuentra respuestas a preguntas comunes sobre nuestros servicios',
     'faqs.faq1.question': '¿Con cuánta anticipación debo reservar?',
     'faqs.faq1.answer': 'Recomendamos reservar con al menos 2-3 semanas de anticipación para garantizar disponibilidad. La temporada alta es de septiembre a marzo, por lo que durante estos meses sugerimos reservar con 4-6 semanas de anticipación para las mejores opciones de horario.',
@@ -573,7 +569,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const t = (key: string): string => {
     // First try direct key lookup (for flat keys with dots)
-    const directValue = translations[currentLanguage.code][key];
+    const directValue = (translations[currentLanguage.code] as any)[key];
     if (directValue) {
       return directValue;
     }

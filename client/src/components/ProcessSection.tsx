@@ -43,7 +43,7 @@ export function ProcessSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step) => (
             <div key={step.number} className="text-center" data-testid={`process-step-${step.number}`}>
-              <div className="bg-sage text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold" data-testid={`step-number-${step.number}`}>
+              <div className="bg-ebony text-alabaster w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold" data-testid={`step-number-${step.number}`}>
                 {step.number}
               </div>
               <h3 className="font-heading text-lg font-semibold text-foreground mb-3" data-testid={`step-title-${step.number}`}>
@@ -60,9 +60,9 @@ export function ProcessSection() {
           <Link href="/connect-with-us">
             <button 
               className="px-8 py-4 rounded-lg transition-colors font-medium"
-              style={{ backgroundColor: '#8B9574', color: '#F5F3EE' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#6B7459'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#8B9574'}
+              style={{ backgroundColor: '#c06446', color: '#eeeae1' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#5e432c'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#c06446'}
               data-testid="process-cta"
             >
               {t('process.cta_button')}

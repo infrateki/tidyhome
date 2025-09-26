@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, Instagram, Facebook } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { trackLanguageChange } from '@/lib/analytics';
@@ -47,15 +47,15 @@ export function Header() {
       <div 
         className="py-3 text-center" 
         style={{ 
-          backgroundColor: '#F5F3EE', 
-          borderBottom: '2px solid #E8E4DB' 
+          backgroundColor: '#eeeae1', 
+          borderBottom: '.01px solid #bfbf8250' 
         }}
       >
         <Link 
           href="/connect-with-us" 
           className="text-xs uppercase tracking-[0.15em] font-light" 
           style={{ 
-            color: '#3C3C3C',
+            color: '#555843',
             fontFamily: 'Montserrat, system-ui, sans-serif' 
           }}
         >
@@ -67,9 +67,9 @@ export function Header() {
       <nav 
         className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300`}
         style={{ 
-          backgroundColor: '#F5F3EE',
-          borderBottom: '2px solid #E8E4DB',
-          boxShadow: isScrolled ? '0 2px 10px rgba(60, 60, 60, 0.08)' : 'none'
+          backgroundColor: '#eeeae1',
+          borderBottom: '0.001px solid #bfbf8250',
+          boxShadow: isScrolled ? '0 2px 10px rgba(85, 88, 67, 0.08)' : 'none'
         }}
         data-testid="main-navigation"
       >
@@ -85,12 +85,12 @@ export function Header() {
                   href="/"
                   className="text-xs uppercase tracking-[0.15em] transition-colors duration-200"
                   style={{
-                    color: '#3C3C3C',
+                    color: '#555843',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
-                  onMouseLeave={(e) => e.currentTarget.style.color = '#3C3C3C'}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#555843'}
                 >
                   {t('nav.home')}
                 </Link>
@@ -98,12 +98,12 @@ export function Header() {
                   href="/about"
                   className="text-xs uppercase tracking-[0.15em] transition-colors duration-200"
                   style={{ 
-                    color: '#3C3C3C',
+                    color: '#555843',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
-                  onMouseLeave={(e) => e.currentTarget.style.color = '#3C3C3C'}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#555843'}
                 >
                   {t('nav.about')}
                 </Link>
@@ -111,12 +111,12 @@ export function Header() {
                   href="/services"
                   className="text-xs uppercase tracking-[0.15em] transition-colors duration-200"
                   style={{ 
-                    color: '#3C3C3C',
+                    color: '#555843',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
-                  onMouseLeave={(e) => e.currentTarget.style.color = '#3C3C3C'}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#555843'}
                 >
                   {t('nav.services')}
                 </Link>
@@ -128,7 +128,7 @@ export function Header() {
                   <img 
                     src={logoImg} 
                     alt="Tidy Home - Your Space Matters" 
-                    className="h-16 w-auto"
+                    className="h-8 w-auto"
                   />
                 </Link>
               </div>
@@ -139,12 +139,12 @@ export function Header() {
                   href="/connect-with-us"
                   className="text-xs uppercase tracking-[0.15em] transition-colors duration-200"
                   style={{ 
-                    color: '#3C3C3C',
+                    color: '#555843',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
-                  onMouseLeave={(e) => e.currentTarget.style.color = '#3C3C3C'}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#555843'}
                 >
                   {t('nav.connect')}
                 </Link>
@@ -152,12 +152,12 @@ export function Header() {
                   href="/portfolio"
                   className="text-xs uppercase tracking-[0.15em] transition-colors duration-200"
                   style={{ 
-                    color: '#3C3C3C',
+                    color: '#555843',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
-                  onMouseLeave={(e) => e.currentTarget.style.color = '#3C3C3C'}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#555843'}
                 >
                   {t('nav.portfolio')}
                 </Link>
@@ -165,39 +165,70 @@ export function Header() {
                   href="/faqs"
                   className="text-xs uppercase tracking-[0.15em] transition-colors duration-200"
                   style={{ 
-                    color: '#3C3C3C',
+                    color: '#555843',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.color = '#8B9574'}
-                  onMouseLeave={(e) => e.currentTarget.style.color = '#3C3C3C'}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#555843'}
                 >
                   {t('nav.faqs')}
                 </Link>
               </div>
             </div>
 
-            {/* Language - Far Right */}
-            <div className="hidden lg:flex items-center space-x-4 absolute right-6">
+            {/* Social Icons - Far Left */}
+            <div className="hidden lg:flex items-center absolute left-6">
               <div className="flex items-center space-x-2">
-                <Globe className="w-3 h-3" style={{ color: '#3C3C3C' }} />
-                <button 
+                <a
+                  href="https://instagram.com/tidyhomepr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors duration-200"
+                  style={{ color: '#555843' }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#555843'}
+                  data-testid="header-instagram"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+                <span style={{ color: '#eeeae1' }}>|</span>
+                <a
+                  href="https://facebook.com/tidyhomepr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors duration-200"
+                  style={{ color: '#555843' }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#555843'}
+                  data-testid="header-facebook"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            {/* Language - Far Right */}
+            <div className="hidden lg:flex items-center absolute right-6">
+              <div className="flex items-center space-x-2">
+                <Globe className="w-4 h-4" style={{ color: '#555843' }} />
+                <button
                   onClick={toggleLanguage}
                   className="text-xs transition-colors duration-200"
-                  style={{ 
-                    color: currentLanguage.code === 'en' ? '#8B9574' : '#3C3C3C',
+                  style={{
+                    color: currentLanguage.code === 'en' ? '#c06446' : '#555843',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                 >
                   EN
                 </button>
-                <span style={{ color: '#E8E4DB' }}>|</span>
-                <button 
+                <span style={{ color: '#eeeae1' }}>|</span>
+                <button
                   onClick={toggleLanguage}
                   className="text-xs transition-colors duration-200"
-                  style={{ 
-                    color: currentLanguage.code === 'es' ? '#8B9574' : '#3C3C3C',
+                  style={{
+                    color: currentLanguage.code === 'es' ? '#c06446' : '#555843',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
@@ -221,7 +252,7 @@ export function Header() {
                 size="sm"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 data-testid="mobile-menu-button"
-                style={{ color: '#3C3C3C' }}
+                style={{ color: '#555843' }}
               >
                 {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </Button>
@@ -230,13 +261,13 @@ export function Header() {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden" style={{ backgroundColor: '#F5F3EE', borderTop: '1px solid #E8E4DB' }}>
+            <div className="lg:hidden" style={{ backgroundColor: '#eeeae1', borderTop: '1px solid #eeeae1' }}>
               <div className="px-4 py-4 space-y-3">
                 <Link 
                   href="/" 
                   className="block text-xs uppercase tracking-[0.15em] py-2" 
                   style={{ 
-                    color: '#3C3C3C',
+                    color: '#555843',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
@@ -247,7 +278,7 @@ export function Header() {
                   href="/about" 
                   className="block text-xs uppercase tracking-[0.15em] py-2" 
                   style={{ 
-                    color: '#3C3C3C',
+                    color: '#555843',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
@@ -258,7 +289,7 @@ export function Header() {
                   href="/services" 
                   className="block text-xs uppercase tracking-[0.15em] py-2" 
                   style={{ 
-                    color: '#3C3C3C',
+                    color: '#555843',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
@@ -269,7 +300,7 @@ export function Header() {
                   href="/connect-with-us" 
                   className="block text-xs uppercase tracking-[0.15em] py-2" 
                   style={{ 
-                    color: '#3C3C3C',
+                    color: '#555843',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
@@ -280,7 +311,7 @@ export function Header() {
                   href="/portfolio" 
                   className="block text-xs uppercase tracking-[0.15em] py-2" 
                   style={{ 
-                    color: '#3C3C3C',
+                    color: '#555843',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
@@ -291,32 +322,32 @@ export function Header() {
                   href="/faqs" 
                   className="block text-xs uppercase tracking-[0.15em] py-2" 
                   style={{ 
-                    color: '#3C3C3C',
+                    color: '#555843',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                 >
                   {t('nav.faqs')}
                 </Link>
-                <div className="flex items-center pt-3 border-t" style={{ borderColor: '#E8E4DB' }}>
+                <div className="flex items-center pt-3 border-t" style={{ borderColor: '#eeeae1' }}>
                   <div className="flex items-center space-x-2">
-                    <Globe className="w-3 h-3" style={{ color: '#3C3C3C' }} />
+                    <Globe className="w-4 h-4" style={{ color: '#555843' }} />
                     <button 
                       onClick={toggleLanguage}
                       className="text-xs"
                       style={{ 
-                        color: currentLanguage.code === 'en' ? '#8B9574' : '#3C3C3C',
+                        color: currentLanguage.code === 'en' ? '#c06446' : '#555843',
                         fontFamily: 'Montserrat, system-ui, sans-serif'
                       }}
                     >
                       EN
                     </button>
-                    <span style={{ color: '#E8E4DB' }}>|</span>
+                    <span style={{ color: '#eeeae1' }}>|</span>
                     <button 
                       onClick={toggleLanguage}
                       className="text-xs"
                       style={{ 
-                        color: currentLanguage.code === 'es' ? '#8B9574' : '#3C3C3C',
+                        color: currentLanguage.code === 'es' ? '#c06446' : '#555843',
                         fontFamily: 'Montserrat, system-ui, sans-serif'
                       }}
                     >

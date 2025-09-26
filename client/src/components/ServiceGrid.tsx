@@ -55,39 +55,60 @@ export function ServiceGrid({ onServiceClick }: ServiceGridProps) {
   ];
 
   return (
-    <section id="services" className="py-20" style={{ backgroundColor: '#F5F3EE' }} data-testid="services-section">
+    <section 
+      id="services" 
+      className="pt-1 pb-16"
+      style={{ backgroundColor: '#eeeae1' }}
+      data-testid="services-section"
+    >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-heading text-4xl font-bold text-foreground mb-4" data-testid="services-title">
-            {t('services.title')}
-          </h2>
-          <p className="text-xl text-muted-foreground" data-testid="services-subtitle">
-            {t('services.grid_subtitle')}
-          </p>
-        </div>
-        
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <div 
               key={service.id}
-              className="service-card bg-card rounded-xl p-8 shadow-lg hover:shadow-xl cursor-pointer"
+              className="service-card bg-alabaster rounded-xl shadow-lg hover:shadow-xl cursor-pointer transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
+              style={{ backgroundColor: '#eeeae1', minHeight: '420px' }}
               onClick={() => onServiceClick(service.id)}
               data-testid={`service-card-${service.id}`}
             >
-              <img 
-                src={service.image} 
-                alt={service.title} 
-                className="w-full h-48 object-cover rounded-lg mb-6"
-                data-testid={`service-image-${service.id}`}
-              />
-              <h3 className="font-heading text-xl font-semibold text-foreground mb-3" data-testid={`service-title-${service.id}`}>
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground mb-4" data-testid={`service-description-${service.id}`}>
-                {service.description}
-              </p>
-              <div className="text-sage font-medium" data-testid={`service-cta-${service.id}`}>
-                {service.id === 'additional-services' ? t('services.view_faqs') : t('services.get_started')}
+              <div className="p-6 flex flex-col h-full">
+                <img 
+                  src={service.image} 
+                  alt={service.title} 
+                  className="w-full h-48 object-cover rounded-lg mb-5"
+                  style={{ height: '192px' }}
+                  data-testid={`service-image-${service.id}`}
+                />
+                <h3 
+                  className="font-heading text-xl font-semibold mb-3" 
+                  style={{ color: '#555843', minHeight: '32px' }}
+                  data-testid={`service-title-${service.id}`}
+                >
+                  {service.title}
+                </h3>
+                <p 
+                  className="text-base mb-4 leading-relaxed flex-grow" 
+                  style={{ 
+                    color: '#555843', 
+                    opacity: 0.9,
+                    minHeight: '72px',
+                    overflow: 'hidden',
+                    display: '-webkit-box',
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: 'vertical'
+                  }}
+                  data-testid={`service-description-${service.id}`}
+                >
+                  {service.description}
+                </p>
+                <div 
+                  className="font-medium hover:underline inline-block mt-auto" 
+                  style={{ color: '#c06446' }}
+                  data-testid={`service-cta-${service.id}`}
+                >
+                  {service.id === 'additional-services' ? t('services.view_faqs') : t('services.get_started')}
+                  <span className="ml-1">→</span>
+                </div>
               </div>
             </div>
           ))}
