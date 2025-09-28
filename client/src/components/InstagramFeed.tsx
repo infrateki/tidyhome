@@ -1,10 +1,10 @@
 import React from 'react';
 import { Instagram } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import ig1Url from '@assets/Copia de Post 01 - Post 01b (4).png';
-import ig2Url from '@assets/Copia de Post 01 - Post 01b (5).png';
-import ig3Url from '@assets/D914761D-CE8D-4326-9668-44DA40A02B78.jpg';
-import ig4Url from '@assets/FullSizeRender_VSCO.jpg';
+import ig1Url from '@assets/instagram1.webp';
+import ig2Url from '@assets/instagram2.webp';
+import ig3Url from '@assets/instagram3.webp';
+import ig4Url from '@assets/instagram4.webp';
 
 export function InstagramFeed() {
   const { t } = useLanguage();
@@ -53,7 +53,8 @@ export function InstagramFeed() {
               <img 
                 src={post.image} 
                 alt={post.alt} 
-                className="rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer w-full aspect-square object-cover"
+                className="rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer w-full object-cover"
+                style={{ aspectRatio: '4/5' }}
                 data-testid={`instagram-post-${post.id}`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-end p-4">

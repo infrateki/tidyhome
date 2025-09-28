@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Service } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
-import homeOrgImg from '@assets/D914761D-CE8D-4326-9668-44DA40A02B78.jpg';
+import homeOrgImg from '@assets/additional.jpg';
 import movingImg from '@assets/concierge.jpg';
 import spaceImg from '@assets/space.jpg';
 import refreshImg from '@assets/refresh.png';
-import additionalImg from '@assets/additional.jpg';
+import additionalImg from '@assets/homeorg.jpg';
 import giftImg from '@assets/giftcert.jpg';
 
 interface ServiceGridProps {

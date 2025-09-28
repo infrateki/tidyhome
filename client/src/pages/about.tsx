@@ -5,7 +5,7 @@ import { ProcessSection } from '../components/ProcessSection';
 import { CalendlyButton } from '../components/CalendlyButton';
 import { useLanguage } from '../contexts/LanguageContext';
 // Temporary team photo - replace with actual team photo when available
-import teamPlaceholder from '@assets/concierge.jpg';
+import teamPlaceholder from '@assets/valeria_raul.png';
 
 export default function About() {
   const { t } = useLanguage();
@@ -84,11 +84,10 @@ export default function About() {
                         src={teamPlaceholder}
                         alt="Valeria and Raul - Tidy Home founders"
                         className="rounded-lg shadow-xl w-full object-cover"
-                        style={{ aspectRatio: '4/5' }}
+                        style={{ objectPosition: 'right center' }}
                         onError={() => setImageError(true)}
                       />
                     ) : (
-                      /* Fallback placeholder if image fails */
                       <div
                         className="rounded-lg p-8 flex items-center justify-center"
                         style={{

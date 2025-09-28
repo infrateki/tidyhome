@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import aboutImg from '@assets/FullSizeRender_VSCO.jpg';
+import aboutImg from '@assets/valeria_raul.png';
 
 export function AboutSection() {
   const { t } = useLanguage();

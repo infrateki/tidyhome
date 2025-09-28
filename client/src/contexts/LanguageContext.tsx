@@ -35,6 +35,7 @@ const translations = {
     'services.space-creation.description': 'Transform everyday spaces into functional, beautiful environments.',
     'services.refresh-sessions.title': 'REFRESH SESSIONS',
     'services.refresh-sessions.description': 'Maintain your organized spaces with ongoing support.',
+    'services.additional-services.title': 'ADDITIONAL SERVICES',
     'services.additional-services.description': 'Trusted solutions including handy work, electrical, and cleaning.',
     'services.gift-certificates.title': 'GIFT CERTIFICATES',
     'services.gift-certificates.description': 'Give the gift of a beautifully organized home.',

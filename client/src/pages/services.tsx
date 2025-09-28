@@ -37,7 +37,7 @@ export default function Services() {
             </h1>
             <p 
               className="text-xl max-w-3xl mx-auto"
-              style={{ color: '#eeeae1', opacity: 0.8 }}
+              style={{ color: '#555843', opacity: 0.8 }}
               data-testid="services-page-subtitle"
             >
               {t('services.page.subtitle')}

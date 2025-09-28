@@ -3,7 +3,7 @@ import { Check } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
-import whyImg from '@assets/0D7512A5-2CB3-4B32-BD13-084B269908D9.jpg';
+import whyImg from '@assets/IMG_7090.jpeg';
 
 export function WhyTidyHome() {
   const { t } = useLanguage();
@@ -24,10 +24,11 @@ export function WhyTidyHome() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <img 
-              src={whyImg} 
-              alt="Organized modern bedroom" 
-              className="rounded-xl shadow-lg w-full h-auto"
+            <img
+              src={whyImg}
+              alt="Organized modern bedroom"
+              className="rounded-xl shadow-lg w-full h-auto object-cover"
+              style={{ maxHeight: '400px' }}
               data-testid="why-tidy-home-image"
             />
           </div>

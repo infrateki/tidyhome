@@ -5,14 +5,14 @@ import { CalendlyButton } from '../components/CalendlyButton';
 import { X } from 'lucide-react';
 
 // Import images from attached_assets
-import homeorgImg from '@assets/homeorg.jpg';
-import img1918 from '@assets/IMG_1918_1757566915330.jpeg';
-import img6114 from '@assets/IMG_6114_1757452360531.jpg';
-import additionalImg from '@assets/additional.jpg';
-import conciergeImg from '@assets/concierge.jpg';
-import spaceImg from '@assets/space.jpg';
-import giftcertImg from '@assets/giftcert.jpg';
-import refreshImg from '@assets/refresh.png';
+import masterBedroomImg from '@assets/master.jpeg';
+import kitchenPantryImg from '@assets/kitchen01.jpeg';
+import homeOfficeImg from '@assets/home04.jpeg';
+import closetTransformImg from '@assets/IMG_7090.jpeg';
+import playroomImg from '@assets/space.jpg';
+import unpackingImg from '@assets/IMG_7101.jpeg';
+import garageImg from '@assets/IMG_7080.jpeg';  
+import bathroomImg from '@assets/IMG_2770.jpeg';
 
 export default function Portfolio() {
   const [selectedImage, setSelectedImage] = useState<any>(null);
@@ -20,14 +20,14 @@ export default function Portfolio() {
 
   // EXACT 8 categories with original names (4 removed from original 12)
   const portfolioItems = [
-    { id: 1, title: 'Master Bedroom Organization', category: 'organization', image: homeorgImg },
-    { id: 2, title: 'Kitchen Pantry System', category: 'organization', image: img1918 },
-    { id: 3, title: 'Home Office Design', category: 'space-creation', image: img6114 },
-    { id: 4, title: 'Closet Transformation', category: 'organization', image: giftcertImg },
-    { id: 5, title: 'Playroom Design', category: 'space-creation', image: additionalImg },
-    { id: 6, title: 'Unpacking & Organizing', category: 'moving', image: conciergeImg },
-    { id: 7, title: 'Garage Organization', category: 'space-creation', image: spaceImg },
-    { id: 8, title: 'Bathroom Organization', category: 'organization', image: refreshImg }
+    { id: 1, title: 'Master Bedroom Organization', category: 'organization', image: masterBedroomImg },
+    { id: 2, title: 'Kitchen Pantry System', category: 'organization', image: kitchenPantryImg },
+    { id: 3, title: 'Home Office Design', category: 'space-creation', image: homeOfficeImg },
+    { id: 4, title: 'Closet Transformation', category: 'organization', image: closetTransformImg },
+    { id: 5, title: 'Playroom Design', category: 'space-creation', image: playroomImg },
+    { id: 6, title: 'Unpacking & Organizing', category: 'moving', image: unpackingImg },
+    { id: 7, title: 'Garage Organization', category: 'space-creation', image: garageImg },
+    { id: 8, title: 'Bathroom Organization', category: 'organization', image: bathroomImg }
   ];
 
   // Filter categories
@@ -116,29 +116,29 @@ export default function Portfolio() {
       </section>
 
       {selectedImage && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{ backgroundColor: 'rgba(60, 60, 60, 0.9)' }}
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.65)' }}
           onClick={() => setSelectedImage(null)}
           data-testid="image-modal"
         >
-          <div className="relative max-w-4xl w-full">
+          <div className="relative max-w-4xl w-full" style={{ backgroundColor: '#555843', padding: '20px', borderRadius: '12px' }}>
             <button
               onClick={() => setSelectedImage(null)}
               className="absolute top-4 right-4 p-2 rounded-full transition-colors"
-              style={{ backgroundColor: '#c06446', color: '#eeeae1' }}
+              style={{ backgroundColor: 'rgba(191, 191, 130, 0.2)', color: '#bfbf82', border: '1px solid #bfbf82' }}
               data-testid="close-modal"
             >
               <X className="w-6 h-6" />
             </button>
-            <div className="rounded-xl overflow-hidden" style={{ backgroundColor: '#eeeae1' }}>
+            <div className="rounded-xl overflow-hidden" style={{ backgroundColor: '#555843' }}>
               <img
                 src={selectedImage.image}
                 alt={selectedImage.title}
                 className="w-full h-auto max-h-[80vh] object-contain"
               />
             </div>
-            <h2 
+            <h2
               className="text-2xl font-heading mt-4 text-center"
               style={{ color: '#eeeae1' }}
             >
