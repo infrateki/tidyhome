@@ -8,12 +8,12 @@ export function CalendlyButton() {
 
   const handleCalendlyClick = () => {
     // Track Calendly button click
-    trackExternalLink('calendly', 'https://calendly.com/tidyhomepr');
+    trackExternalLink('calendly', 'https://calendly.com/hello-tidyhomepr?utm_source=honeybook&utm_content=company-6494d0649a1f14002bb9085b-6494d0639a1f14002bb90796');
   };
 
   return (
     <a
-      href="https://calendly.com/tidyhomepr"
+      href="https://calendly.com/hello-tidyhomepr?utm_source=honeybook&utm_content=company-6494d0649a1f14002bb9085b-6494d0639a1f14002bb90796"
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleCalendlyClick}

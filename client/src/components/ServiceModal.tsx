@@ -55,7 +55,7 @@ export function ServiceModal({ isOpen, onClose, serviceId }: ServiceModalProps) 
     // Track CTA click from service modal
     trackButtonClick(`service_modal_cta_${serviceId}`, 'service_modal');
     onClose();
-    setLocation('/connect');
+    setLocation('/connect-with-us');
   };
 
   return (

@@ -7,7 +7,7 @@ export function AboutSection() {
   const { t } = useLanguage();
 
   const scrollToConnect = () => {
-    window.location.href = '/connect';
+    window.location.href = '/connect-with-us';
   };
 
   return (

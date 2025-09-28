@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Route, Switch, useLocation } from "wouter";
+import { Route, Switch, useLocation, Redirect } from "wouter";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { Toaster } from "@/components/ui/toaster";
 import Home from "@/pages/home";
@@ -49,7 +49,7 @@ function App() {
         <RouteTracker>
           <Switch>
             <Route path="/" component={Home} />
-            <Route path="/connect" component={Connect} />
+            <Route path="/connect" component={() => <Redirect to="/connect-with-us" />} />
             <Route path="/connect-with-us" component={ConnectWithUs} />
             <Route path="/contact" component={Contact} />
             <Route path="/about" component={About} />

@@ -1,13 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { CalendlyButton } from '../components/CalendlyButton';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link } from 'wouter';
+import { HoneybookEmbed } from '../components/HoneybookEmbed';
+import { HONEYBOOK_FORMS } from '../lib/honeybook';
 
 export default function ConnectWithUs() {
   const { t } = useLanguage();
   const [selectedService, setSelectedService] = useState<string | null>(null);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  const onLearnMore = (id: string) => {
+    setSelectedService(id);
+    requestAnimationFrame(() => {
+      formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
+
+  const getServiceTitle = (id: string) => {
+    const service = services.find(s => s.id === id);
+    return service ? service.title : 'Service Inquiry Form';
+  };
 
   const services = [
     {
@@ -95,8 +110,8 @@ export default function ConnectWithUs() {
                   ))}
                 </ul>
                 
-                <button 
-                  onClick={() => setSelectedService(service.id)}
+                <button
+                  onClick={() => onLearnMore(service.id)}
                   className="w-full py-3 px-6 rounded-lg font-medium transition-all duration-300"
                   style={{ 
                     backgroundColor: '#c06446',
@@ -109,13 +124,6 @@ export default function ConnectWithUs() {
                   {t('services.get_started')}
                 </button>
 
-                {selectedService === service.id && (
-                  <div className="mt-6 p-4 rounded-lg" style={{ backgroundColor: '#eeeae1' }}>
-                    <p className="text-center" style={{ color: '#555843' }}>
-                      {t('connect.contact_note')}
-                    </p>
-                  </div>
-                )}
               </div>
             ))}
           </div>
@@ -149,6 +157,25 @@ export default function ConnectWithUs() {
               </button>
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section id="inquiry-form" ref={formRef} className="mt-12 mb-24">
+        <div className="max-w-3xl mx-auto px-4">
+          {selectedService && (
+            <>
+              <HoneybookEmbed
+                src={HONEYBOOK_FORMS[selectedService]}
+                title={`HoneyBook ${getServiceTitle(selectedService)} Form`}
+                height={1100}
+              />
+              <p className="mt-3 text-center">
+                <a href={HONEYBOOK_FORMS[selectedService]} target="_blank" rel="noopener noreferrer" style={{ color: '#c06446' }}>
+                  Having trouble? Open the form in a new tab
+                </a>
+              </p>
+            </>
+          )}
         </div>
       </section>
 

@@ -43,7 +43,7 @@ export function VideoHero() {
   const scrollToConnect = () => {
     // Track primary CTA click
     trackButtonClick('connect_with_us', 'hero_section');
-    window.location.href = '/connect';
+    window.location.href = '/connect-with-us';
   };
 
   return (
