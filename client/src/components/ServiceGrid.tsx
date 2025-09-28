@@ -55,8 +55,8 @@ export function ServiceGrid({ onServiceClick }: ServiceGridProps) {
   ];
 
   return (
-    <section 
-      id="services" 
+    <section
+      id="services"
       className="pt-1 pb-16"
       style={{ backgroundColor: '#eeeae1' }}
       data-testid="services-section"

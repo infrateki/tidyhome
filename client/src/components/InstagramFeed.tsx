@@ -42,7 +42,7 @@ export function InstagramFeed() {
           <h2 className="font-heading text-4xl font-bold text-foreground mb-4" data-testid="instagram-title">
             {t('instagram.title')}
           </h2>
-          <p className="text-xl text-sage" data-testid="instagram-handle">
+          <p className="text-xl text-ebony" data-testid="instagram-handle">
             {t('instagram.handle')}
           </p>
         </div>
@@ -69,7 +69,7 @@ export function InstagramFeed() {
             href="https://www.instagram.com/tidyhomepr/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 text-sage hover:text-sage-dark transition-colors font-medium"
+            className="inline-flex items-center space-x-2 text-ebony hover:text-kobicha transition-colors font-medium"
             data-testid="instagram-follow-link"
           >
             <Instagram className="w-5 h-5" />

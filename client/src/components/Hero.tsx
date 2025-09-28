@@ -27,36 +27,33 @@ export function Hero() {
 
         {/* Text at top */}
         <div className="flex flex-col justify-center items-center pt-20 md:pt-24 space-y-4">
-          <p
-            className="text-sm md:text-base text-center uppercase tracking-[0.2em]"
+          <h2
+            className="text-center uppercase tracking-[0.2em] hero-bicyclette-title"
             style={{
-              fontFamily: 'MarlideDisplay, Georgia, serif',
-              fontWeight: 400,
-              color: '#5e432c',
-              fontSize: '32px',
-              opacity: 0.8,
-              textShadow: '2px 2px 6px rgba(85,88,67,0.4)'
+              fontFamily: 'Bicyclette, -apple-system, sans-serif',
+              color: '#555843',
+              fontSize: '33.6px',  /* 40% larger than 24px */
+              opacity: 0.75,
+              textShadow: '2px 2px 6px rgba(85,88,67,0.4)',
+              fontWeight: 400
             }}
           >
             {t('hero.main_title')}
-          </p>
-          <h1 
+          </h2>
+          <h1
             className="text-5xl md:text-6xl lg:text-7xl text-center"
-            style={{ 
-              fontFamily: 'Playfair Display, Georgia, serif',
-              fontWeight: 300,
-              letterSpacing: '0.02em',
+            style={{
+              fontFamily: 'Bicyclette, -apple-system, sans-serif',
               color: '#eeeae1',
-              textShadow: '2px 2px 6px rgba(85,88,67,0.4)'
+              textShadow: '2px 2px 6px rgba(85,88,67,0.4)',
+              fontWeight: 400
             }}
           >
-            
+
           </h1>
-          <p 
-            className="max-w-3xl text-center text-lg md:text-xl px-6"
-            style={{ 
-              fontFamily: 'Montserrat, sans-serif',
-              fontWeight: 300,
+          <p
+            className="max-w-3xl text-center text-lg md:text-xl px-6 font-body-light"
+            style={{
               color: '#eeeae1',
               textShadow: '1px 1px 4px rgba(85,88,67,0.4)',
               lineHeight: '1.6'
@@ -71,12 +68,11 @@ export function Hero() {
         {/* Buttons at bottom */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center pb-20 md:pb-24">
           <Link href="/connect-with-us">
-            <button 
-              className="px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105"
+            <button
+              className="px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 font-body"
               style={{
                 backgroundColor: '#c06446',
                 color: '#eeeae1',
-                fontFamily: 'Montserrat, sans-serif',
                 fontSize: '14px',
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase'
@@ -86,13 +82,12 @@ export function Hero() {
             </button>
           </Link>
           <Link href="/about">
-            <button 
-              className="px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105"
+            <button
+              className="px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 font-body"
               style={{
                 backgroundColor: 'transparent',
                 border: '2px solid #eeeae1',
                 color: '#eeeae1',
-                fontFamily: 'Montserrat, sans-serif',
                 fontSize: '14px',
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase'
