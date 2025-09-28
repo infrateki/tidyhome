@@ -27,13 +27,13 @@ export function Hero() {
 
         {/* Text at top */}
         <div className="flex flex-col justify-center items-center pt-20 md:pt-24 space-y-4">
-          <p 
+          <p
             className="text-sm md:text-base text-center uppercase tracking-[0.2em]"
-            style={{ 
-              fontFamily: 'Montserrat, sans-serif',
+            style={{
+              fontFamily: 'MarlideDisplay, Georgia, serif',
               fontWeight: 400,
               color: '#5e432c',
-              fontSize: '24px',
+              fontSize: '32px',
               opacity: 0.8,
               textShadow: '2px 2px 6px rgba(85,88,67,0.4)'
             }}

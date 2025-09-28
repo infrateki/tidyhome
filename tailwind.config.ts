@@ -11,6 +11,15 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        // Brand Colors - Direct HEX values
+        ebony: "#555843",          // EBONY - Dark green (CALMA)
+        sage: "#bfbf82",           // SAGE - Light green (ORDEN)
+        "brown-sugar": "#c06446",   // BROWN SUGAR - Terracotta (CALIDEZ)
+        "ruddy-blue": "#82a7d3",     // RUDDY BLUE - Blue (FRESCURA)
+        alabaster: "#eeeae1",      // ALABASTER - Cream (LIMPIEZA)
+        kobicha: "#5e432c",        // KOBICHA - Brown (ELEGANCIA)
+
+        // Semantic Colors - Using CSS variables
         background: "var(--background)",
         foreground: "var(--foreground)",
         card: {
@@ -61,21 +70,15 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
-        sage: {
-          DEFAULT: "var(--sage)",
-          light: "var(--sage-light)",
-          dark: "var(--sage-dark)",
-          muted: "var(--sage-muted)",
-        },
-        cream: "var(--cream)",
-        ebony: "var(--ebony)",
-        gold: "var(--gold)",
       },
       fontFamily: {
         heading: ["var(--font-heading)"],
         body: ["var(--font-body)"],
         sans: ["var(--font-body)"],
         serif: ["var(--font-heading)"],
+        // Direct TidyHome font access
+        marlide: ["MarlideDisplay", "serif"],
+        bicyclette: ["Bicyclette", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {

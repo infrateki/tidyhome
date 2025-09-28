@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import heroImage from '@assets/image-2048x796_1757452360530.png';
+import heroImage from '@assets/space.jpg';
 import { trackButtonClick, trackVideoInteraction } from '@/lib/analytics';
 
 export function VideoHero() {
@@ -70,8 +70,8 @@ export function VideoHero() {
       <div className="relative z-10 h-full flex flex-col justify-between items-center text-center px-4">
         {/* Top: Main Headline */}
         <div className="flex-1 flex items-start justify-center pt-32">
-          <h1 
-            className="text-5xl md:text-7xl font-heading font-bold text-alabaster text-shadow"
+          <h1
+            className="text-6xl md:text-8xl font-marlide font-bold text-alabaster text-shadow"
             data-testid="hero-main-headline"
           >
             {t('hero.tagline')}
@@ -101,7 +101,7 @@ export function VideoHero() {
             <Button
               variant="outline"
               onClick={scrollToServices}
-              className="border-2 border-white text-alabaster px-8 py-3 rounded-md font-semibold hover:bg-alabaster hover:text-sage transition-colors bg-transparent"
+              className="border-2 border-alabaster text-alabaster px-8 py-3 rounded-md font-semibold hover:bg-alabaster hover:text-sage transition-colors bg-transparent"
               data-testid="hero-cta-secondary"
             >
               {t('hero.cta.secondary')}

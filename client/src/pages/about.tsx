@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ProcessSection } from '../components/ProcessSection';
 import { CalendlyButton } from '../components/CalendlyButton';
 import { useLanguage } from '../contexts/LanguageContext';
+// Temporary team photo - replace with actual team photo when available
+import teamPlaceholder from '@assets/concierge.jpg';
 
 export default function About() {
   const { t } = useLanguage();
+  const [imageError, setImageError] = useState(false);
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#eeeae1' }}>
@@ -64,25 +67,51 @@ export default function About() {
           </div>
 
           <div className="mb-20">
-            <h2 
+            <h2
               className="text-3xl font-heading mb-8 text-center"
               style={{ color: '#555843' }}
               data-testid="meet-team-title"
             >
               {t('about.team.title')}
             </h2>
-            <div className="max-w-4xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <div 
-                    className="aspect-square rounded-xl"
-                    style={{ backgroundColor: '#eeeae1' }}
-                  >
-                    <div className="w-full h-full flex items-center justify-center">
-                      <p style={{ color: '#555843' }}>Photo of Valeria & Raul</p>
-                    </div>
+            <div className="max-w-6xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                {/* Left Column - Photo */}
+                <div className="flex justify-center">
+                  <div className="relative w-full max-w-md">
+                    {!imageError ? (
+                      <img
+                        src={teamPlaceholder}
+                        alt="Valeria and Raul - Tidy Home founders"
+                        className="rounded-lg shadow-xl w-full object-cover"
+                        style={{ aspectRatio: '4/5' }}
+                        onError={() => setImageError(true)}
+                      />
+                    ) : (
+                      /* Fallback placeholder if image fails */
+                      <div
+                        className="rounded-lg p-8 flex items-center justify-center"
+                        style={{
+                          backgroundColor: 'rgba(191, 191, 130, 0.2)',
+                          minHeight: '400px',
+                          aspectRatio: '4/5',
+                          border: '2px dashed #bfbf82'
+                        }}
+                      >
+                        <div className="text-center">
+                          <p style={{ color: '#5e432c', fontSize: '18px', fontWeight: '500' }}>
+                            Photo of Valeria & Raul
+                          </p>
+                          <p style={{ color: '#5e432c', fontSize: '14px', marginTop: '8px' }}>
+                            [Add image: /images/team/valeria-raul.jpg]
+                          </p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
+
+                {/* Right Column - Existing Text */}
                 <div>
                   <p style={{ color: '#555843', lineHeight: '1.8' }}>
                     {t('about.team.description')}

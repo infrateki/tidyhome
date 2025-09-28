@@ -22,7 +22,7 @@ export default function Services() {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#555843' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#eeeae1' }}>
       <Header />
       
       <section className="pt-12 pb-4">

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Instagram } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import ig1Url from '@assets/542808275_18032455307695682_2185238791464639187_nfull_1757452360530.webp';
-import ig2Url from '@assets/539105426_18031350800695682_2644044832869472776_nfull_1757452360530.webp';
-import ig3Url from '@assets/530841115_18029953709695682_8719123475487043815_nfull_1757452360530.webp';
-import ig4Url from '@assets/527453841_18029039912695682_7593587430856325733_nfull_1757452360530.webp';
+import ig1Url from '@assets/Copia de Post 01 - Post 01b (4).png';
+import ig2Url from '@assets/Copia de Post 01 - Post 01b (5).png';
+import ig3Url from '@assets/D914761D-CE8D-4326-9668-44DA40A02B78.jpg';
+import ig4Url from '@assets/FullSizeRender_VSCO.jpg';
 
 export function InstagramFeed() {
   const { t } = useLanguage();

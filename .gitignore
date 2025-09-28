@@ -31,6 +31,7 @@ Thumbs.db
 desktop.ini
 
 # IDE files
+.cursorrules
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json

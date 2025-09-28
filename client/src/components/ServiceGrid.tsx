@@ -1,12 +1,12 @@
 import React from 'react';
 import type { Service } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
-import homeOrgImg from '@assets/homeorg.jpg'; 
-import movingImg from '@assets/IMG_1918_1757566915330.jpeg';
-import spaceImg from '@assets/image-2048x796_1757452360530.png';
-import refreshImg from '@assets/IMG_6114_1757452360531.jpg';
-import additionalImg from '@assets/IMG_6114_1757452360531.jpg';
-import giftImg from '@assets/539105426_18031350800695682_2644044832869472776_nfull_1757452360530.webp';
+import homeOrgImg from '@assets/D914761D-CE8D-4326-9668-44DA40A02B78.jpg';
+import movingImg from '@assets/concierge.jpg';
+import spaceImg from '@assets/space.jpg';
+import refreshImg from '@assets/refresh.png';
+import additionalImg from '@assets/additional.jpg';
+import giftImg from '@assets/giftcert.jpg';
 
 interface ServiceGridProps {
   onServiceClick: (serviceId: string) => void;
