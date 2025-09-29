@@ -4,12 +4,12 @@ import { Footer } from '../components/Footer';
 import { CalendlyButton } from '../components/CalendlyButton';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Import images from attached_assets - Best Selection for 8 Categories
-import masterBedroomImg from '@assets/00-master01.jpg';
+// Import images from attached_assets - Working Selection for 8 Categories
+import masterBedroomImg from '@assets/master.jpeg';
 import kitchenPantryImg from '@assets/kitchen01.jpeg';
-import homeOfficeImg from '@assets/00-spacecreation.jpg';
+import homeOfficeImg from '@assets/home04.jpeg';
 import closetTransformImg from '@assets/IMG_7090.jpeg';
-import playroomImg from '@assets/00-playroom01.jpg';
+import playroomImg from '@assets/space.jpg';
 import unpackingImg from '@assets/IMG_7101.jpeg';
 import garageImg from '@assets/IMG_7080.jpeg';
 import bathroomImg from '@assets/IMG_2770.jpeg';

@@ -5,7 +5,7 @@ import homeOrgImg from '@assets/homeorg.jpg';
 import movingImg from '@assets/concierge.jpg';
 import spaceImg from '@assets/space.jpg';
 import refreshImg from '@assets/refresh.png';
-import additionalImg from '@assets/00-additionalservices.jpg';
+import additionalImg from '@assets/additional.jpg';
 import giftImg from '@assets/giftcert.jpg';
 
 interface ServiceGridProps {

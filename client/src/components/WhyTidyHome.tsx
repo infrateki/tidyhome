@@ -3,7 +3,7 @@ import { Check } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
-import whyImg from '@assets/00-newphotoreplaceold.jpg';
+import whyImg from '@assets/space.jpg';
 
 export function WhyTidyHome() {
   const { t } = useLanguage();

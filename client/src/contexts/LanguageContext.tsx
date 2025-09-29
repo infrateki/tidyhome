@@ -110,7 +110,7 @@ const translations = {
     'modal.moving-concierge.services': 'Packing – Decluttering, procurement of materials, and item classification|Moving Management – Day-of supervision, storage solutions, and coordination|Unpacking & Organizing – Space planning, system creation, and setup of home essentials',
     'modal.space-creation.title': 'SPACE CREATION',
     'modal.space-creation.description': 'Tidy Home helps you bring your dream space to life through thoughtful interior styling and tailored storage solution design. From personalized planning to curated product selection, we offer a full range of services to transform your home into a beautifully organized, functional, and inspiring environment.',
-    'modal.space-creation.services': 'Personalized space planning and design|Tailored organization solutions|Product sourcing and shopping support|Full project management & coordiantion | Access to additional services',
+    'modal.space-creation.services': 'Before & After consultations|Custom storage solutions|Space optimization|Aesthetic enhancements',
     'modal.refresh-sessions.title': 'REFRESH SESSIONS',
     'modal.refresh-sessions.description': 'Life evolves, and so should your spaces. Our Refresh Sessions offer the perfect opportunity to maintain your organized home or adapt it to new needs.\n\nThese are ideal for seasonal updates, post-holiday resets, or when life changes demand a fresh approach.',
     'modal.refresh-sessions.note': 'Refresh Sessions are exclusive to returning clients and require a previously completed Tidy Home project.',
