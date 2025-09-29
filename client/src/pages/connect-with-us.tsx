@@ -29,7 +29,7 @@ export default function ConnectWithUs() {
       id: 'first-time-project',
       title: t('connect.form.first-time.title'),
       description: t('connect.form.first-time.description'),
-      features: [t('connect.form.first-time.feature1'), t('connect.form.first-time.feature2'), t('connect.form.first-time.feature3'), t('connect.form.first-time.feature4')]
+      features: [t('connect.form.first-time.feature1'), t('connect.form.first-time.feature2'), t('connect.form.first-time.feature3'), t('connect.form.first-time.feature4'), t('connect.form.first-time.feature5')]
     },
     {
       id: 'moving-services',
@@ -47,7 +47,7 @@ export default function ConnectWithUs() {
       id: 'proyecto-inicial',
       title: t('connect.form.spanish.title'),
       description: t('connect.form.spanish.description'),
-      features: [t('connect.form.spanish.feature1'), t('connect.form.spanish.feature2'), t('connect.form.spanish.feature3'), t('connect.form.spanish.feature4')]
+      features: [t('connect.form.spanish.feature1'), t('connect.form.spanish.feature2'), t('connect.form.spanish.feature3'), t('connect.form.spanish.feature4'), t('connect.form.spanish.feature5')]
     }
   ];
 

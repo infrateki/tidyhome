@@ -14,7 +14,10 @@
       "Bash(ls:*)",
       "Bash(awk:*)",
       "Bash(dir:*)",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "Bash(npx tsc:*)",
+      "Bash(powershell:*)",
+      "Read(//c/Users/sergi/Desktop/**)"
     ],
     "deny": [],
     "ask": []

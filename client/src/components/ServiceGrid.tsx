@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Service } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
-import homeOrgImg from '@assets/additional.jpg';
+import homeOrgImg from '@assets/homeorg.jpg';
 import movingImg from '@assets/concierge.jpg';
 import spaceImg from '@assets/space.jpg';
 import refreshImg from '@assets/refresh.png';
-import additionalImg from '@assets/homeorg.jpg';
+import additionalImg from '@assets/00-additionalservices.jpg';
 import giftImg from '@assets/giftcert.jpg';
 
 interface ServiceGridProps {
@@ -67,16 +67,20 @@ export function ServiceGrid({ onServiceClick }: ServiceGridProps) {
             <div 
               key={service.id}
               className="service-card bg-alabaster rounded-xl shadow-lg hover:shadow-xl cursor-pointer transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
-              style={{ backgroundColor: '#eeeae1', minHeight: '420px' }}
+              style={{ backgroundColor: '#eeeae1', minHeight: '460px' }}
               onClick={() => onServiceClick(service.id)}
               data-testid={`service-card-${service.id}`}
             >
               <div className="p-6 flex flex-col h-full">
-                <img 
-                  src={service.image} 
-                  alt={service.title} 
-                  className="w-full h-48 object-cover rounded-lg mb-5"
-                  style={{ height: '192px' }}
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full object-cover rounded-lg mb-5"
+                  style={{
+                    height: '230px',
+                    objectPosition: service.id === 'gift-certificates' ? 'center 75%' :
+                                   service.id === 'additional-services' ? 'center 75%' : 'center center'
+                  }}
                   data-testid={`service-image-${service.id}`}
                 />
                 <h3 
