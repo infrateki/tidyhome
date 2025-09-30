@@ -36,10 +36,10 @@ export default function About() {
               {t('about.brand.title')}
             </h2>
             <div className="max-w-4xl mx-auto space-y-6">
-              <p style={{ color: '#555843', lineHeight: '1.8' }}>
+              <p className="font-body" style={{ color: '#555843', lineHeight: '1.8' }}>
                 {t('about.brand.paragraph1')}
               </p>
-              <p style={{ color: '#555843', lineHeight: '1.8' }}>
+              <p className="font-body" style={{ color: '#555843', lineHeight: '1.8' }}>
                 {t('about.brand.paragraph2')}
               </p>
             </div>
@@ -54,13 +54,13 @@ export default function About() {
               {t('about.journey.title')}
             </h2>
             <div className="max-w-4xl mx-auto space-y-6">
-              <p style={{ color: '#555843', lineHeight: '1.8' }}>
+              <p className="font-body" style={{ color: '#555843', lineHeight: '1.8' }}>
                 {t('about.journey.paragraph1')}
               </p>
-              <p style={{ color: '#555843', lineHeight: '1.8' }}>
+              <p className="font-body" style={{ color: '#555843', lineHeight: '1.8' }}>
                 {t('about.journey.paragraph2')}
               </p>
-              <p style={{ color: '#555843', lineHeight: '1.8' }}>
+              <p className="font-body" style={{ color: '#555843', lineHeight: '1.8' }}>
                 {t('about.journey.paragraph3')}
               </p>
             </div>
@@ -112,7 +112,7 @@ export default function About() {
 
                 {/* Right Column - Existing Text */}
                 <div>
-                  <p style={{ color: '#555843', lineHeight: '1.8' }}>
+                  <p className="font-body" style={{ color: '#555843', lineHeight: '1.8' }}>
                     {t('about.team.description')}
                   </p>
                 </div>

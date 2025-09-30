@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap');
-
 /* TidyHome Custom Fonts */
 
 /* TÍTULOS - Headers - MarlideDisplay */
 @font-face {
   font-family: 'MarlideDisplay';
-  src: url('/videos/fonts/MarlideDisplay_Regular.ttf') format('truetype');
+  src: url('/fonts/MarlideDisplay_Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -14,7 +12,7 @@
 /* SUBTÍTULOS - Bicyclette Regular */
 @font-face {
   font-family: 'Bicyclette';
-  src: url('/videos/fonts/Bicyclette-Regular.ttf') format('truetype');
+  src: url('/fonts/Bicyclette-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -23,7 +21,7 @@
 /* BOLD - Bicyclette Bold */
 @font-face {
   font-family: 'Bicyclette';
-  src: url('/videos/fonts/Bicyclette-Bold.ttf') format('truetype');
+  src: url('/fonts/Bicyclette-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -107,7 +105,7 @@ html, body, #root {
     min-height: 100vh;
   }
 
-  /* All headings use EBONY */
+  /* All headings use MarlideDisplay and EBONY color */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'MarlideDisplay', Georgia, serif !important;
     font-weight: 300;
@@ -203,6 +201,7 @@ html, body, #root {
   /* Modal Backdrop */
   .modal-backdrop {
     background: rgba(85, 88, 67, 0.95) !important; /* EBONY overlay */
+    -webkit-backdrop-filter: blur(4px); /* Safari support */
     backdrop-filter: blur(4px);
   }
 
@@ -258,16 +257,6 @@ html, body, #root {
     font-weight: 400 !important;
     letter-spacing: 0.04em;
     line-height: 1.2;
-  }
-
-  /* Specific override for any nested styles */
-  h1.font-heading,
-  h2.font-heading,
-  h3.font-heading,
-  h4.font-heading,
-  h5.font-heading,
-  h6.font-heading {
-    font-family: 'MarlideDisplay', Georgia, serif !important;
   }
 
   .font-subheading {
@@ -358,32 +347,10 @@ html, body, #root {
 }
 
 /* CRITICAL FONT OVERRIDES - MUST BE LAST */
-/* Force MarlideDisplay on all headers with maximum specificity */
-.font-heading,
-h1.font-heading,
-h2.font-heading,
-h3.font-heading,
-h4.font-heading,
-h5.font-heading,
-h6.font-heading,
-*[class*="font-heading"] {
-  font-family: 'MarlideDisplay', Georgia, serif !important;
-}
-
-/* Ensure all h1-h6 use MarlideDisplay by default */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'MarlideDisplay', Georgia, serif;
-}
-
-/* Force body text to use Bicyclette */
+/* Force Bicyclette on all body text elements */
 .font-body,
 .font-body-light,
 p:not(.font-heading),
 span:not(.font-heading) {
-  font-family: 'Bicyclette', -apple-system, sans-serif !important;
-}
-
-/* HERO SPECIFIC OVERRIDE - MAXIMUM FORCE */
-h2.hero-bicyclette-title {
   font-family: 'Bicyclette', -apple-system, sans-serif !important;
 }

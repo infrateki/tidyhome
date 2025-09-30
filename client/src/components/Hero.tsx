@@ -28,10 +28,8 @@ export function Hero() {
         {/* Text at top */}
         <div className="flex flex-col justify-center items-center pt-20 md:pt-24 space-y-4">
           <h2
-            className="text-center uppercase tracking-[0.2em] hero-bicyclette-title"
+            className="text-center uppercase tracking-[0.2em] font-body text-ebony"
             style={{
-              fontFamily: 'Bicyclette, -apple-system, sans-serif',
-              color: '#555843',
               fontSize: '33.6px',  /* 40% larger than 24px */
               opacity: 0.75,
               textShadow: '2px 2px 6px rgba(85,88,67,0.4)',
@@ -41,10 +39,8 @@ export function Hero() {
             {t('hero.main_title')}
           </h2>
           <h1
-            className="text-5xl md:text-6xl lg:text-7xl text-center"
+            className="text-5xl md:text-6xl lg:text-7xl text-center font-heading text-alabaster"
             style={{
-              fontFamily: 'Bicyclette, -apple-system, sans-serif',
-              color: '#eeeae1',
               textShadow: '2px 2px 6px rgba(85,88,67,0.4)',
               fontWeight: 400
             }}
@@ -52,9 +48,8 @@ export function Hero() {
 
           </h1>
           <p
-            className="max-w-3xl text-center text-lg md:text-xl px-6 font-body-light"
+            className="max-w-3xl text-center text-lg md:text-xl px-6 font-body-light text-alabaster"
             style={{
-              color: '#eeeae1',
               textShadow: '1px 1px 4px rgba(85,88,67,0.4)',
               lineHeight: '1.6'
             }}

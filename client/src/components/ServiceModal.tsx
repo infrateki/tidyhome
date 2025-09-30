@@ -109,10 +109,11 @@ export function ServiceModal({ isOpen, onClose, serviceId }: ServiceModalProps) 
               data-testid="service-modal-description"
             >
               {modal.description.split('\n\n').map((paragraph, index) => (
-                <p 
-                  key={index} 
-                  style={{ 
-                    color: '#eeeae1',  // ALABASTER - cream for body text
+                <p
+                  key={index}
+                  className="font-body"
+                  style={{
+                    color: '#eeeae1',
                     lineHeight: '1.6'
                   }}
                 >
@@ -136,9 +137,9 @@ export function ServiceModal({ isOpen, onClose, serviceId }: ServiceModalProps) 
                 </h4>
                 <ul className="space-y-2">
                   {modal.services.map((service: string, index: number) => (
-                    <li 
-                      key={index} 
-                      className="flex items-start" 
+                    <li
+                      key={index}
+                      className="flex items-start font-body"
                       data-testid={`modal-service-item-${serviceId}-${index}`}
                     >
                       <span style={{ color: '#eeeae1' }} className="mr-2">•</span>
@@ -151,10 +152,10 @@ export function ServiceModal({ isOpen, onClose, serviceId }: ServiceModalProps) 
             
             {/* Note if exists */}
             {modal.note && (
-              <p 
-                className="text-sm italic" 
-                style={{ 
-                  color: '#eeeae1',  // ALABASTER for note
+              <p
+                className="text-sm italic font-body"
+                style={{
+                  color: '#eeeae1',
                   opacity: 0.9
                 }}
                 data-testid={`modal-note-${serviceId}`}

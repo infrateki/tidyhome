@@ -2,7 +2,7 @@ import React from 'react';
 import type { Service } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
 import homeOrgImg from '@assets/services/cover_home_organization.jpg';
-import movingImg from '@assets/services/cover_moving_concierges.jpg';
+import movingImg from '@assets/concierge.jpg';
 import spaceImg from '@assets/services/cover_space_creation.jpg';
 import refreshImg from '@assets/services/cover_refresh_sessions.png';
 import additionalImg from '@assets/services/cover_additional_services.jpg';
@@ -93,10 +93,10 @@ export function ServiceGrid({ onServiceClick }: ServiceGridProps) {
                 >
                   {service.title}
                 </h3>
-                <p 
-                  className="text-base mb-4 leading-relaxed flex-grow" 
-                  style={{ 
-                    color: '#555843', 
+                <p
+                  className="text-base mb-4 leading-relaxed flex-grow font-body"
+                  style={{
+                    color: '#555843',
                     opacity: 0.9,
                     minHeight: '72px',
                     overflow: 'hidden',
@@ -108,8 +108,8 @@ export function ServiceGrid({ onServiceClick }: ServiceGridProps) {
                 >
                   {service.description}
                 </p>
-                <div 
-                  className="font-medium hover:underline inline-block mt-auto" 
+                <div
+                  className="font-medium hover:underline inline-block mt-auto font-body"
                   style={{ color: '#c06446' }}
                   data-testid={`service-cta-${service.id}`}
                 >

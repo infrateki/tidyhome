@@ -18,8 +18,8 @@ export function Footer() {
             >
               Tidy Home
             </h3>
-            <p 
-              className="mb-4"
+            <p
+              className="mb-4 font-body"
               style={{ color: '#eeeae1' }}
               data-testid="footer-description"
             >
@@ -60,8 +60,8 @@ export function Footer() {
               {t('footer.services')}
             </h4>
             <ul className="space-y-2" style={{ color: '#eeeae1' }}>
-              <li>
-                <Link href="/connect-with-us" className="transition-colors" 
+              <li className="font-body">
+                <Link href="/connect-with-us" className="transition-colors"
                   style={{ color: '#eeeae1' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#eeeae1'}
@@ -69,8 +69,8 @@ export function Footer() {
                   {t('footer.home_organization')}
                 </Link>
               </li>
-              <li>
-                <Link href="/connect-with-us" className="transition-colors" 
+              <li className="font-body">
+                <Link href="/connect-with-us" className="transition-colors"
                   style={{ color: '#eeeae1' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#eeeae1'}
@@ -78,8 +78,8 @@ export function Footer() {
                   {t('footer.moving_concierge')}
                 </Link>
               </li>
-              <li>
-                <Link href="/connect-with-us" className="transition-colors" 
+              <li className="font-body">
+                <Link href="/connect-with-us" className="transition-colors"
                   style={{ color: '#eeeae1' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#eeeae1'}
@@ -87,8 +87,8 @@ export function Footer() {
                   {t('footer.space_creation')}
                 </Link>
               </li>
-              <li>
-                <Link href="/connect-with-us" className="transition-colors" 
+              <li className="font-body">
+                <Link href="/connect-with-us" className="transition-colors"
                   style={{ color: '#eeeae1' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#eeeae1'}
@@ -108,7 +108,7 @@ export function Footer() {
               {t('footer.company')}
             </h4>
             <ul className="space-y-2" style={{ color: '#eeeae1' }}>
-              <li>
+              <li className="font-body">
                 <Link href="/about" className="transition-colors" data-testid="footer-about"
                   style={{ color: '#eeeae1' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
@@ -116,7 +116,7 @@ export function Footer() {
                   {t('footer.about_link')}
                 </Link>
               </li>
-              <li>
+              <li className="font-body">
                 <Link href="/services" className="transition-colors" data-testid="footer-services"
                   style={{ color: '#eeeae1' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
@@ -124,7 +124,7 @@ export function Footer() {
                   {t('footer.services_link')}
                 </Link>
               </li>
-              <li>
+              <li className="font-body">
                 <Link href="/portfolio" className="transition-colors" data-testid="footer-portfolio"
                   style={{ color: '#eeeae1' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
@@ -132,7 +132,7 @@ export function Footer() {
                   {t('footer.portfolio_link')}
                 </Link>
               </li>
-              <li>
+              <li className="font-body">
                 <Link href="/faqs" className="transition-colors" data-testid="footer-faqs"
                   style={{ color: '#eeeae1' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
@@ -153,20 +153,20 @@ export function Footer() {
             </h4>
             <div className="space-y-3" style={{ color: '#eeeae1' }}>
               <div className="flex items-center space-x-2" data-testid="footer-email">
-                <span>{t('footer.email')}</span>
+                <span className="font-body">{t('footer.email')}</span>
               </div>
               <div className="flex items-center space-x-2" data-testid="footer-hours">
-                <span>{t('footer.hours')}</span>
+                <span className="font-body">{t('footer.hours')}</span>
               </div>
               <div className="flex items-center space-x-2" data-testid="footer-location">
-                <span>{t('footer.service_areas')}</span>
+                <span className="font-body">{t('footer.service_areas')}</span>
               </div>
             </div>
           </div>
         </div>
         
         <div className="mt-12 pt-8 text-center" style={{ borderTop: '1px solid #bfbf8250', color: '#eeeae1' }}>
-          <p data-testid="footer-copyright">
+          <p className="font-body" data-testid="footer-copyright">
             {t('footer.copyright')}
           </p>
         </div>

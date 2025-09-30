@@ -71,7 +71,7 @@ export function VideoHero() {
         {/* Top: Main Headline */}
         <div className="flex-1 flex items-start justify-center pt-32">
           <h1
-            className="text-6xl md:text-8xl font-marlide font-bold text-alabaster text-shadow"
+            className="text-6xl md:text-8xl font-heading font-bold text-alabaster text-shadow"
             data-testid="hero-main-headline"
           >
             {t('hero.tagline')}

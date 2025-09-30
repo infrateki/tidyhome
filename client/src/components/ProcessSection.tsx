@@ -35,7 +35,7 @@ export function ProcessSection() {
           <h2 className="font-heading text-4xl font-bold text-foreground mb-4" data-testid="process-title">
             {t('process.title')}
           </h2>
-          <p className="text-xl text-muted-foreground" data-testid="process-subtitle">
+          <p className="text-xl text-muted-foreground font-body" data-testid="process-subtitle">
             {t('process.subtitle')}
           </p>
         </div>
@@ -49,7 +49,7 @@ export function ProcessSection() {
               <h3 className="font-heading text-lg font-semibold text-foreground mb-3" data-testid={`step-title-${step.number}`}>
                 {step.title}
               </h3>
-              <p className="text-muted-foreground text-sm" data-testid={`step-description-${step.number}`}>
+              <p className="text-muted-foreground text-sm font-body" data-testid={`step-description-${step.number}`}>
                 {step.description}
               </p>
             </div>

@@ -51,12 +51,11 @@ export function Header() {
           borderBottom: '.01px solid #bfbf8250' 
         }}
       >
-        <Link 
-          href="/connect-with-us" 
-          className="text-xs uppercase tracking-[0.15em] font-light" 
-          style={{ 
-            color: '#555843',
-            fontFamily: 'Montserrat, system-ui, sans-serif' 
+        <Link
+          href="/connect-with-us"
+          className="text-xs uppercase tracking-[0.15em] font-light font-body"
+          style={{
+            color: '#555843'
           }}
         >
           {t('header.schedule_consultation')}
@@ -83,10 +82,9 @@ export function Header() {
               <div className="flex items-center space-x-10 flex-1 justify-end">
                 <Link
                   href="/"
-                  className="text-xs uppercase tracking-[0.15em] transition-colors duration-200"
+                  className="text-xs uppercase tracking-[0.15em] transition-colors duration-200 font-body"
                   style={{
                     color: '#555843',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
@@ -96,10 +94,9 @@ export function Header() {
                 </Link>
                 <Link
                   href="/about"
-                  className="text-xs uppercase tracking-[0.15em] transition-colors duration-200"
-                  style={{ 
+                  className="text-xs uppercase tracking-[0.15em] transition-colors duration-200 font-body"
+                  style={{
                     color: '#555843',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
@@ -109,10 +106,9 @@ export function Header() {
                 </Link>
                 <Link
                   href="/services"
-                  className="text-xs uppercase tracking-[0.15em] transition-colors duration-200"
-                  style={{ 
+                  className="text-xs uppercase tracking-[0.15em] transition-colors duration-200 font-body"
+                  style={{
                     color: '#555843',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
@@ -137,10 +133,9 @@ export function Header() {
               <div className="flex items-center space-x-10 flex-1">
                 <Link
                   href="/connect-with-us"
-                  className="text-xs uppercase tracking-[0.15em] transition-colors duration-200"
-                  style={{ 
+                  className="text-xs uppercase tracking-[0.15em] transition-colors duration-200 font-body"
+                  style={{
                     color: '#555843',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
@@ -150,10 +145,9 @@ export function Header() {
                 </Link>
                 <Link
                   href="/portfolio"
-                  className="text-xs uppercase tracking-[0.15em] transition-colors duration-200"
-                  style={{ 
+                  className="text-xs uppercase tracking-[0.15em] transition-colors duration-200 font-body"
+                  style={{
                     color: '#555843',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
@@ -163,10 +157,9 @@ export function Header() {
                 </Link>
                 <Link
                   href="/faqs"
-                  className="text-xs uppercase tracking-[0.15em] transition-colors duration-200"
-                  style={{ 
+                  className="text-xs uppercase tracking-[0.15em] transition-colors duration-200 font-body"
+                  style={{
                     color: '#555843',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#bfbf92'}
@@ -214,10 +207,9 @@ export function Header() {
                 <Globe className="w-4 h-4" style={{ color: '#555843' }} />
                 <button
                   onClick={toggleLanguage}
-                  className="text-xs transition-colors duration-200"
+                  className="text-xs transition-colors duration-200 font-body"
                   style={{
                     color: currentLanguage.code === 'en' ? '#c06446' : '#555843',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                 >
@@ -226,10 +218,9 @@ export function Header() {
                 <span style={{ color: '#eeeae1' }}>|</span>
                 <button
                   onClick={toggleLanguage}
-                  className="text-xs transition-colors duration-200"
+                  className="text-xs transition-colors duration-200 font-body"
                   style={{
                     color: currentLanguage.code === 'es' ? '#c06446' : '#555843',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                 >
@@ -263,67 +254,61 @@ export function Header() {
           {isMenuOpen && (
             <div className="lg:hidden" style={{ backgroundColor: '#eeeae1', borderTop: '1px solid #eeeae1' }}>
               <div className="px-4 py-4 space-y-3">
-                <Link 
-                  href="/" 
-                  className="block text-xs uppercase tracking-[0.15em] py-2" 
-                  style={{ 
+                <Link
+                  href="/"
+                  className="block text-xs uppercase tracking-[0.15em] py-2 font-body"
+                  style={{
                     color: '#555843',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                 >
                   {t('nav.home')}
                 </Link>
                 <Link
-                  href="/about" 
-                  className="block text-xs uppercase tracking-[0.15em] py-2" 
-                  style={{ 
+                  href="/about"
+                  className="block text-xs uppercase tracking-[0.15em] py-2 font-body"
+                  style={{
                     color: '#555843',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                 >
                   {t('nav.about')}
                 </Link>
                 <Link
-                  href="/services" 
-                  className="block text-xs uppercase tracking-[0.15em] py-2" 
-                  style={{ 
+                  href="/services"
+                  className="block text-xs uppercase tracking-[0.15em] py-2 font-body"
+                  style={{
                     color: '#555843',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                 >
                   {t('nav.services')}
                 </Link>
                 <Link
-                  href="/connect-with-us" 
-                  className="block text-xs uppercase tracking-[0.15em] py-2" 
-                  style={{ 
+                  href="/connect-with-us"
+                  className="block text-xs uppercase tracking-[0.15em] py-2 font-body"
+                  style={{
                     color: '#555843',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                 >
                   {t('nav.connect')}
                 </Link>
                 <Link
-                  href="/portfolio" 
-                  className="block text-xs uppercase tracking-[0.15em] py-2" 
-                  style={{ 
+                  href="/portfolio"
+                  className="block text-xs uppercase tracking-[0.15em] py-2 font-body"
+                  style={{
                     color: '#555843',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                 >
                   {t('nav.portfolio')}
                 </Link>
                 <Link
-                  href="/faqs" 
-                  className="block text-xs uppercase tracking-[0.15em] py-2" 
-                  style={{ 
+                  href="/faqs"
+                  className="block text-xs uppercase tracking-[0.15em] py-2 font-body"
+                  style={{
                     color: '#555843',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontWeight: 400
                   }}
                 >
@@ -332,23 +317,21 @@ export function Header() {
                 <div className="flex items-center pt-3 border-t" style={{ borderColor: '#eeeae1' }}>
                   <div className="flex items-center space-x-2">
                     <Globe className="w-4 h-4" style={{ color: '#555843' }} />
-                    <button 
+                    <button
                       onClick={toggleLanguage}
-                      className="text-xs"
-                      style={{ 
-                        color: currentLanguage.code === 'en' ? '#c06446' : '#555843',
-                        fontFamily: 'Montserrat, system-ui, sans-serif'
+                      className="text-xs font-body"
+                      style={{
+                        color: currentLanguage.code === 'en' ? '#c06446' : '#555843'
                       }}
                     >
                       EN
                     </button>
                     <span style={{ color: '#eeeae1' }}>|</span>
-                    <button 
+                    <button
                       onClick={toggleLanguage}
-                      className="text-xs"
-                      style={{ 
-                        color: currentLanguage.code === 'es' ? '#c06446' : '#555843',
-                        fontFamily: 'Montserrat, system-ui, sans-serif'
+                      className="text-xs font-body"
+                      style={{
+                        color: currentLanguage.code === 'es' ? '#c06446' : '#555843'
                       }}
                     >
                       ES

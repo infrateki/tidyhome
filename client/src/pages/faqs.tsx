@@ -77,8 +77,8 @@ export default function FAQs() {
             >
               {t('faqs.page.title')}
             </h1>
-            <p 
-              className="text-xl"
+            <p
+              className="text-xl font-body"
               style={{ color: '#555843' }}
               data-testid="faq-subtitle"
             >
@@ -103,7 +103,7 @@ export default function FAQs() {
                   }}
                   data-testid={`faq-question-${faq.id}`}
                 >
-                  <span className="font-medium text-lg">{faq.question}</span>
+                  <span className="font-medium text-lg font-body">{faq.question}</span>
                   {openQuestion === faq.id ? (
                     <ChevronUp className="w-5 h-5 flex-shrink-0" />
                   ) : (
@@ -116,7 +116,7 @@ export default function FAQs() {
                     style={{ backgroundColor: '#FAF9F7', color: '#555843' }}
                     data-testid={`faq-answer-${faq.id}`}
                   >
-                    <p>{faq.answer}</p>
+                    <p className="font-body">{faq.answer}</p>
                   </div>
                 )}
               </div>
@@ -135,8 +135,8 @@ export default function FAQs() {
               >
                 {t('faqs.still_questions')}
               </h2>
-              <p 
-                className="mb-8"
+              <p
+                className="mb-8 font-body"
                 style={{ color: '#555843' }}
                 data-testid="questions-section-text"
               >
@@ -145,9 +145,9 @@ export default function FAQs() {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label 
-                    htmlFor="name" 
-                    className="block mb-2 font-medium"
+                  <label
+                    htmlFor="name"
+                    className="block mb-2 font-medium font-body"
                     style={{ color: '#555843' }}
                   >
                     {t('faqs.form.name')}
@@ -165,9 +165,9 @@ export default function FAQs() {
                 </div>
 
                 <div>
-                  <label 
-                    htmlFor="email" 
-                    className="block mb-2 font-medium"
+                  <label
+                    htmlFor="email"
+                    className="block mb-2 font-medium font-body"
                     style={{ color: '#555843' }}
                   >
                     {t('faqs.form.email')}
@@ -185,9 +185,9 @@ export default function FAQs() {
                 </div>
 
                 <div>
-                  <label 
-                    htmlFor="question" 
-                    className="block mb-2 font-medium"
+                  <label
+                    htmlFor="question"
+                    className="block mb-2 font-medium font-body"
                     style={{ color: '#555843' }}
                   >
                     {t('faqs.form.question')}

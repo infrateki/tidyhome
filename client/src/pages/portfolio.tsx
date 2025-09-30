@@ -236,7 +236,7 @@ export default function Portfolio() {
               Our Portfolio
             </h1>
             <p
-              className="text-xl max-w-3xl mx-auto mb-10"
+              className="text-xl max-w-3xl mx-auto mb-10 font-body"
               style={{ color: '#555843' }}
               data-testid="portfolio-subtitle"
             >
@@ -394,7 +394,7 @@ export default function Portfolio() {
             {/* Image counter and dots */}
             <div className="flex items-center justify-center gap-3 mt-4">
               <p
-                className="text-sm font-medium tracking-wider uppercase"
+                className="text-sm font-medium tracking-wider uppercase font-body"
                 style={{ color: 'white' }}
                 data-testid="image-counter"
               >

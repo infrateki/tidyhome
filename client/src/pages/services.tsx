@@ -28,15 +28,15 @@ export default function Services() {
       <section className="pt-12 pb-4">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center">
-            <h1 
+            <h1
               className="text-4xl md:text-5xl font-heading mb-3"
-              style={{ color: '#eeeae1' }}
+              style={{ color: '#555843' }}
               data-testid="services-page-title"
             >
               {t('services.page.title')}
             </h1>
-            <p 
-              className="text-xl max-w-3xl mx-auto"
+            <p
+              className="text-xl max-w-3xl mx-auto font-body"
               style={{ color: '#555843', opacity: 0.8 }}
               data-testid="services-page-subtitle"
             >

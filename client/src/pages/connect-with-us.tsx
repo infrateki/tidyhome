@@ -65,8 +65,8 @@ export default function ConnectWithUs() {
             >
               {t('connect.title')}
             </h1>
-            <p 
-              className="text-xl max-w-3xl mx-auto"
+            <p
+              className="text-xl max-w-3xl mx-auto font-body"
               style={{ color: '#555843' }}
               data-testid="connect-subtitle"
             >
@@ -88,17 +88,17 @@ export default function ConnectWithUs() {
                 >
                   {service.title}
                 </h3>
-                <p 
-                  className="mb-6"
+                <p
+                  className="mb-6 font-body"
                   style={{ color: '#555843' }}
                 >
                   {service.description}
                 </p>
                 <ul className="mb-8 space-y-2">
                   {service.features.map((feature, index) => (
-                    <li 
+                    <li
                       key={index}
-                      className="flex items-center"
+                      className="flex items-center font-body"
                       style={{ color: '#555843' }}
                     >
                       <span 
@@ -129,8 +129,8 @@ export default function ConnectWithUs() {
           </div>
 
           <div className="mt-16 text-center">
-            <p 
-              className="text-lg mb-6"
+            <p
+              className="text-lg mb-6 font-body"
               style={{ color: '#555843' }}
             >
               {t('connect.not_sure')}
@@ -170,7 +170,7 @@ export default function ConnectWithUs() {
                 height={1100}
               />
               <p className="mt-3 text-center">
-                <a href={HONEYBOOK_FORMS[selectedService]} target="_blank" rel="noopener noreferrer" style={{ color: '#c06446' }}>
+                <a href={HONEYBOOK_FORMS[selectedService]} target="_blank" rel="noopener noreferrer" className="font-body" style={{ color: '#c06446' }}>
                   Having trouble? Open the form in a new tab
                 </a>
               </p>
