@@ -1,12 +1,12 @@
 import React from 'react';
 import type { Service } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
-import homeOrgImg from '@assets/homeorg.jpg';
-import movingImg from '@assets/concierge.jpg';
-import spaceImg from '@assets/space.jpg';
-import refreshImg from '@assets/refresh.png';
-import additionalImg from '@assets/additional.jpg';
-import giftImg from '@assets/giftcert.jpg';
+import homeOrgImg from '@assets/services/cover_home_organization.jpg';
+import movingImg from '@assets/services/cover_moving_concierges.jpg';
+import spaceImg from '@assets/services/cover_space_creation.jpg';
+import refreshImg from '@assets/services/cover_refresh_sessions.png';
+import additionalImg from '@assets/services/cover_additional_services.jpg';
+import giftImg from '@assets/services/cover_gift_certificates.jpg';
 
 interface ServiceGridProps {
   onServiceClick: (serviceId: string) => void;
@@ -64,10 +64,10 @@ export function ServiceGrid({ onServiceClick }: ServiceGridProps) {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div 
+            <div
               key={service.id}
               className="service-card bg-alabaster rounded-xl shadow-lg hover:shadow-xl cursor-pointer transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
-              style={{ backgroundColor: '#eeeae1', minHeight: '460px' }}
+              style={{ backgroundColor: '#eeeae1', minHeight: '550px' }}
               onClick={() => onServiceClick(service.id)}
               data-testid={`service-card-${service.id}`}
             >
@@ -77,9 +77,12 @@ export function ServiceGrid({ onServiceClick }: ServiceGridProps) {
                   alt={service.title}
                   className="w-full object-cover rounded-lg mb-5"
                   style={{
-                    height: '230px',
-                    objectPosition: service.id === 'gift-certificates' ? 'center 75%' :
-                                   service.id === 'additional-services' ? 'center 75%' : 'center center'
+                    height: '320px',
+                    objectPosition: service.id === 'refresh-sessions' || service.id === 'gift-certificates'
+                                   ? 'center 95%'
+                                   : service.id === 'additional-services'
+                                   ? 'center 35%'
+                                   : 'center center'
                   }}
                   data-testid={`service-image-${service.id}`}
                 />

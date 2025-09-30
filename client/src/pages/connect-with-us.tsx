@@ -35,7 +35,7 @@ export default function ConnectWithUs() {
       id: 'moving-services',
       title: t('connect.form.moving.title'),
       description: t('connect.form.moving.description'),
-      features: [t('connect.form.moving.feature1'), t('connect.form.moving.feature2'), t('connect.form.moving.feature3'), t('connect.form.moving.feature4')]
+      features: [t('connect.form.moving.feature1'), t('connect.form.moving.feature2'), t('connect.form.moving.feature3'), t('connect.form.moving.feature4'), t('connect.form.moving.feature5')]
     },
     {
       id: 'refresh-sessions',

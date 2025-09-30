@@ -4,31 +4,142 @@ import { Footer } from '../components/Footer';
 import { CalendlyButton } from '../components/CalendlyButton';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Import images from attached_assets - Working Selection for 8 Categories
-import masterBedroomImg from '@assets/master.jpeg';
-import kitchenPantryImg from '@assets/kitchen01.jpeg';
-import homeOfficeImg from '@assets/home04.jpeg';
-import closetTransformImg from '@assets/IMG_7090.jpeg';
-import playroomImg from '@assets/space.jpg';
-import unpackingImg from '@assets/IMG_7101.jpeg';
-import garageImg from '@assets/IMG_7080.jpeg';
-import bathroomImg from '@assets/IMG_2770.jpeg';
+// Bathroom Organization
+import bathroom01 from '@assets/portfolio/bathroom/bathroom-01.jpg';
+import bathroom02 from '@assets/portfolio/bathroom/bathroom-02.jpeg';
+import bathroom03 from '@assets/portfolio/bathroom/bathroom-03.jpeg';
+import bathroom04 from '@assets/portfolio/bathroom/bathroom-04.jpeg';
+import bathroom05 from '@assets/portfolio/bathroom/bathroom-05.jpeg';
+import bathroom06 from '@assets/portfolio/bathroom/bathroom-06.jpeg';
+
+// Closet Organization
+import closet01 from '@assets/portfolio/closet-organization/closet-organization-01.jpeg';
+import closet02 from '@assets/portfolio/closet-organization/closet-organization-02.jpeg';
+import closet03 from '@assets/portfolio/closet-organization/closet-organization-03.jpeg';
+import closet04 from '@assets/portfolio/closet-organization/closet-organization-04.jpeg';
+import closet05 from '@assets/portfolio/closet-organization/closet-organization-05.jpeg';
+import closet06 from '@assets/portfolio/closet-organization/closet-organization-06.jpeg';
+import closet07 from '@assets/portfolio/closet-organization/closet-organization-07.jpeg';
+
+// Garage Organization
+import garage01 from '@assets/portfolio/garage/garage-01.jpg';
+import garage02 from '@assets/portfolio/garage/garage-02.jpg';
+import garage03 from '@assets/portfolio/garage/garage-03.jpeg';
+import garage05 from '@assets/portfolio/garage/garage-05.jpeg';
+import garage06 from '@assets/portfolio/garage/garage-06.jpeg';
+
+// Kitchen & Pantry Organization
+import kitchen01 from '@assets/portfolio/kitchen-pantry/kitchen-pantry-01.png';
+import kitchen02 from '@assets/portfolio/kitchen-pantry/kitchen-pantry-02.png';
+import kitchen03 from '@assets/portfolio/kitchen-pantry/kitchen-pantry-03.png';
+import kitchen04 from '@assets/portfolio/kitchen-pantry/kitchen-pantry-04.jpeg';
+import kitchen05 from '@assets/portfolio/kitchen-pantry/kitchen-pantry-05.jpeg';
+import kitchen06 from '@assets/portfolio/kitchen-pantry/kitchen-pantry-06.jpeg';
+import kitchen07 from '@assets/portfolio/kitchen-pantry/kitchen-pantry-07.jpeg';
+import kitchen08 from '@assets/portfolio/kitchen-pantry/kitchen-pantry-08.jpeg';
+import kitchen09 from '@assets/portfolio/kitchen-pantry/kitchen-pantry-09.jpeg';
+import kitchen10 from '@assets/portfolio/kitchen-pantry/kitchen-pantry-10.jpeg';
+import kitchen11 from '@assets/portfolio/kitchen-pantry/kitchen-pantry-11.jpeg';
+import kitchen12 from '@assets/portfolio/kitchen-pantry/kitchen-pantry-12.jpeg';
+import kitchen13 from '@assets/portfolio/kitchen-pantry/kitchen-pantry-13.jpeg';
+
+// Laundry Room Organization
+import laundry01 from '@assets/portfolio/laundry-room/laundry-room-01.jpeg';
+import laundry02 from '@assets/portfolio/laundry-room/laundry-room-02.jpeg';
+import laundry03 from '@assets/portfolio/laundry-room/laundry-room-03.jpeg';
+import laundry04 from '@assets/portfolio/laundry-room/laundry-room-04.jpeg';
+
+// Moving Concierge
+import moving01 from '@assets/portfolio/moving-concierge/moving-concierge-01.jpeg';
+import moving03 from '@assets/portfolio/moving-concierge/moving-concierge-03.jpeg';
+import moving04 from '@assets/portfolio/moving-concierge/moving-concierge-04.jpeg';
+import moving05 from '@assets/portfolio/moving-concierge/moving-concierge-05.jpeg';
+import moving06 from '@assets/portfolio/moving-concierge/moving-concierge-06.jpg';
+
+// Playroom Design
+import playroom01 from '@assets/portfolio/playroom/playroom-01.jpeg';
+import playroom02 from '@assets/portfolio/playroom/playroom-02.jpeg';
+import playroom03 from '@assets/portfolio/playroom/playroom-03.jpeg';
+import playroom04 from '@assets/portfolio/playroom/playroom-04.jpeg';
+import playroom05 from '@assets/portfolio/playroom/playroom-05.jpeg';
+import playroom06 from '@assets/portfolio/playroom/playroom-06.jpeg';
+import playroom07 from '@assets/portfolio/playroom/playroom-07.jpeg';
+import playroom08 from '@assets/portfolio/playroom/playroom-08.jpeg';
+import playroom09 from '@assets/portfolio/playroom/playroom-09.jpeg';
+import playroom10 from '@assets/portfolio/playroom/playroom-10.jpeg';
+
+// Space Creation
+import space01 from '@assets/portfolio/space-creation/space-creation-01.jpg';
+import space02 from '@assets/portfolio/space-creation/space-creation-02.jpg';
+import space03 from '@assets/portfolio/space-creation/space-creation-03.jpg';
+import space04 from '@assets/portfolio/space-creation/space-creation-04.jpg';
+import space05 from '@assets/portfolio/space-creation/space-creation-05.jpeg';
+import space07 from '@assets/portfolio/space-creation/space-creation-07.jpeg';
 
 export default function Portfolio() {
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const [selectedItemId, setSelectedItemId] = useState<number | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
   const [isImageFading, setIsImageFading] = useState(false);
 
-  // EXACT 8 categories - DO NOT CHANGE
+  // EXACT 8 categories with multiple images per category
   const portfolioItems = [
-    { id: 1, title: 'Master Bedroom Organization', category: 'organization', image: masterBedroomImg },
-    { id: 2, title: 'Kitchen Pantry System', category: 'organization', image: kitchenPantryImg },
-    { id: 3, title: 'Home Office Design', category: 'space-creation', image: homeOfficeImg },
-    { id: 4, title: 'Closet Transformation', category: 'organization', image: closetTransformImg },
-    { id: 5, title: 'Playroom Design', category: 'space-creation', image: playroomImg },
-    { id: 6, title: 'Unpacking & Organizing', category: 'moving', image: unpackingImg },
-    { id: 7, title: 'Garage Organization', category: 'space-creation', image: garageImg },
-    { id: 8, title: 'Bathroom Organization', category: 'organization', image: bathroomImg }
+    {
+      id: 1,
+      title: 'BATHROOM ORGANIZATION',
+      category: 'organization',
+      coverImage: bathroom01,
+      images: [bathroom01, bathroom02, bathroom03, bathroom04, bathroom05, bathroom06]
+    },
+    {
+      id: 2,
+      title: 'CLOSET ORGANIZATION',
+      category: 'organization',
+      coverImage: closet01,
+      images: [closet01, closet02, closet03, closet04, closet05, closet06, closet07]
+    },
+    {
+      id: 3,
+      title: 'GARAGE ORGANIZATION',
+      category: 'organization',
+      coverImage: garage01,
+      images: [garage01, garage02, garage03, garage05, garage06]
+    },
+    {
+      id: 4,
+      title: 'KITCHEN & PANTRY ORGANIZATION',
+      category: 'organization',
+      coverImage: kitchen01,
+      images: [kitchen01, kitchen02, kitchen03, kitchen04, kitchen05, kitchen06, kitchen07, kitchen08, kitchen09, kitchen10, kitchen11, kitchen12, kitchen13]
+    },
+    {
+      id: 5,
+      title: 'LAUNDRY ROOM ORGANIZATION',
+      category: 'organization',
+      coverImage: laundry01,
+      images: [laundry01, laundry02, laundry03, laundry04]
+    },
+    {
+      id: 6,
+      title: 'MOVING CONCIERGE',
+      category: 'moving',
+      coverImage: moving01,
+      images: [moving01, moving03, moving04, moving05, moving06]
+    },
+    {
+      id: 7,
+      title: 'PLAYROOM DESIGN',
+      category: 'space-creation',
+      coverImage: playroom01,
+      images: [playroom01, playroom02, playroom03, playroom04, playroom05, playroom06, playroom07, playroom08, playroom09, playroom10]
+    },
+    {
+      id: 8,
+      title: 'SPACE CREATION',
+      category: 'space-creation',
+      coverImage: space01,
+      images: [space01, space02, space03, space04, space05, space07]
+    }
   ];
 
   // Filter categories
@@ -44,53 +155,56 @@ export default function Portfolio() {
     ? portfolioItems
     : portfolioItems.filter(item => item.category === selectedFilter);
 
-  // Get the current selected image based on index
-  const selectedImage = selectedImageIndex !== null ? filteredItems[selectedImageIndex] : null;
+  // Get the currently selected portfolio item and its images
+  const selectedItem = selectedItemId !== null
+    ? portfolioItems.find(item => item.id === selectedItemId)
+    : null;
+  const currentImages = selectedItem?.images || [];
+  const currentImage = currentImages[selectedImageIndex];
 
-  // Navigation functions
+  // Navigation functions - navigate within the current item's images
   const goToPrevious = () => {
-    if (selectedImageIndex === null) return;
+    if (!selectedItem) return;
 
     setIsImageFading(true);
     setTimeout(() => {
       setSelectedImageIndex((prevIndex) => {
-        if (prevIndex === null) return null;
         // Wrap around to last image if at first
-        return prevIndex === 0 ? filteredItems.length - 1 : prevIndex - 1;
+        return prevIndex === 0 ? currentImages.length - 1 : prevIndex - 1;
       });
       setIsImageFading(false);
     }, 150);
   };
 
   const goToNext = () => {
-    if (selectedImageIndex === null) return;
+    if (!selectedItem) return;
 
     setIsImageFading(true);
     setTimeout(() => {
       setSelectedImageIndex((prevIndex) => {
-        if (prevIndex === null) return null;
         // Wrap around to first image if at last
-        return prevIndex === filteredItems.length - 1 ? 0 : prevIndex + 1;
+        return prevIndex === currentImages.length - 1 ? 0 : prevIndex + 1;
       });
       setIsImageFading(false);
     }, 150);
   };
 
-  // Open modal with correct index
+  // Open modal with selected item
   const openModal = (item: any) => {
-    const index = filteredItems.findIndex(i => i.id === item.id);
-    setSelectedImageIndex(index);
+    setSelectedItemId(item.id);
+    setSelectedImageIndex(0); // Start at first image
   };
 
   // Close modal
   const closeModal = () => {
-    setSelectedImageIndex(null);
+    setSelectedItemId(null);
+    setSelectedImageIndex(0);
   };
 
   // Keyboard event listeners
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (selectedImageIndex === null) return;
+      if (selectedItemId === null) return;
 
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
@@ -105,7 +219,7 @@ export default function Portfolio() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedImageIndex]);
+  }, [selectedItemId, selectedImageIndex]);
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#eeeae1' }}>
@@ -158,15 +272,15 @@ export default function Portfolio() {
                 data-testid={`portfolio-item-${item.id}`}
                 style={{ animationDelay: `${filteredItems.indexOf(item) * 100}ms` }}
               >
-                <div className="aspect-w-4 aspect-h-3 overflow-hidden" style={{ backgroundColor: '#eeeae1' }}>
+                <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-t-xl" style={{ backgroundColor: '#eeeae1' }}>
                   <img
-                    src={item.image}
+                    src={item.coverImage}
                     alt={item.title}
                     className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>
-                <div className="p-4" style={{ backgroundColor: '#eeeae1' }}>
-                  <h3 
+                <div className="p-4 rounded-b-xl" style={{ backgroundColor: '#eeeae1' }}>
+                  <h3
                     className="font-heading text-lg"
                     style={{ color: '#555843' }}
                   >
@@ -179,136 +293,123 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {selectedImage && (
+      {selectedItem && currentImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
           style={{
-            background: 'linear-gradient(135deg, rgba(85, 88, 67, 0.95) 0%, rgba(0, 0, 0, 0.85) 50%, rgba(85, 88, 67, 0.95) 100%)'
+            background: 'linear-gradient(135deg, rgba(85, 88, 67, 0.95) 0%, rgba(85, 88, 67, 0.90) 100%)'
           }}
           onClick={closeModal}
           data-testid="image-modal"
         >
-          {/* Animated background pattern */}
+          {/* Animated background pattern - subtle waves */}
           <div
             className="absolute inset-0 opacity-10"
             style={{
-              backgroundImage: `radial-gradient(circle at 20% 80%, rgba(191, 191, 130, 0.3) 0%, transparent 50%),
-                               radial-gradient(circle at 80% 20%, rgba(191, 191, 130, 0.3) 0%, transparent 50%),
-                               radial-gradient(circle at 40% 40%, rgba(191, 191, 130, 0.2) 0%, transparent 50%)`,
-              animation: 'pulse 8s ease-in-out infinite'
+              backgroundImage: `radial-gradient(circle at 20% 80%, rgba(238, 234, 225, 0.2) 0%, transparent 50%),
+                               radial-gradient(circle at 80% 20%, rgba(238, 234, 225, 0.2) 0%, transparent 50%),
+                               radial-gradient(circle at 40% 40%, rgba(238, 234, 225, 0.15) 0%, transparent 50%)`,
+              animation: 'pulse 10s ease-in-out infinite'
             }}
           />
 
           <div
             className="relative max-w-5xl w-full shadow-2xl"
             style={{
-              background: 'linear-gradient(145deg, rgba(85, 88, 67, 0.98) 0%, rgba(85, 88, 67, 0.95) 100%)',
+              background: 'rgba(85, 88, 67, 0.98)',
               padding: '24px',
               borderRadius: '20px',
-              border: '1px solid rgba(191, 191, 130, 0.3)',
-              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 100px rgba(191, 191, 130, 0.1)'
+              border: '1px solid rgba(238, 234, 225, 0.1)',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close button */}
+            {/* Close button - minimal icon approach */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 p-2.5 rounded-full transition-all duration-300 hover:scale-110 z-10 backdrop-blur-sm"
-              style={{
-                background: 'linear-gradient(145deg, rgba(191, 191, 130, 0.3), rgba(191, 191, 130, 0.1))',
-                color: '#eeeae1',
-                border: '1px solid rgba(191, 191, 130, 0.4)',
-                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.1)'
-              }}
+              className="absolute top-4 right-4 p-2 transition-all duration-300 hover:opacity-60 z-10"
               data-testid="close-modal"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5" style={{ color: 'rgba(238, 234, 225, 0.8)' }} strokeWidth={1.5} />
             </button>
 
-            {/* Previous button */}
+            {/* Previous button - minimal elegant */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 goToPrevious();
               }}
-              className="absolute left-6 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-10 backdrop-blur-sm group"
-              style={{
-                background: 'linear-gradient(145deg, rgba(191, 191, 130, 0.25), rgba(191, 191, 130, 0.1))',
-                border: '1px solid rgba(191, 191, 130, 0.4)',
-                boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.1)'
-              }}
+              className="absolute left-6 top-1/2 -translate-y-1/2 p-2 transition-all duration-300 hover:opacity-60 z-10"
               aria-label="Previous image"
               data-testid="prev-button"
             >
-              <ChevronLeft className="w-7 h-7 text-white group-hover:text-[#bfbf82] transition-colors" />
+              <ChevronLeft className="w-8 h-8" style={{ color: 'rgba(238, 234, 225, 0.7)' }} strokeWidth={1.5} />
             </button>
 
-            {/* Next button */}
+            {/* Next button - minimal elegant */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 goToNext();
               }}
-              className="absolute right-6 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-10 backdrop-blur-sm group"
-              style={{
-                background: 'linear-gradient(145deg, rgba(191, 191, 130, 0.25), rgba(191, 191, 130, 0.1))',
-                border: '1px solid rgba(191, 191, 130, 0.4)',
-                boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.1)'
-              }}
+              className="absolute right-6 top-1/2 -translate-y-1/2 p-2 transition-all duration-300 hover:opacity-60 z-10"
               aria-label="Next image"
               data-testid="next-button"
             >
-              <ChevronRight className="w-7 h-7 text-white group-hover:text-[#bfbf82] transition-colors" />
+              <ChevronRight className="w-8 h-8" style={{ color: 'rgba(238, 234, 225, 0.7)' }} strokeWidth={1.5} />
             </button>
 
-            {/* Image container with fade transition - FULL BLEED NO BLACK */}
-            <div className="rounded-2xl overflow-hidden relative">
-              <img
-                src={selectedImage.image}
-                alt={selectedImage.title}
-                className={`w-full h-auto max-h-[75vh] object-contain transition-all duration-500 ${
-                  isImageFading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-                }`}
-                style={{
-                  filter: isImageFading ? 'blur(4px)' : 'blur(0px)',
-                  boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5)'
-                }}
-              />
+            {/* Image container with fade transition */}
+            <div className="relative flex justify-center">
+              <div className="overflow-hidden rounded-2xl" style={{ maxHeight: '75vh' }}>
+                <img
+                  src={currentImage}
+                  alt={`${selectedItem.title} - Image ${selectedImageIndex + 1}`}
+                  className={`w-full h-full object-cover transition-all duration-500 ${
+                    isImageFading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
+                  }`}
+                  style={{
+                    filter: isImageFading ? 'blur(4px)' : 'blur(0px)',
+                    maxHeight: '75vh',
+                    width: 'auto'
+                  }}
+                />
+              </div>
             </div>
 
-            {/* Title with elegant typography */}
-            <h2
+            {/* Title with Sage color for contrast */}
+            <div
               className={`text-3xl font-heading mt-6 text-center transition-all duration-300 tracking-wide ${
                 isImageFading ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
               }`}
               style={{
-                color: '#eeeae1',
-                textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
-                fontWeight: '300'
+                color: '#bfbf82',  // Using Sage color for good contrast
+                fontWeight: '300',
+                textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
               }}
             >
-              {selectedImage.title}
-            </h2>
+              {selectedItem.title}
+            </div>
 
-            {/* Image counter with dots indicator */}
+            {/* Image counter and dots */}
             <div className="flex items-center justify-center gap-3 mt-4">
               <p
                 className="text-sm font-medium tracking-wider uppercase"
-                style={{ color: 'rgba(238, 234, 225, 0.7)' }}
+                style={{ color: 'white' }}
                 data-testid="image-counter"
               >
-                {selectedImageIndex !== null && `${selectedImageIndex + 1} of ${filteredItems.length}`}
+                {`${selectedImageIndex + 1} of ${currentImages.length}`}
               </p>
 
-              {/* Progress dots */}
-              <div className="flex gap-1">
-                {filteredItems.length <= 10 && filteredItems.map((_, index) => (
+              {/* Progress dots - elegant alabaster */}
+              <div className="flex gap-1.5">
+                {currentImages.length <= 15 && currentImages.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImageIndex(index)}
-                    className="w-1.5 h-1.5 rounded-full transition-all duration-300"
+                    className="w-2 h-2 rounded-full transition-all duration-300"
                     style={{
-                      backgroundColor: index === selectedImageIndex ? '#bfbf82' : 'rgba(238, 234, 225, 0.3)',
+                      backgroundColor: index === selectedImageIndex ? '#eeeae1' : 'rgba(238, 234, 225, 0.3)',
                       transform: index === selectedImageIndex ? 'scale(1.3)' : 'scale(1)'
                     }}
                     aria-label={`Go to image ${index + 1}`}

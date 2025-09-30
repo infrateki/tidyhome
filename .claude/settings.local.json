@@ -17,7 +17,10 @@
       "mcp__ide__getDiagnostics",
       "Bash(npx tsc:*)",
       "Bash(powershell:*)",
-      "Read(//c/Users/sergi/Desktop/**)"
+      "Read(//c/Users/sergi/Desktop/**)",
+      "Bash(test:*)",
+      "Read(//tmp/SnagitTemp/**)",
+      "Read(//c/Users/sergi/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/TempState/BA6CD003FABC3E54631B2A3A48FC3E24/**)"
     ],
     "deny": [],
     "ask": []

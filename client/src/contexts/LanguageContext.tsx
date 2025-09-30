@@ -230,6 +230,7 @@ const translations = {
     'connect.form.moving.feature2': 'Professional packing',
     'connect.form.moving.feature3': 'New home setup',
     'connect.form.moving.feature4': 'Unpacking & organizing',
+    'connect.form.moving.feature5': 'Moving coordination and supervision',
     'connect.form.refresh.feature1': 'System maintenance',
     'connect.form.refresh.feature2': 'Seasonal updates',
     'connect.form.refresh.feature3': 'Quick reorganization',
